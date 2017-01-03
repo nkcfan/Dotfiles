@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keymap version="1" name="Visual Studio_Modified" parent="Visual Studio">
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="control alt LEFT" />
+    <mouse-shortcut keystroke="button4" />
+    <keyboard-shortcut first-keystroke="control BACK_QUOTE" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="control W" />
+  </action>
+  <action id="DuplicatesForm.SendToLeft" />
+  <action id="DuplicatesForm.SendToRight" />
+  <action id="EditSource">
+    <keyboard-shortcut first-keystroke="control 1" />
+  </action>
+  <action id="EditorSelectWord" />
+  <action id="FileChooser.GotoHome" />
+  <action id="FileChooser.GotoProject" />
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="shift alt F7" />
+    <keyboard-shortcut first-keystroke="control 2" />
+  </action>
+  <action id="GotoBookmark1" />
+  <action id="GotoBookmark2" />
+  <action id="GuiDesigner.ExpandSelection" />
+  <action id="QuickChangeScheme" />
+</keymap>
+

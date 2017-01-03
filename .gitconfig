@@ -1,0 +1,102 @@
+[user]
+    name = nkcfan
+    email = nkcfan@users.noreply.github.com
+[core]
+    excludesfile = ~/.gitignore_global
+    autocrlf = input
+[diff]
+    tool = winmerge
+[difftool "winmerge"]
+    cmd = \"$PROGRAMFILES/WinMerge/WinMergeU.exe\" -e -u -x -wl -dl "Base" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
+[mergetool "winmerge"]
+    cmd = \"$PROGRAMFILES/WinMerge/WinMergeU.exe\" -e -u -x -wl -dl "Base" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
+[color]
+    ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = true
+[credential]
+    helper = ! \"$GIT_CREDENTIAL_HELPER\"
+[help]
+    format = html
+[pack]
+    packSizeLimit = 2g
+[rebase]
+    autosquash = true
+[color "branch"]
+    current = red bold
+    local = normal
+    remote = yellow bold
+    plain = normal
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    header = normal
+    new = red bold
+    added = green bold
+    updated = cyan bold
+    changed = cyan bold
+    untracked = red bold
+    nobranch = red bold
+[alias]
+    a = add -A
+    aliases = config --get-regexp alias
+    amend = commit --amend -C HEAD
+    bl = blame -w -M -C
+    br = branch
+    bra = branch -rav
+    branches = branch -rav
+    cat = cat-file -t
+    ci = commit -a
+    changed = status -sb
+    cm = commit -m
+    co = checkout
+    df = diff --word-diff=color --word-diff-regex=. -w --patience
+    dump = cat-file -p
+    f = ! git ls-files | grep -i
+    filelog = log -u
+    hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --abbrev-commit --date=relative
+    in = log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short ..@{u}
+    l = log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short
+    last = log -p --max-count=1 --word-diff
+    lastref = rev-parse --short HEAD
+    lasttag = describe --tags --abbrev=0
+    lg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    loglist = log --oneline
+    out = log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short @{u}..
+    pick = add -p
+    pullom = pull origin master
+    pushom = push origin master
+    pushoh = push origin HEAD
+    re = rebase
+    reabort = rebase --abort
+    ready = rebase -i @{u}
+    rego = rebase --continue
+    reskip = rebase --skip
+    remotes = remote -v show
+    st = status -sb
+    stats = diff --stat
+    stage = add
+    undo = reset head~
+    unstage = reset HEAD
+    wdiff = diff --color-words
+    who = shortlog -s -e --
+    standup = ! git log --since yesterday --oneline --author $GIT_AUTHOR_NAME
+[merge]
+#    ff = false
+[pull]
+#    ff = only
+[push]
+    default = upstream

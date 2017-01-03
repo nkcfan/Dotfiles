@@ -1,0 +1,29 @@
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set bell-style visible
+
+# Delete Key
+"\e[3~": delete-char
+
+# Ctrl-Delete: delete next word
+"\e[3;5~": kill-word
+
+# Ctrl-Backspace
+"\C-H": backward-kill-word
+
+# Line jump
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+
+# Ctrl+Arrow to move word
+"\eOD": backward-word
+"\eOC": forward-word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+
+# Readline (as of v7) and thus Bash (as of v4.4) now have support for bracketed paste mode!
+# Enable it by adding set enable-bracketed-paste
+# Before these versions, bind bracket escape sequence to nothing, in order not to mess input
+"\e[200~":
+"\e[201~":
+

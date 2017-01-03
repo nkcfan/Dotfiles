@@ -1,0 +1,11 @@
+*
+
+!bin/
+!.git*
+!.*rc
+!.*profile
+
+.bashrc
+.netrc
+.gitk
+.curlrc
