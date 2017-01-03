@@ -65,17 +65,17 @@
     dump = cat-file -p
     f = ! git ls-files | grep -i
     filelog = log -u
-    hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --abbrev-commit --date=relative
-    in = log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short ..@{u}
-    l = log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short
+    hist = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --abbrev-commit --date=relative
+    in = log --pretty=tformat:\"%h %ad | %s%d [%an]\" --date=short ..@{u}
+    l = log --pretty=tformat:\"%h %ad | %s%d [%an]\" --date=short
     last = log -p --max-count=1 --word-diff
     lastref = rev-parse --short HEAD
     lasttag = describe --tags --abbrev=0
-    lg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    lg = log --pretty=tformat:\"%h %ad | %s%d [%an]\" --graph --date=short
     lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     loglist = log --oneline
-    out = log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short @{u}..
+    out = log --pretty=tformat:\"%h %ad | %s%d [%an]\" --date=short @{u}..
     pick = add -p
     pullom = pull origin master
     pushom = push origin master
