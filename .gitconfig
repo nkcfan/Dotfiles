@@ -10,7 +10,7 @@
     cmd = \"$PROGRAMFILES/WinMerge/WinMergeU.exe\" -e -u -x -wl -dl "Base" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
+    path =
 [mergetool "sourcetree"]
     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
@@ -100,3 +100,9 @@
 #    ff = only
 [push]
     default = upstream
+[pager]
+	show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+	log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+	diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+[interactive]
+	diffFilter = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight
