@@ -11,9 +11,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'mhinz/vim-signify'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'rdnetto/YCM-Generator'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'jeaye/color_coded'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -71,6 +72,7 @@ let g:ctrlp_match_window = 'top,order:ttb'
 
 " YouCompleteMe
 let g:ycm_extra_conf_globlist = ['~/work/*','/mnt/data[!/]*/*','!~/*']
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Newbie vim-syntastic/syntastic settings
 "set statusline+=%#warningmsg#
