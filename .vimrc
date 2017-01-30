@@ -122,7 +122,8 @@ nnoremap <expr><C-X> "dd"
 nnoremap <C-P><C-P> :CtrlPBuffer<CR>
 
 " Key mappings in insert mode
-inoremap <C-S> <Esc>:w<CR>i
+inoremap <M-I> <Esc>:YcmCompleter GoTo<CR>
+inoremap <C-S> <Esc>:w<CR>
 
 " Key mappings in command-line mode
 " C-BS
