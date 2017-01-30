@@ -21,6 +21,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'svermeulen/vim-easyclip'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 " All of your Plugins must be added before the following line
@@ -106,7 +108,6 @@ execute "set <S-Down>=\e[1;2B"
 execute "set <S-Left>=\e[1;2D"
 execute "set <S-Right>=\e[1;2C"
 
-
 " Key mappings in normal mode
 nnoremap <M-I> :YcmCompleter GoTo<CR>
 " Naviaget Back
@@ -117,7 +118,9 @@ nnoremap <C-S> :w<CR>
 nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
-nnoremap <expr><C-H> "db"
+" C-BS
+nnoremap <expr><C-H> "\"_db"
+" C-Del
 nnoremap <expr><C-X> "dd"
 nnoremap <C-P><C-P> :CtrlPBuffer<CR>
 
