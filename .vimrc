@@ -152,6 +152,14 @@ inoremap <S-Down> <Esc>v<Down>
 inoremap <S-Left> <Esc>v<Left>
 inoremap <S-Right> <Esc>v<Right>
 
+" Natual search and replace
+" ref: http://vim.wikia.com/wiki/Copy_or_change_search_hit
+" ref: https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+" Make a simple "search" text object.
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
+
 let g:prev_register = @0
 function! Idle()
    if g:prev_register != @0
