@@ -69,9 +69,6 @@ if &term =~ '^screen'
     set ttymouse=xterm2
 endif
 
-" CtrlP
-let g:ctrlp_match_window = 'top,order:ttb'
-
 " YouCompleteMe
 let g:ycm_extra_conf_globlist = ['~/work/*','/mnt/data[!/]*/*','!~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -131,6 +128,8 @@ nnoremap <C-P><C-P> :CtrlPBuffer<CR>
 " Key mappings in insert mode
 inoremap <M-I> <Esc>:YcmCompleter GoTo<CR>
 inoremap <C-S> <Esc>:w<CR>
+inoremap <C-P> <Esc>:CtrlP<CR>
+inoremap <C-P><C-P> <Esc>:CtrlPBuffer<CR>
 
 " Key mappings in command-line mode
 " C-BS
