@@ -122,6 +122,7 @@ nnoremap <expr><BS> "X"
 " C-BS
 nnoremap <expr><C-H> "\"_db"
 " C-Del
+nnoremap <expr><C-kDel> "\"_dw"
 nnoremap <expr><C-X> "dd"
 nnoremap <C-P><C-P> :CtrlPBuffer<CR>
 
