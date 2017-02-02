@@ -99,6 +99,7 @@ map g/ <Plug>(incsearch-stay)
 " Key naming
 execute "set <M-I>=\ei"
 execute "set <M-O>=\eo"
+execute "set <M-V>=\ev"
 execute "set <C-Left>=\e[D"
 execute "set <C-Right>=\e[C"
 execute "set <C-Home>=\e[1;5H"
@@ -112,6 +113,9 @@ execute "set <S-Right>=\e[1;2C"
 nnoremap <M-I> :YcmCompleter GoTo<CR>
 " Naviaget Back
 nnoremap <M-O> <C-O>
+" Select text just pasted
+" ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <C-Home> gg
 nnoremap <C-End> G
 nnoremap <C-S> :w<CR>
