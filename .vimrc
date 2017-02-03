@@ -97,14 +97,8 @@ map g/ <Plug>(incsearch-stay)
 execute "set <M-I>=\ei"
 execute "set <M-O>=\eo"
 execute "set <M-V>=\ev"
-execute "set <C-Left>=\e[D"
-execute "set <C-Right>=\e[C"
 execute "set <C-Home>=\e[1;5H"
 execute "set <C-End>=\e[1;5F"
-execute "set <S-Up>=\e[1;2A"
-execute "set <S-Down>=\e[1;2B"
-execute "set <S-Left>=\e[1;2D"
-execute "set <S-Right>=\e[1;2C"
 
 " Key mappings in normal mode
 nnoremap <M-I> :YcmCompleter GoTo<CR>
