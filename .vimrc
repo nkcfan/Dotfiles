@@ -26,6 +26,9 @@ Plugin 'svermeulen/vim-easyclip'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'ConradIrwin/vim-bracketed-paste'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-colorscheme-switcher'
+Plugin 'pearofducks/ansible-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
