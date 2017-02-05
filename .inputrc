@@ -9,7 +9,7 @@ set bell-style visible
 "\e[3;5~": kill-word
 
 # Ctrl-Backspace
-"\C-H": backward-kill-word
+"\C-H": unix-word-rubout
 
 # Line jump
 "\e[1~": beginning-of-line
