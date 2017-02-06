@@ -74,6 +74,13 @@ if &term =~ '^screen'
     set ttymouse=xterm2
 endif
 
+" lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
+      \ }
+      \ }
+
 " YouCompleteMe
 let g:ycm_extra_conf_globlist = ['~/work/*','/mnt/data[!/]*/*','!~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
