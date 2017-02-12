@@ -20,7 +20,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'tomtom/tcomment_vim'
-" Auto detect of tab convention
 Plugin 'tpope/vim-sleuth'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 " All of your Plugins must be added before the following line
