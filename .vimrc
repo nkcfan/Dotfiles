@@ -23,6 +23,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'svermeulen/vim-easyclip'
+Plugin 'epeli/slimux'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
@@ -87,6 +88,9 @@ let g:lightline = {
 let g:ycm_extra_conf_globlist = ['~/work/*','/mnt/data[!/]*/*','!~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+" Slimux
+let g:slimux_select_from_current_window = 1
+
 " Newbie vim-syntastic/syntastic settings
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -108,6 +112,7 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Key naming
+execute "set <M-E>=\ee"
 execute "set <M-I>=\ei"
 execute "set <M-O>=\eo"
 execute "set <M-V>=\ev"
@@ -172,6 +177,25 @@ inoremap <S-Right> <Esc>v<Right>
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
+
+" Key mappings for slime
+if !exists('g:slimux_map') | let g:slimux_map = "\<M-E>" | endif
+execute "nnoremap " . g:slimux_map . g:slimux_map . " :SlimuxREPLSendLine<CR>"
+execute "inoremap " . g:slimux_map . g:slimux_map . " <Esc>:SlimuxREPLSendLine<CR>"
+" Adapt Slimux to an operator
+execute "nnoremap <silent> " g:slimux_map " :set opfunc=SlimuxAdaptor<CR>g@"
+execute "vnoremap <silent> " g:slimux_map " :<C-U>call SlimuxAdaptor(visualmode(), 1)<CR>"
+function! SlimuxAdaptor(type, ...)
+    if a:0  " invoked from visual mode, use '< and '> marks.
+        silent execute ":'<,'>SlimuxREPLSendSelection<CR>"
+    elseif a:type == 'line'
+        silent execute "normal `[V`]" g:slimux_map
+    elseif a:type == 'block'
+        silent execute "normal `[\<C-V>`]" g:slimux_map
+    else
+        silent execute "normal `[v`]" g:slimux_map
+    endif
+endfunction
 
 let g:prev_register = @0
 function! Idle()
