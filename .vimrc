@@ -197,15 +197,3 @@ function! SlimuxAdaptor(type, ...)
     endif
 endfunction
 
-let g:prev_register = @0
-function! Idle()
-   if g:prev_register != @0
-      let g:prev_register = @0
-      if $TMUX != ''
-         call system("tmux load-buffer -", @0)
-      endif
-      echo "register copied"
-   endif
-endfunction
-autocmd CursorHold * call Idle()
-
