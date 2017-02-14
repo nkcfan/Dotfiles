@@ -21,10 +21,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'haya14busa/incsearch.vim'
-Plugin 'tomtom/tcomment_vim'
 Plugin 'svermeulen/vim-easyclip'
 Plugin 'epeli/slimux'
 Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tommcdo/vim-exchange'
@@ -169,6 +169,12 @@ inoremap <S-Up> <Esc>v<Up>
 inoremap <S-Down> <Esc>v<Down>
 inoremap <S-Left> <Esc>v<Left>
 inoremap <S-Right> <Esc>v<Right>
+
+" Commentary
+xmap <C-Q>  <Plug>Commentary
+nmap <C-Q>  <Plug>Commentary
+omap <C-Q>  <Plug>Commentary
+nmap <C-Q><C-Q> <Plug>CommentaryLine
 
 " Natual search and replace
 " ref: http://vim.wikia.com/wiki/Copy_or_change_search_hit
