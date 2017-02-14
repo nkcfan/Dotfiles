@@ -105,6 +105,9 @@ syntax on
 colorscheme pablo
 set cursorline
 hi CursorLine cterm=NONE ctermbg=darkgray
+hi clear MatchParen
+hi MatchParen cterm=reverse
+" Set vertsplit char as blank
 
 " incsearch.vim
 map /  <Plug>(incsearch-forward)
