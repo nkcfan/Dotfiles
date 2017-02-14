@@ -99,32 +99,32 @@ COLOREND="\[\e[00m\]"
 
 # Responsive Prompt
 prompt() {
-	if [[ $? -eq 0 ]]; then
-		exit_status="${LBLUE}\$ "
-	else
-		exit_status="${LRED}\$ "
-	fi
+    if [[ $? -eq 0 ]]; then
+        exit_status="${LBLUE}\$ "
+    else
+        exit_status="${LRED}\$ "
+    fi
 
-	remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
+    remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
     branch_name=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)
-	if [[ "$remote_state" == "" ]]; then
+    if [[ "$remote_state" == "" ]]; then
         rstat=""
     else
-		rstat="${CYAN}("
-		if [[ "$remote_state" == *ahead* ]] && [[ "$remote_state" == *behind* ]]; then
-			ahead_num=$(sed -n 's/\[ahead \([0-9][0-9]*\)[],].*/\1/p' <<< "$remote_state")
-			behind_num=$(sed -n 's/.*behind \([0-9][0-9]*\)\]/\1/p' <<< "$remote_state")
-			rstat="$rstat${RED}$behind_num,${GREEN}$ahead_num"
-		elif [[ "$remote_state" == *ahead* ]]; then
-			ahead_num=$(sed -n 's/\[ahead \([0-9][0-9]*\)[],].*/\1/p' <<< "$remote_state")
-			rstat="$rstat${GREEN}$ahead_num"
-		elif [[ "$remote_state" == *behind* ]]; then
-			behind_num=$(sed -n 's/.*behind \([0-9][0-9]*\)\]/\1/p' <<< "$remote_state")
-			rstat="$rstat${RED}$behind_num"
-		fi
+        rstat="${CYAN}("
+        if [[ "$remote_state" == *ahead* ]] && [[ "$remote_state" == *behind* ]]; then
+            ahead_num=$(sed -n 's/\[ahead \([0-9][0-9]*\)[],].*/\1/p' <<< "$remote_state")
+            behind_num=$(sed -n 's/.*behind \([0-9][0-9]*\)\]/\1/p' <<< "$remote_state")
+            rstat="$rstat${RED}$behind_num,${GREEN}$ahead_num"
+        elif [[ "$remote_state" == *ahead* ]]; then
+            ahead_num=$(sed -n 's/\[ahead \([0-9][0-9]*\)[],].*/\1/p' <<< "$remote_state")
+            rstat="$rstat${GREEN}$ahead_num"
+        elif [[ "$remote_state" == *behind* ]]; then
+            behind_num=$(sed -n 's/.*behind \([0-9][0-9]*\)\]/\1/p' <<< "$remote_state")
+            rstat="$rstat${RED}$behind_num"
+        fi
 
-		rstat="$rstat${CYAN})"
-	fi
+        rstat="$rstat${CYAN})"
+    fi
 
     if [[ $TERM =~ "256color" ]]; then
         host_color="\[\e[38;5;$((16 + $(hostname | cksum | cut -c1-3) % 256))m\]";
