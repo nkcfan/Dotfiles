@@ -104,9 +104,13 @@ let g:slimux_select_from_current_window = 1
 syntax on
 colorscheme pablo
 set cursorline
-hi CursorLine cterm=NONE ctermbg=darkgray
+hi clear CursorLine
+hi CursorLine ctermbg=darkgray
 hi clear MatchParen
 hi MatchParen cterm=reverse
+hi clear LineNr
+hi LineNr ctermfg=darkgray
+hi clear CursorLineNr
 " Set vertsplit char as blank
 
 " incsearch.vim
