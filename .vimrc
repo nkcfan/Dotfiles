@@ -43,11 +43,18 @@ set encoding=utf-8
 set laststatus=2
 " Show line numbers
 set number
+" Show invisible char
+set list
+set listchars=tab:↹\ 
 " Tabs
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+" Line wrap
+" To insert the elipsis, press ctrl-vu followed by the numeric code for elipsis: 2026
+set wrap linebreak
+set showbreak=…
 " Allows the left and right arrow keys to wrap around lines
 set whichwrap+=<,>,h,l,[,]
 " Backspace
@@ -101,9 +108,9 @@ let g:slimux_select_from_current_window = 1
 "let g:syntastic_check_on_wq = 0
 
 " Colors
+set cursorline
 syntax on
 colorscheme pablo
-set cursorline
 hi clear CursorLine
 hi CursorLine ctermbg=darkgray
 hi clear MatchParen
@@ -111,6 +118,9 @@ hi MatchParen cterm=reverse
 hi clear LineNr
 hi LineNr ctermfg=darkgray
 hi clear CursorLineNr
+hi link CursorLineNr LineNr
+hi clear SpecialKey
+hi link SpecialKey NonText
 " Set vertsplit char as blank
 
 " incsearch.vim
