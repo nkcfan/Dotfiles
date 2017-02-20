@@ -32,6 +32,7 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'joshdick/onedark.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -86,6 +87,7 @@ endif
 
 " lightline
 let g:lightline = {
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
       \ }
@@ -110,18 +112,7 @@ let g:slimux_select_from_current_window = 1
 " Colors
 set cursorline
 syntax on
-colorscheme pablo
-hi clear CursorLine
-hi CursorLine ctermbg=darkgray
-hi clear MatchParen
-hi MatchParen cterm=reverse
-hi clear LineNr
-hi LineNr ctermfg=darkgray
-hi clear CursorLineNr
-hi link CursorLineNr LineNr
-hi clear SpecialKey
-hi link SpecialKey NonText
-" Set vertsplit char as blank
+colorscheme onedark
 
 " incsearch.vim
 map /  <Plug>(incsearch-forward)
