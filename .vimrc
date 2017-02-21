@@ -1,43 +1,35 @@
-set nocompatible              " be iMproved, required
-set hidden                    " required by vim-ctrlspace
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 " The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin from http://vim-scripts.org/vim/scripts.html
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/argtextobj.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'mhinz/vim-signify'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'jeaye/color_coded'
-"Plugin 'vim-syntastic/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'svermeulen/vim-easyclip'
-Plugin 'epeli/slimux'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'tommcdo/vim-ninja-feet'
-Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'joshdick/onedark.vim'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'Valloric/YouCompleteMe', { 'on': 'YcmCompleter' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'mhinz/vim-signify'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
+"Plug 'jeaye/color_coded'
+"Plug 'vim-syntastic/syntastic'
+Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'svermeulen/vim-easyclip'
+Plug 'epeli/slimux'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tommcdo/vim-exchange'
+Plug 'tommcdo/vim-ninja-feet'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'pearofducks/ansible-vim'
+Plug 'joshdick/onedark.vim'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Initialize plugin system
+call plug#end()
 
+set nocompatible
+set hidden                    " required by vim-ctrlspace
 set path+=**
 set wildmenu
 set wildmode=longest:full
