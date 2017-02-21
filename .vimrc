@@ -118,6 +118,7 @@ map g/ <Plug>(incsearch-stay)
 execute "set <M-E>=\ee"
 execute "set <M-I>=\ei"
 execute "set <M-O>=\eo"
+execute "set <M-P>=\ep"
 execute "set <M-V>=\ev"
 execute "set <C-Home>=\e[1;5H"
 execute "set <C-End>=\e[1;5F"
@@ -141,15 +142,18 @@ nnoremap <expr><C-H> "\"_db"
 " C-Del
 nnoremap <expr><C-kDel> "\"_dw"
 nnoremap <expr><C-X> "dd"
-nnoremap <C-P><C-P> :CtrlPBuffer<CR>
 
 " Key mappings in insert mode
 inoremap <C-kDel> <C-O>"_dw
 inoremap <M-I> <C-O>:YcmCompleter GoTo<CR>
 inoremap <M-O> <C-O><C-O>
 inoremap <C-S> <C-O>:w<CR>
-inoremap <C-P> <C-O>:CtrlP<CR>
-inoremap <C-P><C-P> <C-O>:CtrlPBuffer<CR>
+
+" CtrlP
+let g:ctrlp_map = '<M-P>'
+nnoremap <M-P><M-P> :CtrlPBuffer<CR>
+inoremap <M-P> <C-O>:CtrlP<CR>
+inoremap <M-P><M-P> <C-O>:CtrlPBuffer<CR>
 
 " Key mappings in command-line mode
 " C-BS
