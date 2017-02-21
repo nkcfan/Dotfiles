@@ -144,10 +144,12 @@ nnoremap <expr><C-X> "dd"
 nnoremap <C-P><C-P> :CtrlPBuffer<CR>
 
 " Key mappings in insert mode
-inoremap <M-I> <Esc>:YcmCompleter GoTo<CR>
-inoremap <C-S> <Esc>:w<CR>
-inoremap <C-P> <Esc>:CtrlP<CR>
-inoremap <C-P><C-P> <Esc>:CtrlPBuffer<CR>
+inoremap <C-kDel> <C-O>"_dw
+inoremap <M-I> <C-O>:YcmCompleter GoTo<CR>
+inoremap <M-O> <C-O><C-O>
+inoremap <C-S> <C-O>:w<CR>
+inoremap <C-P> <C-O>:CtrlP<CR>
+inoremap <C-P><C-P> <C-O>:CtrlPBuffer<CR>
 
 " Key mappings in command-line mode
 " C-BS
@@ -190,7 +192,7 @@ omap s :normal vs<CR>
 " Key mappings for slime
 if !exists('g:slimux_map') | let g:slimux_map = "\<M-E>" | endif
 execute "nnoremap " . g:slimux_map . g:slimux_map . " :SlimuxREPLSendLine<CR>"
-execute "inoremap " . g:slimux_map . g:slimux_map . " <Esc>:SlimuxREPLSendLine<CR>"
+execute "inoremap " . g:slimux_map . g:slimux_map . " <C-O>:SlimuxREPLSendLine<CR>"
 " Adapt Slimux to an operator
 execute "nnoremap <silent> " g:slimux_map " :set opfunc=SlimuxAdaptor<CR>g@"
 execute "vnoremap <silent> " g:slimux_map " :<C-U>call SlimuxAdaptor(visualmode(), 1)<CR>"
