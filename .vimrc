@@ -155,26 +155,6 @@ inoremap <C-P><C-P> <C-O>:CtrlPBuffer<CR>
 " C-BS
 noremap! <C-H> <C-W>
 
-" Key mapping for natural copy and paste :)
-vnoremap <C-C> "+yi
-vnoremap <C-X> "+c
-vnoremap <C-V> c<ESC>"+p
-inoremap <C-V> <C-r><C-o>+
-
-" Key mapping for natual selecting :)
-nnoremap <S-Up> v<Up>
-nnoremap <S-Down> v<Down>
-nnoremap <S-Left> v<Left>
-nnoremap <S-Right> v<Right>
-vnoremap <S-Up> <Up>
-vnoremap <S-Down> <Down>
-vnoremap <S-Left> <Left>
-vnoremap <S-Right> <Right>
-inoremap <S-Up> <Esc>v<Up>
-inoremap <S-Down> <Esc>v<Down>
-inoremap <S-Left> <Esc>v<Left>
-inoremap <S-Right> <Esc>v<Right>
-
 " Commentary
 xmap <C-Q>  <Plug>Commentary
 nmap <C-Q>  <Plug>Commentary
