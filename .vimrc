@@ -115,18 +115,13 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Key naming
-execute "set <M-E>=\ee"
-execute "set <M-I>=\ei"
-execute "set <M-O>=\eo"
-execute "set <M-P>=\ep"
-execute "set <M-V>=\ev"
 execute "set <C-Home>=\e[1;5H"
 execute "set <C-End>=\e[1;5F"
 
 " Key mappings in normal mode
-nnoremap <M-I> :YcmCompleter GoTo<CR>
+nnoremap <M-i> :YcmCompleter GoTo<CR>
 " Naviaget Back
-nnoremap <M-O> <C-O>
+nnoremap <M-o> <C-O>
 " Select text just pasted
 " ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
@@ -145,15 +140,15 @@ nnoremap <expr><C-X> "dd"
 
 " Key mappings in insert mode
 inoremap <C-kDel> <C-O>"_dw
-inoremap <M-I> <C-O>:YcmCompleter GoTo<CR>
-inoremap <M-O> <C-O><C-O>
+inoremap <M-i> <C-O>:YcmCompleter GoTo<CR>
+inoremap <M-o> <C-O><C-O>
 inoremap <C-S> <C-O>:w<CR>
 
 " CtrlP
-let g:ctrlp_map = '<M-P>'
-nnoremap <M-P><M-P> :CtrlPBuffer<CR>
-inoremap <M-P> <C-O>:CtrlP<CR>
-inoremap <M-P><M-P> <C-O>:CtrlPBuffer<CR>
+let g:ctrlp_map = '<M-p>'
+nnoremap <M-p><M-p> :CtrlPBuffer<CR>
+inoremap <M-p> <C-O>:CtrlP<CR>
+inoremap <M-p><M-p> <C-O>:CtrlPBuffer<CR>
 
 " Key mappings in command-line mode
 " C-BS
@@ -174,7 +169,7 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
 omap s :normal vs<CR>
 
 " Key mappings for slime
-if !exists('g:slimux_map') | let g:slimux_map = "\<M-E>" | endif
+if !exists('g:slimux_map') | let g:slimux_map = "\<M-e>" | endif
 execute "nnoremap " . g:slimux_map . g:slimux_map . " :SlimuxREPLSendLine<CR>"
 execute "inoremap " . g:slimux_map . g:slimux_map . " <C-O>:SlimuxREPLSendLine<CR>"
 " Adapt Slimux to an operator
