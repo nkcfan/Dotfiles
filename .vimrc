@@ -40,7 +40,9 @@ filetype plugin indent on    " required
 
 set path+=**
 set wildmenu
+set wildmode=longest:full
 set encoding=utf-8
+set selection=exclusive
 " Always show statusline
 set laststatus=2
 " Show line numbers
