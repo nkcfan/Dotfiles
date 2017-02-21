@@ -10,6 +10,7 @@ call vundle#begin()
 " plugin from http://vim-scripts.org/vim/scripts.html
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'mhinz/vim-signify'
@@ -28,6 +29,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tommcdo/vim-exchange'
+Plugin 'tommcdo/vim-ninja-feet'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-colorscheme-switcher'
