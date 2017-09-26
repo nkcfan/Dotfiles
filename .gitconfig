@@ -51,15 +51,15 @@
 [alias]
     a = add -A
     aliases = config --get-regexp alias
-    amend = commit --amend -C HEAD
+    amend = commit -s --amend -C HEAD
     bl = blame -w -M -C
     br = branch
     bra = branch -rav
     branches = branch -rav
     cat = cat-file -t
-    ci = commit -a
+    ci = commit -sa
     changed = status -sb
-    cm = commit -m
+    cm = commit -sm
     co = checkout
     df = diff --word-diff=color --word-diff-regex=. -w --patience
     dump = cat-file -p
@@ -106,3 +106,5 @@
 	diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [interactive]
 	diffFilter = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight
+[merge]
+	conflictstyle = diff3
