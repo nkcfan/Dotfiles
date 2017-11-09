@@ -65,6 +65,7 @@
     dump = cat-file -p
     f = ! git ls-files | grep -i
     filelog = log -u
+    g = grep -n
     hist = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --abbrev-commit --date=relative
     in = log --pretty=tformat:\"%h %ad | %s%d [%an]\" --date=short ..@{u}
     l = log --pretty=tformat:\"%h %ad | %s%d [%an]\" --date=short
