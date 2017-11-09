@@ -24,6 +24,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'pearofducks/ansible-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'bogado/file-line'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()
