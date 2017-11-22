@@ -101,8 +101,10 @@ COLOREND="\[\e[00m\]"
 prompt() {
     if [[ $? -eq 0 ]]; then
         exit_status="${LBLUE}\$ "
+        exit_symbol="${LBLUE}✔"
     else
         exit_status="${LRED}\$ "
+        exit_symbol="${LRED}✘" 
     fi
 
     remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
@@ -140,7 +142,7 @@ prompt() {
     ## 2. tmux in remote client
     printf "\033k$title\033\\ \r"
 
-    PS1="${host_color}\h${YELLOW}\w ${CYAN}${branch_name}${rstat}${exit_status}${COLOREND}"
+    PS1="${host_color}\h${exit_symbol}${YELLOW}\w ${CYAN}${branch_name}${rstat}${exit_status}${COLOREND}"
 }
 
 export PROMPT_COMMAND=prompt
