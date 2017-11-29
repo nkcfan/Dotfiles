@@ -84,6 +84,8 @@ endif
 " lightline
 let g:lightline = {
       \ 'colorscheme': 'onedark',
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
       \ }
