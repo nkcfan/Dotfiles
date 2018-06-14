@@ -163,6 +163,9 @@ nmap <C-Q>  <Plug>Commentary
 omap <C-Q>  <Plug>Commentary
 nmap <C-Q><C-Q> <Plug>CommentaryLine
 
+" easyclip
+let g:EasyClipEnableBlackHoleRedirectForDeleteOperator = 0
+
 " Natual search and replace
 " ref: http://vim.wikia.com/wiki/Copy_or_change_search_hit
 " ref: https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
