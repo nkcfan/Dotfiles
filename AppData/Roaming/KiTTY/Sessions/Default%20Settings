@@ -170,7 +170,7 @@ WindowHasSysMenu\1\
 WindowMaximizable\1\
 WindowMinimizable\1\
 WindowClosable\1\
-BoldAsColour\1\
+BoldAsColour\0\
 Xterm256Colour\1\
 ANSIColour\1\
 TryPalette\0\
@@ -180,7 +180,7 @@ FontQuality\3\
 FontHeight\10\
 FontCharSet\0\
 FontIsBold\0\
-Font\Courier%20New\
+Font\Hack\
 TermHeight\24\
 TermWidth\80\
 WinTitle\\
@@ -275,7 +275,7 @@ ProxyExcludeList\\
 AddressFamily\0\
 TerminalModes\CS7=A,CS8=A,DISCARD=A,DSUSP=A,ECHO=A,ECHOCTL=A,ECHOE=A,ECHOK=A,ECHOKE=A,ECHONL=A,EOF=A,EOL=A,EOL2=A,ERASE=A,FLUSH=A,ICANON=A,ICRNL=A,IEXTEN=A,IGNCR=A,IGNPAR=A,IMAXBEL=A,INLCR=A,INPCK=A,INTR=A,ISIG=A,ISTRIP=A,IUCLC=A,IUTF8=A,IXANY=A,IXOFF=A,IXON=A,KILL=A,LNEXT=A,NOFLSH=A,OCRNL=A,OLCUC=A,ONLCR=A,ONLRET=A,ONOCR=A,OPOST=A,PARENB=A,PARMRK=A,PARODD=A,PENDIN=A,QUIT=A,REPRINT=A,START=A,STATUS=A,STOP=A,SUSP=A,SWTCH=A,TOSTOP=A,WERASE=A,XCASE=A\
 TerminalSpeed\38400,38400\
-TerminalType\xterm\
+TerminalType\xterm-256color\
 TCPKeepalives\0\
 TCPNoDelay\1\
 PingIntervalSecs\0\
