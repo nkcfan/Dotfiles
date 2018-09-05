@@ -109,7 +109,7 @@ EraseToScrollback\1\
 ScrollOnDisp\1\
 ScrollOnKey\0\
 ScrollBarFullScreen\0\
-ScrollBar\1\
+ScrollBar\0\
 CapsLockCyr\0\
 Printer\\
 UTF8Override\1\
