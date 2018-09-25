@@ -54,8 +54,6 @@ if [[ "$UNAME" == "Linux" ]]; then
     source $HOME/bin/ssh-agent.sh
     # Enable rbenv shims and autocompletion
     eval "$(rbenv init -)"
-    # Enable color in grep
-    export GREP_OPTIONS='--color=auto'
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=true
     # Disable XON/XOFF flow control
