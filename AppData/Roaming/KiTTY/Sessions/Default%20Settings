@@ -114,7 +114,7 @@ CapsLockCyr\0\
 Printer\\
 UTF8Override\1\
 CJKAmbigWide\0\
-LineCodePage\\
+LineCodePage\UTF-8\
 Wordness224\2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2\
 Wordness192\2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2\
 Wordness160\1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1\
@@ -198,7 +198,7 @@ BellOverloadN\5\
 BellOverload\1\
 BellWaveFile\\
 BeepInd\0\
-Beep\1\
+Beep\2\
 BlinkCur\0\
 CurType\0\
 WindowBorder\1\
