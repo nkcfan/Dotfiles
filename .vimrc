@@ -35,7 +35,7 @@ set path+=**
 set wildmenu
 set wildmode=longest:full
 set encoding=utf-8
-set selection=exclusive
+"set selection=exclusive " Doesn't work well with vim-easyclip, ref: https://github.com/svermeulen/vim-easyclip/issues/107
 " Always show statusline
 set laststatus=2
 " Show line numbers
