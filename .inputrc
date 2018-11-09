@@ -1,6 +1,8 @@
 set completion-ignore-case on
 set show-all-if-ambiguous on
 set bell-style visible
+# Bash 4.4, with readline 7.0, supports bracketed paste
+set enable-bracketed-paste on
 
 # Delete Key
 "\e[3~": delete-char
