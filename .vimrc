@@ -146,6 +146,8 @@ inoremap <C-kDel> <C-O>"_dw
 inoremap <M-i> <C-O>:YcmCompleter GoTo<CR>
 inoremap <M-o> <C-O><C-O>
 inoremap <C-S> <C-O>:w<CR>
+" Disable i_CTRL-V in favor for i_CTRL-Q
+inoremap <C-v> <Nop>
 
 " CtrlP
 let g:ctrlp_map = '<M-p>'
