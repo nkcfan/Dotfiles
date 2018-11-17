@@ -13,6 +13,9 @@ set enable-bracketed-paste on
 # Ctrl-Backspace
 "\C-H": unix-word-rubout
 
+# Prefer Ctrl-Q to Ctrl-V
+"\C-V": ""
+
 # Line jump
 "\e[1~": beginning-of-line
 "\e[4~": end-of-line
