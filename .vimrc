@@ -25,6 +25,7 @@ Plug 'xolox/vim-colorscheme-switcher'
 Plug 'pearofducks/ansible-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'bogado/file-line'
+Plug 'ludovicchabant/vim-gutentags'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()
@@ -87,7 +88,10 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified', 'gutentags' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gutentags': 'gutentags#statusline'
       \ }
       \ }
 
@@ -195,3 +199,9 @@ function! SlimuxAdaptor(type, ...)
     endif
 endfunction
 
+" gutentags
+augroup MyGutentagsStatusLineRefresher
+    autocmd!
+    autocmd User GutentagsUpdating call lightline#update()
+    autocmd User GutentagsUpdated call lightline#update()
+augroup END
