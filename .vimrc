@@ -135,7 +135,6 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <C-Home> gg
 nnoremap <C-End> G
 nnoremap <C-S> :w<CR>
-nnoremap <C-W> :bd<CR>
 nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
