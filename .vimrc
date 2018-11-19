@@ -59,6 +59,15 @@ set whichwrap+=<,>,h,l,[,]
 " Backspace
 set backspace=indent,eol,start
 
+" map the escape sequences to their Alt combinations
+" ref: https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim/10216459#10216459
+let c='a'
+while c <= 'z'
+  exec "set <M-".c.">=\e".c
+  exec "imap \e".c." <M-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
 " tmux will send xterm-style keys when xterm-keys is on
 " ref: http://unix.stackexchange.com/questions/29907/how-to-get-vim-to-work-with-tmux-properly/34723#34723
 if &term =~ '^screen'
