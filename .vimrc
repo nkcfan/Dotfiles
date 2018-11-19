@@ -88,7 +88,7 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified', 'gutentags' ] ]
+      \   'left': [ [ 'mode', 'paste', 'gutentags' ], [ 'readonly', 'relativepath', 'modified'] ]
       \ },
       \ 'component_function': {
       \   'gutentags': 'gutentags#statusline'
