@@ -83,6 +83,7 @@ if &term =~ '^screen'
 endif
 
 " lightline
+set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ 'separator': { 'left': '', 'right': '' },
