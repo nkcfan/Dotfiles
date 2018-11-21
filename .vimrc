@@ -201,6 +201,7 @@ function! SlimuxAdaptor(type, ...)
 endfunction
 
 " gutentags
+let g:gutentags_file_list_command = $HOME . '/.cargo/bin/rg --files'
 augroup MyGutentagsStatusLineRefresher
     autocmd!
     autocmd User GutentagsUpdating call lightline#update()
