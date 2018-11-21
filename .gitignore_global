@@ -6,3 +6,6 @@
 *.orig
 *history*
 *hst*
+
+# Python virtual env
+*/lib/python?.?/
