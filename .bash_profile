@@ -161,3 +161,5 @@ prompt() {
 }
 
 export PROMPT_COMMAND=prompt
+
+export PATH="$HOME/.cargo/bin:$PATH"
