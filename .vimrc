@@ -201,6 +201,8 @@ function! SlimuxAdaptor(type, ...)
 endfunction
 
 " gutentags
+"let g:gutentags_trace=1
+let g:gutentags_ctags_extra_args = ['--languages=AnsiblePlaybook,Autoconf,Automake,Awk,Basic,C,C#,C++,Clojure,CPreProcessor,CUDA,DosBatch,Erlang,Fortran,Go,Iniconf,Java,JavaProperties,JavaScript,Lisp,Lua,M4,Make,MatLab,Maven2,ObjectiveC,OCaml,Pascal,Perl,Perl6,pod,Python,PythonLoggingConfig,R,RpmSpec,RSpec,Ruby,Rust,Scheme,Sh,SQL,SystemVerilog,Tcl,TclOO,Tex,Verilog,VHDL,Vim,XSLT,YACC,Yaml']
 let g:gutentags_file_list_command = $HOME . '/.cargo/bin/rg --files'
 augroup MyGutentagsStatusLineRefresher
     autocmd!
