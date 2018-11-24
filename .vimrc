@@ -155,6 +155,7 @@ inoremap <M-o> <C-O><C-O>
 inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
 inoremap <C-v> <Nop>
+cnoremap <C-v> <Nop>
 
 " CtrlP
 let g:ctrlp_map = '<M-p>'
