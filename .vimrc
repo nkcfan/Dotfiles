@@ -11,7 +11,6 @@ Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'haya14busa/incsearch.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'epeli/slimux'
 Plug 'tpope/vim-abolish'
@@ -58,6 +57,14 @@ set showbreak=…
 set whichwrap+=<,>,h,l,[,]
 " Backspace
 set backspace=indent,eol,start
+
+" incsearch
+set incsearch
+augroup vimrc-incsearch-highlight
+  autocmd!
+  autocmd CmdlineEnter [/\?] :set hlsearch
+  autocmd CmdlineLeave [/\?] :set nohlsearch
+augroup END
 
 " map the escape sequences to their Alt combinations
 " ref: https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim/10216459#10216459
@@ -117,11 +124,6 @@ let g:slimux_select_from_current_window = 1
 set cursorline
 syntax on
 colorscheme onedark
-
-" incsearch.vim
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 
 " Key naming
 execute "set <C-Home>=\e[1;5H"
