@@ -63,7 +63,11 @@ set incsearch
 augroup vimrc-incsearch-highlight
   autocmd!
   autocmd CmdlineEnter [/\?] :set hlsearch
+  autocmd CmdlineEnter [/\?] cnoremap <Tab> <C-G>
+  autocmd CmdlineEnter [/\?] cnoremap <S-Tab> <C-T>
   autocmd CmdlineLeave [/\?] :set nohlsearch
+  autocmd CmdlineLeave [/\?] cunmap <Tab>
+  autocmd CmdlineLeave [/\?] cunmap <S-Tab>
 augroup END
 
 " map the escape sequences to their Alt combinations
