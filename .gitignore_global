@@ -9,3 +9,6 @@
 
 # Python virtual env
 */lib/python?.?/
+
+# Debian package temp
+debian/*/
