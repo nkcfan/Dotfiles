@@ -124,6 +124,7 @@ let g:slimux_select_from_current_window = 1
 set cursorline
 syntax on
 colorscheme onedark
+let g:load_doxygen_syntax = 1
 
 " Key naming
 execute "set <C-Home>=\e[1;5H"
