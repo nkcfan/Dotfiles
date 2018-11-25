@@ -158,9 +158,16 @@ inoremap <C-S> <C-O>:w<CR>
 inoremap <C-v> <Nop>
 cnoremap <C-v> <Nop>
 
+" grep
+let &grepprg = $HOME . '/.cargo/bin/rg --files --color=never'
+
 " CtrlP
 let g:ctrlp_map = '<M-p>'
+let g:ctrlp_user_command = $HOME . '/.cargo/bin/rg --files --color=never --glob ""'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_extensions = ['tag']
 nnoremap <M-p><M-p> :CtrlPBuffer<CR>
+nnoremap <M-p><M-t> :CtrlPTag<CR>
 inoremap <M-p> <C-O>:CtrlP<CR>
 inoremap <M-p><M-p> <C-O>:CtrlPBuffer<CR>
 
