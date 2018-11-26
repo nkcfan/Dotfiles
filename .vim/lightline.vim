@@ -16,12 +16,13 @@ let g:lightline = {
       \   'filetype': 'LightlineFiletype',
       \   'fileencoding': 'LightlineFileencoding',
       \   'mode': 'LightlineMode',
+      \   'modified': 'LightlineModified',
       \   'ctrlpmark': 'CtrlPMark',
       \ },
       \ }
 
 function! LightlineModified()
-  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &ft =~ 'help' ? '' : &modified ? '+' : '' "&modifiable ? '' : '-'
 endfunction
 
 function! LightlineReadonly()
