@@ -63,6 +63,8 @@ set showbreak=…
 set whichwrap+=<,>,h,l,[,]
 " Backspace
 set backspace=indent,eol,start
+" Fix vim esc delay
+set ttimeoutlen=100
 " Prefer lightline status, don't need showmode
 set noshowmode
 
