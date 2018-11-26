@@ -114,6 +114,7 @@ endif
 " YouCompleteMe
 let g:ycm_extra_conf_globlist = ['~/work/*','/mnt/data[!/]*/*','!~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Slimux
 let g:slimux_select_from_current_window = 1
