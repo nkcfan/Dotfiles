@@ -31,6 +31,8 @@ Plug 'mbbill/echofunc'
 " Initialize plugin system
 call plug#end()
 
+source ~/.vim/lightline.vim
+
 set nocompatible
 set hidden                    " required by vim-ctrlspace
 set path+=**
@@ -58,6 +60,8 @@ set showbreak=…
 set whichwrap+=<,>,h,l,[,]
 " Backspace
 set backspace=indent,eol,start
+" Prefer lightline status, don't need showmode
+set noshowmode
 
 " incsearch
 set incsearch
@@ -103,20 +107,6 @@ if &term =~ '^screen'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
-
-" lightline
-set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste', 'gutentags' ], [ 'readonly', 'relativepath', 'modified'] ]
-      \ },
-      \ 'component_function': {
-      \   'gutentags': 'gutentags#statusline'
-      \ }
-      \ }
 
 " YouCompleteMe
 let g:ycm_extra_conf_globlist = ['~/work/*','/mnt/data[!/]*/*','!~/*']
