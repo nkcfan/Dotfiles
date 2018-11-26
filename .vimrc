@@ -28,6 +28,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'bogado/file-line'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'Shougo/echodoc.vim'
 Plug 'mbbill/echofunc'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
