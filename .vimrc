@@ -26,6 +26,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'bogado/file-line'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mbbill/echofunc'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()
@@ -229,3 +230,7 @@ augroup END
 " vim-better-whitespace
 let g:strip_whitelines_at_eof = 1
 let g:show_spaces_that_precede_tabs = 1
+
+" echofunc
+let g:EchoFuncKeyNext = '<M-Down>'
+let g:EchoFuncKeyPrev = '<M-Up>'
