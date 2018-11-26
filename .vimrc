@@ -17,6 +17,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-ninja-feet'
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -152,6 +154,8 @@ inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
 inoremap <C-v> <Nop>
 cnoremap <C-v> <Nop>
+" Github link
+vnoremap <C-g> :Gbrowse!<Cr>
 
 " grep
 let &grepprg = $HOME . '/.cargo/bin/rg --files --color=never'
