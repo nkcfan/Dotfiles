@@ -1,10 +1,11 @@
+" special char ref: https://github.com/source-foundry/Hack/issues/124
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste', 'gutentags' ], [ 'readonly', 'filename', 'modified', 'fugitive' ], ['ctrlpmark'] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'left': [ [ 'mode', 'paste', 'gutentags' ], [ 'readonly', 'filename', 'modified' ], [ 'ctrlpmark', 'fugitive' ] ],
+      \   'right': [ ['lineinfo'], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
@@ -17,12 +18,6 @@ let g:lightline = {
       \   'mode': 'LightlineMode',
       \   'ctrlpmark': 'CtrlPMark',
       \ },
-      \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
-      \ },
-      \ 'component_type': {
-      \   'syntastic': 'error',
-      \ },
       \ }
 
 function! LightlineModified()
@@ -30,7 +25,7 @@ function! LightlineModified()
 endfunction
 
 function! LightlineReadonly()
-  return &ft !~? 'help' && &readonly ? 'RO' : ''
+  return &ft !~? 'help' && &readonly ? "\ue0a2" : ''
 endfunction
 
 function! LightlineFilename()
@@ -38,6 +33,7 @@ function! LightlineFilename()
   let fname = fnamemodify(expand("%"), ":~:.")
   return fname == 'ControlP' && has_key(g:lightline, 'ctrlp_item') ? g:lightline.ctrlp_item :
         \ &ft == 'tagbar' ? '' :
+        \ &ft == 'fugitiveblame' ? '' :
         \ fname =~ '__Gundo\|NERD_tree' ? '' :
         \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
         \ &ft == 'unite' ? unite#get_status_string() :
@@ -47,8 +43,8 @@ endfunction
 
 function! LightlineFugitive()
   try
-    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
-      let mark = ''  " edit here for cool mark
+    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && !exists('*fugitive')
+      let mark = "\ue0a0"  " edit here for cool mark
       let branch = fugitive#head()
       return branch !=# '' ? mark.branch : ''
     endif
@@ -114,15 +110,6 @@ let g:tagbar_status_func = 'TagbarStatusFunc'
 function! TagbarStatusFunc(current, sort, fname, ...) abort
     let g:lightline.fname = a:fname
   return lightline#statusline(0)
-endfunction
-
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost *.c,*.cpp call s:syntastic()
-augroup END
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
 endfunction
 
 let g:unite_force_overwrite_statusline = 0
