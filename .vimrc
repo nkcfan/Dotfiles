@@ -70,15 +70,17 @@ set noshowmode
 
 " incsearch
 set incsearch
-augroup vimrc-incsearch-highlight
-  autocmd!
-  autocmd CmdlineEnter [/\?] :set hlsearch
-  autocmd CmdlineEnter [/\?] cnoremap <Tab> <C-G>
-  autocmd CmdlineEnter [/\?] cnoremap <S-Tab> <C-T>
-  autocmd CmdlineLeave [/\?] :set nohlsearch
-  autocmd CmdlineLeave [/\?] cunmap <Tab>
-  autocmd CmdlineLeave [/\?] cunmap <S-Tab>
-augroup END
+if exists('##CmdlineEnter')
+    augroup vimrc-incsearch-highlight
+        autocmd!
+        autocmd CmdlineEnter [/\?] :set hlsearch
+        autocmd CmdlineEnter [/\?] cnoremap <Tab> <C-G>
+        autocmd CmdlineEnter [/\?] cnoremap <S-Tab> <C-T>
+        autocmd CmdlineLeave [/\?] :set nohlsearch
+        autocmd CmdlineLeave [/\?] cunmap <Tab>
+        autocmd CmdlineLeave [/\?] cunmap <S-Tab>
+    augroup END
+endif
 
 " map the escape sequences to their Alt combinations
 " ref: https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim/10216459#10216459
