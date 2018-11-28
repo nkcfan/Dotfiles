@@ -42,6 +42,9 @@ call plug#end()
 
 source ~/.vim/lightline.vim
 
+" Detect filetype
+au BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
+
 set nocompatible
 set hidden                    " required by vim-ctrlspace
 set path+=**
@@ -240,3 +243,6 @@ let g:show_spaces_that_precede_tabs = 1
 " echofunc
 let g:EchoFuncKeyNext = '<M-Down>'
 let g:EchoFuncKeyPrev = '<M-Up>'
+
+" ALE
+let g:ale_lint_on_text_changed = 'never'
