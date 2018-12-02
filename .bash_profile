@@ -121,6 +121,7 @@ prompt() {
 
     remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
     branch_name=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)
+    venv_name=$([[ -n "$VIRTUAL_ENV" ]] && echo "${VIRTUAL_ENV##*/} ")
     if [[ "$remote_state" == "" ]]; then
         rstat=""
     else
@@ -157,7 +158,7 @@ prompt() {
     stop=$(_fetch_cursor_column)
     _back_cursor $start $stop
 
-    PS1="${host_color}\h${exit_symbol}${YELLOW}\w ${CYAN}${branch_name}${rstat}${exit_status}${COLOREND}"
+    PS1="${YELLOW}${venv_name}${host_color}\h${exit_symbol}${YELLOW}\w ${CYAN}${branch_name}${rstat}${exit_status}${COLOREND}"
 }
 
 export PROMPT_COMMAND=prompt
