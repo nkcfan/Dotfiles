@@ -102,7 +102,7 @@ endw
 
 " tmux will send xterm-style keys when xterm-keys is on
 " ref: http://unix.stackexchange.com/questions/29907/how-to-get-vim-to-work-with-tmux-properly/34723#34723
-if &term =~ '^screen'
+if &term =~ '^screen' || &term =~ '^tmux'
     execute "set <xUp>=\e[1;*A"
     execute "set <xDown>=\e[1;*B"
     execute "set <xRight>=\e[1;*C"
@@ -119,7 +119,7 @@ endif
 " Set mouse in all mode
 set mouse+=a
 " Fix mouse dragging splitters inside tmux
-if &term =~ '^screen'
+if &term =~ '^screen' || &term =~ '^tmux'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
@@ -137,6 +137,7 @@ set cursorline
 syntax on
 colorscheme onedark
 let g:load_doxygen_syntax = 1
+highlight Comment cterm=italic
 
 " Key naming
 execute "set <C-Home>=\e[1;5H"
