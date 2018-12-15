@@ -74,6 +74,8 @@ set whichwrap+=<,>,h,l,[,]
 set backspace=indent,eol,start
 " Fix vim esc delay
 set ttimeoutlen=100
+" The default updatetime is too large for tagbar's response
+set updatetime=500
 " Prefer lightline status, don't need showmode
 set noshowmode
 
