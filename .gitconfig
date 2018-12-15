@@ -7,6 +7,7 @@
     editor = vim
 [diff]
     tool = winmerge
+    algorithm = patience
 [difftool "winmerge"]
     cmd = \"$PROGRAMFILES/WinMerge/WinMergeU.exe\" -e -u -x -wl -dl "Base" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
