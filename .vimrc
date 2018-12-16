@@ -16,6 +16,8 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'epeli/slimux'
@@ -251,3 +253,6 @@ let g:EchoFuncKeyPrev = '<M-Up>'
 
 " ALE
 let g:ale_lint_on_text_changed = 'never'
+
+" fzf
+nnoremap <C-F> :Rg<Space>
