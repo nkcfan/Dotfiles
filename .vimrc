@@ -166,8 +166,8 @@ nnoremap <expr><C-X> "dd"
 
 " Key mappings in insert mode
 inoremap <C-kDel> <C-O>"_dw
-inoremap <M-i> <C-O>:YcmCompleter GoTo<CR>
-inoremap <M-o> <C-O><C-O>
+inoremap <M-i> <C-C>:YcmCompleter GoTo<CR>
+inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
 inoremap <C-v> <Nop>
@@ -185,8 +185,8 @@ let g:ctrlp_use_caching = 0
 let g:ctrlp_extensions = ['tag']
 nnoremap <M-p><M-p> :CtrlPBuffer<CR>
 nnoremap <M-p><M-t> :CtrlPTag<CR>
-inoremap <M-p> <C-O>:CtrlP<CR>
-inoremap <M-p><M-p> <C-O>:CtrlPBuffer<CR>
+inoremap <M-p> <C-C>:CtrlP<CR>
+inoremap <M-p><M-p> <C-C>:CtrlPBuffer<CR>
 
 " Key mappings in command-line mode
 " C-BS
