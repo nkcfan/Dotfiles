@@ -139,7 +139,9 @@ set cursorline
 syntax on
 colorscheme onedark
 let g:load_doxygen_syntax = 1
-highlight Comment cterm=italic
+if &term =~ '^xterm' || &term =~ '^tmux'
+    highlight Comment cterm=italic
+endif
 
 " Key naming
 execute "set <C-Home>=\e[1;5H"
