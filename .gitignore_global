@@ -1,11 +1,13 @@
 *~
 .DS_Store
 
+*.swp
 *.pyc
 *.bak
 *.orig
 *history*
 *hst*
+tags
 
 # Python virtual env
 */lib/python?.?/
