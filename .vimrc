@@ -180,7 +180,7 @@ cnoremap <C-v> <Nop>
 vnoremap <C-g> :Gbrowse!<Cr>
 
 " grep
-let &grepprg = $HOME . '/.cargo/bin/rg --files --color=never'
+let &grepprg = $HOME . '/.cargo/bin/rg --vimgrep --no-heading'
 
 " CtrlP
 let g:ctrlp_map = '<M-p>'
