@@ -153,9 +153,6 @@ execute "set <C-End>=\e[1;5F"
 nnoremap <M-i> :YcmCompleter GoTo<CR>
 " Naviaget Back
 nnoremap <M-o> <C-O>
-" Select text just pasted
-" ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
-nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <C-Home> gg
 nnoremap <C-End> G
 nnoremap <C-S> :w<CR>
@@ -212,6 +209,11 @@ let g:EasyClipEnableBlackHoleRedirectForDeleteOperator = 0
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
+
+" Make a text object for previously changed text
+" ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
+xnoremap <silent> <expr> c ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
+onoremap <silent> <expr> c ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
 
 " Key mappings for slime
 if !exists('g:slimux_map') | let g:slimux_map = "\<M-e>" | endif
