@@ -111,3 +111,5 @@
 	diffFilter = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 [merge]
 	conflictstyle = diff3
+[commit]
+	verbose = true
