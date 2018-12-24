@@ -217,6 +217,17 @@ omap s :normal vs<CR>
 xnoremap <silent> <expr> c ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
 onoremap <silent> <expr> c ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
 
+" signify
+let g:signify_realtime = 1
+" hunk text object
+omap ic <plug>(signify-motion-inner-pending)
+xmap ic <plug>(signify-motion-inner-visual)
+omap ac <plug>(signify-motion-outer-pending)
+xmap ac <plug>(signify-motion-outer-visual)
+" Hunk jumping
+nmap <M-Down> <plug>(signify-next-hunk)
+nmap <M-Up> <plug>(signify-prev-hunk)
+
 " Key mappings for slime
 if !exists('g:slimux_map') | let g:slimux_map = "\<M-e>" | endif
 execute "nnoremap " . g:slimux_map . g:slimux_map . " :SlimuxREPLSendLine<CR>"
