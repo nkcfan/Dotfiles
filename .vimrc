@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'shime/vim-livedown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
@@ -259,3 +260,7 @@ let g:ale_lint_on_text_changed = 'never'
 
 " fzf
 nnoremap <C-F> :Rg<Space>
+
+" vim-livedown
+let g:livedown_autorun = 1
+let g:livedown_open = 0
