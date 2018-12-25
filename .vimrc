@@ -47,7 +47,8 @@ call plug#end()
 source ~/.vim/lightline.vim
 
 " Detect filetype
-au BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
+autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
+autocmd FileType gitcommit setlocal spell
 
 set nocompatible
 set hidden                    " required by vim-ctrlspace
