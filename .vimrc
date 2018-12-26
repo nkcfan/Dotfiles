@@ -63,7 +63,7 @@ set laststatus=2
 set number
 " Show invisible char
 set list
-set listchars=tab:↹\ 
+set listchars=tab:⇲\ ,trail:◦
 " Tabs
 set tabstop=4
 set shiftwidth=4
