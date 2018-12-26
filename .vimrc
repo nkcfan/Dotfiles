@@ -54,7 +54,7 @@ set nocompatible
 set hidden                    " required by vim-ctrlspace
 set path+=**
 set wildmenu
-set wildmode=longest:full
+set wildmode=longest:full,full
 set encoding=utf-8
 "set selection=exclusive " Doesn't work well with vim-easyclip, ref: https://github.com/svermeulen/vim-easyclip/issues/107
 " Always show statusline
