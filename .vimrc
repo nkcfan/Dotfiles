@@ -21,7 +21,7 @@ Plug 'shime/vim-livedown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'svermeulen/vim-easyclip'
+Plug 'svermeulen/vim-cutlass'
 Plug 'epeli/slimux'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -202,6 +202,12 @@ xmap <C-Q>  <Plug>Commentary
 nmap <C-Q>  <Plug>Commentary
 omap <C-Q>  <Plug>Commentary
 nmap <C-Q><C-Q> <Plug>CommentaryLine
+
+" Cutlass
+nnoremap m d
+xnoremap m d
+nnoremap mm dd
+nnoremap M D
 
 " Make a text object for previously changed text
 " ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
