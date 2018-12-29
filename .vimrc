@@ -266,3 +266,17 @@ nnoremap <C-F> :Rg<Space>
 " vim-livedown
 let g:livedown_autorun = 1
 let g:livedown_open = 0
+
+" Yank to tmux
+if exists("##TextYankPost")
+    function! s:onYanked() abort
+        if $TMUX != ''
+            call system("tmux load-buffer -", v:event.regcontents)
+        endif
+    endfunction
+
+    augroup YankPost
+        autocmd!
+        autocmd TextYankPost * call s:onYanked()
+    augroup END
+endif
