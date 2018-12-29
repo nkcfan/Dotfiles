@@ -203,9 +203,6 @@ nmap <C-Q>  <Plug>Commentary
 omap <C-Q>  <Plug>Commentary
 nmap <C-Q><C-Q> <Plug>CommentaryLine
 
-" easyclip
-let g:EasyClipEnableBlackHoleRedirectForDeleteOperator = 0
-
 " Make a text object for previously changed text
 " ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
 xnoremap <silent> <expr> c ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
