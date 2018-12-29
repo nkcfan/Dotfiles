@@ -49,6 +49,7 @@ source ~/.vim/lightline.vim
 " Detect filetype
 autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
 autocmd FileType gitcommit setlocal spell
+autocmd FileType help noremap <buffer> q :q<cr>
 
 set nocompatible
 set hidden                    " required by vim-ctrlspace
