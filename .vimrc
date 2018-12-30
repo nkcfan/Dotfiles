@@ -6,7 +6,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 " The following are examples of different formats supported.
-Plug 'vim-scripts/argtextobj.vim'
+Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'Valloric/YouCompleteMe', { 'on': 'YcmCompleter' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
