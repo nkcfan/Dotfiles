@@ -31,6 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-ninja-feet'
+Plug 'unblevable/quick-scope'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
@@ -139,6 +140,14 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Slimux
 let g:slimux_select_from_current_window = 1
+
+" quick-scope
+" Note: Customize colors before you set colorscheme
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary cterm=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary cterm=underline
+augroup END
 
 " Colors
 set cursorline
