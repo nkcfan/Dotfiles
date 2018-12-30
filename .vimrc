@@ -224,7 +224,10 @@ xnoremap <silent> <expr> c ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1)
 onoremap <silent> <expr> c ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
 
 " signify
-let g:signify_realtime = 1
+" Note: g:signify_realtime will invalidate `previously changed or yanked text`
+" so '[  `[  ']  `] will not work, even not realtime, file saving will
+" invalidate them too.
+let g:signify_realtime = 0
 " hunk text object
 omap ic <plug>(signify-motion-inner-pending)
 xmap ic <plug>(signify-motion-inner-visual)
