@@ -194,14 +194,11 @@ vnoremap <C-g> :Gbrowse!<Cr>
 let &grepprg = $HOME . '/.cargo/bin/rg --vimgrep --no-heading'
 
 " CtrlP
-let g:ctrlp_map = '<M-p>'
+"let g:ctrlp_map = '<M-p>'
 let g:ctrlp_user_command = $HOME . '/.cargo/bin/rg --files --color=never --glob ""'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_extensions = ['tag']
-nnoremap <M-p><M-p> :CtrlPBuffer<CR>
-nnoremap <M-p><M-t> :CtrlPTag<CR>
-inoremap <M-p> <C-C>:CtrlP<CR>
-inoremap <M-p><M-p> <C-C>:CtrlPBuffer<CR>
+nnoremap <M-p> :CtrlPBuffer<CR>
 
 " Key mappings in command-line mode
 " C-BS
