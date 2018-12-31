@@ -12,6 +12,7 @@ Plug 'Valloric/YouCompleteMe', { 'on': 'YcmCompleter' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
 "Plug 'jeaye/color_coded'
 Plug 'w0rp/ale'
