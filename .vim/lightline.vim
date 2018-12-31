@@ -1,7 +1,7 @@
 " special char ref: https://github.com/source-foundry/Hack/issues/124
 let g:lightline = {
       \ 'colorscheme': 'onedark',
-      \ 'separator': { 'left': '', 'right': '' },
+      \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste', 'gutentags' ], [ 'readonly', 'filename', 'modified' ], [ 'ctrlpmark', 'fugitive' ] ],
