@@ -139,9 +139,6 @@ let g:ycm_extra_conf_globlist = ['~/work/*','/mnt/data[!/]*/*','!~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 
-" Slimux
-let g:slimux_select_from_current_window = 1
-
 " quick-scope
 " Note: Customize colors before you set colorscheme
 augroup qs_colors
@@ -235,8 +232,10 @@ xmap ac <plug>(signify-motion-outer-visual)
 nmap <M-Down> <plug>(signify-next-hunk)
 nmap <M-Up> <plug>(signify-prev-hunk)
 
-" Key mappings for slime
-if !exists('g:slimux_map') | let g:slimux_map = "\<M-e>" | endif
+" Slimux
+let g:slimux_select_from_current_window = 1
+" Key mappings for slimux
+if !exists('g:slimux_map') | let g:slimux_map = "<M-e>" | endif
 execute "nnoremap " . g:slimux_map . g:slimux_map . " :SlimuxREPLSendLine<CR>"
 execute "inoremap " . g:slimux_map . g:slimux_map . " <C-O>:SlimuxREPLSendLine<CR>"
 " Adapt Slimux to an operator
