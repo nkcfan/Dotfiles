@@ -75,10 +75,10 @@ COLOREND="\[\e[00m\]"
 # Responsive Prompt
 prompt() {
     if [[ $? -eq 0 ]]; then
-        exit_status="${LBLUE}\$ "
+        exit_status="${LBLUE}\$"
         exit_symbol="${LBLUE}✔"
     else
-        exit_status="${LRED}\$ "
+        exit_status="${LRED}\$"
         exit_symbol="${LRED}✘"
     fi
 
@@ -121,7 +121,7 @@ prompt() {
     stop=$(_fetch_cursor_column)
     _back_cursor $start $stop
 
-    PS1="${CYAN}${debian_chroot:+($debian_chroot)}${YELLOW}${venv_name}${host_color}\h${exit_symbol}${YELLOW}\w ${CYAN}${branch_name}${rstat}${exit_status}${COLOREND}"
+    PS1="${CYAN}${debian_chroot:+($debian_chroot)}${YELLOW}${venv_name}${host_color}\h${exit_symbol}${YELLOW}\w ${CYAN}${branch_name}${rstat}${exit_status}${COLOREND} "
 }
 
 _fetch_cursor_column() {
