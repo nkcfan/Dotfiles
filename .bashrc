@@ -113,29 +113,11 @@ prompt() {
     ## Set tmux window title as git repo name or dir name
     base=$(basename `git config --get remote.origin.url || pwd`)
     title=$(perl -pe 's/^((\w{1,2}).*([\-_]))?(\w+)(\.git)?$/\2\3\4/g;' <<< "$base")
-    ## Save and restore cursor column, trick to clear message for non tmux environment
-    ## 1. local tmux
-    ## 2. tmux in remote client
-    start=$(_fetch_cursor_column)
     printf "\033k$title\033\\"
-    stop=$(_fetch_cursor_column)
-    _back_cursor $start $stop
+    ## Clear from cursor to beginning of the line
+    echo -ne "\033[1K\r"
 
     PS1="${CYAN}${debian_chroot:+($debian_chroot)}${YELLOW}${venv_name}${host_color}\h${exit_symbol}${YELLOW}\w ${CYAN}${branch_name}${rstat}${exit_status}${COLOREND} "
-}
-
-_fetch_cursor_column() {
-    local pos
-    IFS='[;' read -p $'\e[6n' -d R -a pos -rs || echo "failed with error: $? ; ${pos[*]}" >&2
-    echo "${pos[2]}"
-}
-
-_back_cursor() {
-    start=$1
-    stop=$(($2-1))
-    if (($start <= $stop)); then
-        printf '%.s\b \b' $(eval echo {$start..$stop})
-    fi
 }
 
 if [ "$color_prompt" = yes ]; then
