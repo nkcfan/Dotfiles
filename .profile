@@ -52,8 +52,6 @@ export TM_C_FLAGS="$TM_C_FLAGS -Wc++11-extensions"
 
 UNAME=`uname`
 if [[ "$UNAME" == "Linux" ]]; then
-    # Start the ssh-agent in the background
-    source $HOME/bin/ssh-agent.sh
     # Enable rbenv shims and autocompletion
     eval "$(rbenv init -)"
     # Set git credential helper for https
@@ -71,7 +69,5 @@ else # Windows
     #export EDITOR="'$PROGRAMFILES/Notepad++/notepad++.exe'"
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=true
-    # Start the ssh-agent in the background
-    source $HOME/bin/ssh-agent.sh
 fi
 
