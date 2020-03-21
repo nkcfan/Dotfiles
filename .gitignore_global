@@ -13,4 +13,5 @@ tags
 */lib/python?.?/
 
 # Debian package temp
-debian/*/
+*/debian/usr/*
+*/debian/*/{DEBIAN,usr}/*
