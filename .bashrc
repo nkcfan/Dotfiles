@@ -76,10 +76,10 @@ COLOREND="\[\e[00m\]"
 prompt() {
     if [[ $? -eq 0 ]]; then
         exit_status="${LBLUE}\$"
-        exit_symbol="${LBLUE}✔"
+        exit_symbol="${LBLUE}\[✔\]"
     else
         exit_status="${LRED}\$"
-        exit_symbol="${LRED}✘"
+        exit_symbol="${LRED}\[✘\]"
     fi
 
     remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
@@ -113,9 +113,9 @@ prompt() {
     ## Set tmux window title as git repo name or dir name
     base=$(basename `git config --get remote.origin.url || pwd`)
     title=$(perl -pe 's/^((\w{1,2}).*([\-_]))?(\w+)(\.git)?$/\2\3\4/g;' <<< "$base")
-    printf "\033k$title\033\\"
+    printf "\ek$title\e\\"
     ## Clear from cursor to beginning of the line
-    echo -ne "\033[1K\r"
+    echo -ne "\e[1K\r"
 
     PS1="${CYAN}${debian_chroot:+($debian_chroot)}${YELLOW}${venv_name}${host_color}\h${exit_symbol}${YELLOW}\w ${CYAN}${branch_name}${rstat}${exit_status}${COLOREND} "
 }
