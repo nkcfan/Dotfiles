@@ -156,6 +156,10 @@ if &term =~ '^xterm' || &term =~ '^tmux'
     highlight Comment cterm=italic
 endif
 
+function! AtEndOfLine()
+    return col(".") >= col("$") - 1
+endfunction
+
 " Key naming
 execute "set <C-Home>=\e[1;5H"
 execute "set <C-End>=\e[1;5F"
@@ -177,7 +181,7 @@ nnoremap <expr><C-kDel> "\"_dw"
 nnoremap <expr><C-X> "dd"
 
 " Key mappings in insert mode
-inoremap <C-kDel> <C-O>"_dw
+inoremap <expr> <C-kDel> AtEndOfLine() ? '<C-O>J<C-O>"_dw' : '<C-O>"_dw'
 inoremap <M-i> <C-C>:YcmCompleter GoTo<CR>
 inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
