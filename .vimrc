@@ -120,6 +120,12 @@ if &term =~ '^screen' || &term =~ '^tmux'
     execute "set <kDel>=\e[3;*~"
 endif
 
+" Change cursor styles (DECSCUSR) based on modes
+" ref: https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html
+let &t_SI = "\e[5 q"        " Blink Vertical line in insert mode
+let &t_EI = "\e[2 q"        " Steady Block in normal mode
+let &t_SR = "\e[3 q"        " Blink Underline in replace mode
+
 " Fix MSYS environment
 if has('win32')
 "	let &t_AF="\e[38;5;%dm"
