@@ -86,6 +86,10 @@ set ttimeoutlen=100
 set updatetime=500
 " Prefer lightline status, don't need showmode
 set noshowmode
+" ins-completion
+set completeopt-=preview
+set completeopt+=popup
+set completeopt+=longest
 
 " incsearch
 set incsearch
@@ -210,7 +214,10 @@ inoremap <C-S> <C-O>:w<CR>
 inoremap <C-v> <Nop>
 cnoremap <C-v> <Nop>
 " Github link
-vnoremap <C-g> :Gbrowse!<Cr>
+vnoremap <C-G> :Gbrowse!<CR>
+" Use <CR> to confirm completion, `<C-G>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<C-G>u\<CR>"
 
 " grep
 let &grepprg = $HOME . '/.cargo/bin/rg --vimgrep --no-heading'
@@ -299,9 +306,22 @@ let g:EchoFuncKeyPrev = '<M-Up>'
 
 " ALE
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_set_balloons=1
 
 " fzf
 nnoremap <C-F> :Rg<Space>
+" Starting fzf in a popup window
+" Required:
+" - width [float range [0 ~ 1]]
+" - height [float range [0 ~ 1]]
+"
+" Optional:
+" - xoffset [float default 0.5 range [0 ~ 1]]
+" - yoffset [float default 0.5 range [0 ~ 1]]
+" - highlight [string default 'Comment']: Highlight group for border
+" - border [string default 'rounded']: Border style
+"   - 'rounded' / 'sharp' / 'horizontal' / 'vertical' / 'top' / 'bottom' / 'left' / 'right'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 " vim-livedown
 let g:livedown_autorun = 1
