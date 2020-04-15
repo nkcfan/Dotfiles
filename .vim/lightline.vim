@@ -42,6 +42,14 @@ let g:lightline#ale#indicator_warnings = "! "
 let g:lightline#ale#indicator_errors = "✘ "
 let g:lightline#ale#indicator_ok = "OK"
 
+augroup LightLineOnALE
+  autocmd!
+  autocmd User ALEFixPre   call lightline#update()
+  autocmd User ALEFixPost  call lightline#update()
+  autocmd User ALELintPre  call lightline#update()
+  autocmd User ALELintPost call lightline#update()
+augroup end
+
 function! LightlineModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : '' "&modifiable ? '' : '-'
 endfunction

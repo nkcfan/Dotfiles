@@ -54,6 +54,12 @@ autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
 autocmd FileType gitcommit setlocal spell
 autocmd FileType help noremap <buffer> q :q<cr>
 
+" Add to .vimrc to enable project-specific vimrc
+" exrc allows loading local executing local rc files.
+" secure disallows the use of :autocmd, shell and write commands in local .vimrc files.
+set exrc
+set secure
+
 set nocompatible
 set hidden                    " required by vim-ctrlspace
 set path+=**
@@ -308,6 +314,7 @@ let g:EchoFuncKeyPrev = '<M-Up>'
 " ALE
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_set_balloons=1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " fzf
 nnoremap <C-F> :Rg<Space>
