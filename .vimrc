@@ -22,6 +22,7 @@ Plug 'shime/vim-livedown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
 Plug 'svermeulen/vim-cutlass'
 Plug 'epeli/slimux'
 Plug 'tpope/vim-abolish'
