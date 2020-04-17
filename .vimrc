@@ -182,11 +182,11 @@ endif
 
 set cursorline
 syntax on
+" Disable italics because KiTTY + vim one dark will have very dark gray for
+" Comment highlight
+"let g:onedark_terminal_italics = 1
 colorscheme onedark
 let g:load_doxygen_syntax = 1
-if &term =~ '^xterm' || &term =~ '^tmux'
-    highlight Comment cterm=italic
-endif
 
 function! AtEndOfLine()
     return col(".") >= col("$") - 1
