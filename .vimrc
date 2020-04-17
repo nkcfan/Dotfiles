@@ -137,6 +137,9 @@ let &t_SI = "\e[5 q"        " Blink Vertical line in insert mode
 let &t_EI = "\e[2 q"        " Steady Block in normal mode
 let &t_SR = "\e[3 q"        " Blink Underline in replace mode
 
+" Prevent left moving one character when leaving insert mode
+autocmd InsertLeave * :normal `^
+
 " Fix MSYS environment
 if has('win32')
 "	let &t_AF="\e[38;5;%dm"
@@ -213,7 +216,9 @@ nnoremap <expr><C-kDel> "\"_dw"
 nnoremap <expr><C-X> "dd"
 
 " Key mappings in insert mode
-inoremap <expr> <C-kDel> AtEndOfLine() ? '<C-O>J<C-O>"_dw' : '<C-O>"_dw'
+" Mimic Windows C-Del behavior
+" Note: gJ - Join lines and don't insert or remove any spaces
+inoremap <expr> <C-kDel> AtEndOfLine() ? '<C-O>gJ<C-O>"_dw' : '<C-O>"_dw'
 inoremap <M-i> <C-C>:YcmCompleter GoTo<CR>
 inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
