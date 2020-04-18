@@ -42,7 +42,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Shougo/echodoc.vim'
-Plug 'mbbill/echofunc'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()
@@ -311,10 +310,6 @@ augroup END
 " vim-better-whitespace
 let g:strip_whitelines_at_eof = 1
 let g:show_spaces_that_precede_tabs = 1
-
-" echofunc
-let g:EchoFuncKeyNext = '<M-Down>'
-let g:EchoFuncKeyPrev = '<M-Up>'
 
 " ALE
 let g:ale_lint_on_text_changed = 'never'
