@@ -17,7 +17,6 @@ Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind
 "Plug 'jeaye/color_coded'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'shime/vim-livedown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -232,13 +231,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<C-G>u\<CR>"
 
 " grep
 let &grepprg = $HOME . '/.cargo/bin/rg --vimgrep --no-heading'
-
-" CtrlP
-"let g:ctrlp_map = '<M-p>'
-let g:ctrlp_user_command = $HOME . '/.cargo/bin/rg --files --color=never --glob ""'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_extensions = ['tag']
-nnoremap <M-p> :CtrlPBuffer<CR>
 
 " Key mappings in command-line mode
 " C-BS
