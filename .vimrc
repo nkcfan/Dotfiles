@@ -112,10 +112,16 @@ endif
 
 " map the escape sequences to their Alt combinations
 " ref: https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim/10216459#10216459
+" map the escape sequences to their Alt combinations in terminal mode
+" ref: https://github.com/macvim-dev/macvim/issues/868#issuecomment-466348034
+function s:tmap_meta(key)
+    call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
+endfunction
 let c='a'
 while c <= 'z'
   exec "set <M-".c.">=\e".c
   exec "imap \e".c." <M-".c.">"
+  exec "tnoremap <silent> <M-".c."> <C-w>:call <SID>tmap_meta('".c."')<CR>"
   let c = nr2char(1+char2nr(c))
 endw
 
