@@ -213,8 +213,6 @@ nnoremap <C-S> :w<CR>
 nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
-" C-BS
-nnoremap <expr><C-H> "\"_db"
 " C-Del
 nnoremap <expr><C-kDel> "\"_dw"
 nnoremap <expr><C-X> "dd"
@@ -238,7 +236,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<C-G>u\<CR>"
 " grep
 let &grepprg = $HOME . '/.cargo/bin/rg --vimgrep --no-heading'
 
-" Key mappings in command-line mode
+" Key mappings in insert or command-line mode
 " C-BS
 noremap! <C-H> <C-W>
 
