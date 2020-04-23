@@ -1,5 +1,6 @@
 *~
 .DS_Store
+.pc/
 
 *.swp
 *.pyc
@@ -13,5 +14,15 @@ tags
 */lib/python?.?/
 
 # Debian package temp
-*/debian/usr/*
-*/debian/*/{DEBIAN,usr}/*
+debian/usr/*
+debian/*/{DEBIAN,usr}/*
+debian/.debhelper/*
+**/debian/usr/*
+**/debian/*/{DEBIAN,usr}/*
+**/debian/.debhelper/*
+
+# Cache
+.cache/
+.ccls-cache/
+.clangd/
+autom4te.cache/
