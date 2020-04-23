@@ -8,8 +8,6 @@ call plug#begin('~/.vim/bundle')
 " The following are examples of different formats supported.
 Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'Valloric/YouCompleteMe', { 'on': 'YcmCompleter' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
@@ -158,11 +156,6 @@ if &term =~ '^screen' || &term =~ '^tmux'
     set ttymouse=xterm2
 endif
 
-" YouCompleteMe
-let g:ycm_extra_conf_globlist = ['~/work/*','/mnt/data[!/]*/*','!~/*']
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-
 " quick-scope
 " Note: Customize colors before you set colorscheme
 augroup qs_colors
@@ -203,10 +196,6 @@ endfunction
 execute "set <C-Home>=\e[1;5H"
 execute "set <C-End>=\e[1;5F"
 
-" Key mappings in normal mode
-nnoremap <M-i> :YcmCompleter GoTo<CR>
-" Naviaget Back
-nnoremap <M-o> <C-O>
 nnoremap <C-Home> gg
 nnoremap <C-End> G
 nnoremap <C-S> :w<CR>
