@@ -311,6 +311,13 @@ let g:show_spaces_that_precede_tabs = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_set_balloons=1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_enabled=1
+augroup disable_ale
+    autocmd InsertEnter * let g:ale_enabled=0
+    autocmd InsertEnter * silent! :call ale#highlight#UpdateHighlights()
+    autocmd InsertLeave * let g:ale_enabled=1
+    autocmd InsertLeave * silent! :call ale#highlight#UpdateHighlights()
+augroup END
 
 " fzf
 nnoremap <silent> <C-P> :FZF -m<CR>
