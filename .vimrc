@@ -12,7 +12,8 @@ Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
-"Plug 'jeaye/color_coded'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 Plug 'shime/vim-livedown'
@@ -65,6 +66,8 @@ set encoding=utf-8
 set selection=exclusive
 " Always show statusline
 set laststatus=2
+" To use echodoc/coc.nvim, you must increase 'cmdheight' value.
+set cmdheight=2
 " Show line numbers
 set number
 " Show invisible char
@@ -93,6 +96,8 @@ set noshowmode
 set completeopt-=preview
 set completeopt+=popup
 set completeopt+=longest
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 
 " incsearch
 set incsearch
@@ -356,6 +361,27 @@ let $FZF_DEFAULT_COMMAND = '{ rg --files --hidden & git ls-files; } | sort -u'
 " vim-livedown
 let g:livedown_autorun = 1
 let g:livedown_open = 0
+
+" coc.nvim
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Snippet expand and jump
+let g:coc_snippet_next = '<Tab>'
+let g:coc_snippet_prev = '<S-Tab>'
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 
 " Yank to tmux
 if exists("##TextYankPost")
