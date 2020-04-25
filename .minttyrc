@@ -1,0 +1,8 @@
+Font=Hack
+FontHeight=10
+MiddleClickAction=void
+RightClickAction=paste
+Term=xterm-256color
+Transparency=low
+FontSmoothing=default
+BoldAsFont=yes
