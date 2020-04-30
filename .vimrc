@@ -385,6 +385,9 @@ endfunction
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
+" highlightedyank
+let g:highlightedyank_highlight_duration = 200
+
 " Yank to tmux
 if exists("##TextYankPost")
     function! s:onYanked() abort
