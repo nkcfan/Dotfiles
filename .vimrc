@@ -124,7 +124,7 @@ let c='a'
 while c <= 'z'
   exec "set <M-".c.">=\e".c
   exec "imap \e".c." <M-".c.">"
-  exec "tnoremap <silent> <M-".c."> <C-w>:call <SID>tmap_meta('".c."')<CR>"
+  exec "tnoremap <silent> <M-".c."> <C-W>:call <SID>tmap_meta('".c."')<CR>"
   let c = nr2char(1+char2nr(c))
 endw
 
@@ -219,8 +219,8 @@ inoremap <M-i> <C-C>:YcmCompleter GoTo<CR>
 inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
-inoremap <C-v> <Nop>
-cnoremap <C-v> <Nop>
+inoremap <C-V> <Nop>
+cnoremap <C-V> <Nop>
 " Github link
 vnoremap <C-G> :Gbrowse!<CR>
 " Use <CR> to confirm completion, `<C-G>u` means break undo chain at current position.
