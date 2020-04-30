@@ -14,6 +14,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'vim-python/python-syntax'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 Plug 'shime/vim-livedown'
@@ -192,6 +193,7 @@ syntax on
 "let g:onedark_terminal_italics = 1
 colorscheme onedark
 let g:load_doxygen_syntax = 1
+let g:python_highlight_all = 1
 
 function! AtEndOfLine()
     return col(".") >= col("$") - 1
