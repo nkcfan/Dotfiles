@@ -130,6 +130,8 @@ while c <= 'z'
   let c = nr2char(1+char2nr(c))
 endw
 
+source ~/.vim/slimux.vim
+
 " tmux will send xterm-style keys when xterm-keys is on
 " ref: http://unix.stackexchange.com/questions/29907/how-to-get-vim-to-work-with-tmux-properly/34723#34723
 if &term =~ '^screen' || &term =~ '^tmux'
@@ -267,27 +269,6 @@ xmap ac <plug>(signify-motion-outer-visual)
 " Hunk jumping
 nmap <M-Down> <plug>(signify-next-hunk)
 nmap <M-Up> <plug>(signify-prev-hunk)
-
-" Slimux
-let g:slimux_select_from_current_window = 1
-" Key mappings for slimux
-if !exists('g:slimux_map') | let g:slimux_map = "<M-e>" | endif
-execute "nnoremap " . g:slimux_map . g:slimux_map . " :SlimuxREPLSendLine<CR>"
-execute "inoremap " . g:slimux_map . g:slimux_map . " <C-O>:SlimuxREPLSendLine<CR>"
-" Adapt Slimux to an operator
-execute "nnoremap <silent> " g:slimux_map " :set opfunc=SlimuxAdaptor<CR>g@"
-execute "vnoremap <silent> " g:slimux_map " :<C-U>call SlimuxAdaptor(visualmode(), 1)<CR>"
-function! SlimuxAdaptor(type, ...)
-    if a:0  " invoked from visual mode, use '< and '> marks.
-        silent execute ":'<,'>SlimuxREPLSendSelection<CR>"
-    elseif a:type == 'line'
-        silent execute "normal `[V`]" g:slimux_map
-    elseif a:type == 'block'
-        silent execute "normal `[\<C-V>`]" g:slimux_map
-    else
-        silent execute "normal `[v`]" g:slimux_map
-    endif
-endfunction
 
 " gutentags
 "let g:gutentags_trace=1
