@@ -348,10 +348,16 @@ let g:livedown_open = 0
 
 " coc.nvim
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> vv <Plug>(coc-definition)
+nmap <silent> gD <Plug>(coc-declaration)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> rr <Plug>(coc-references)
+" CoC Settings
+let g:coc_global_extensions = [
+            \ 'coc-git',
+            \ 'coc-python',
+            \ ]
 " Snippet expand and jump
 let g:coc_snippet_next = '<Tab>'
 let g:coc_snippet_prev = '<S-Tab>'
