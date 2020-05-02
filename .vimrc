@@ -298,6 +298,10 @@ let g:strip_whitelines_at_eof = 1
 let g:show_spaces_that_precede_tabs = 1
 
 " ALE
+" Moving between ALE warnings and errors quickly
+nmap <silent> <C-S-Up> <Plug>(ale_previous)
+nmap <silent> <C-S-Down> <Plug>(ale_next)
+" ALE config
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_set_balloons=1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
