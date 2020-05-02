@@ -2,7 +2,7 @@
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '|' },
+      \ 'subseparator': { 'left': '', 'right': '│' },
       \ 'active': {
       \   'left': [
       \     [ 'mode', 'paste', 'gutentags', 'cocstatus' ],
