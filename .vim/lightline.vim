@@ -2,10 +2,20 @@
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '|' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste', 'gutentags' ], [ 'readonly', 'filename', 'modified' ], [ 'ctrlpmark', 'fugitive' ] ],
-      \   'right': [ ['lineinfo'], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ], [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]]
+      \   'left': [
+      \     [ 'mode', 'paste', 'gutentags', 'cocstatus' ],
+      \     [ 'readonly', 'filename', 'modified' ],
+      \     [ 'ctrlpmark', 'fugitive' ]
+      \   ],
+      \   'right': [
+      \     [ 'lineinfo'],
+      \     [ 'percent'],
+      \     [ 'fileformat', 'fileencoding', 'filetype' ],
+      \     [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_infos', 'linter_ok' ],
+      \     [ 'blame' ]
+      \   ],
       \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
@@ -18,23 +28,25 @@ let g:lightline = {
       \   'mode': 'LightlineMode',
       \   'modified': 'LightlineModified',
       \   'ctrlpmark': 'CtrlPMark',
+      \   'cocstatus': 'coc#status',
+      \   'blame': 'LightlineGitBlame',
       \ },
       \ }
 
-" Add ALE components
 let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_infos': 'lightline#ale#infos',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
+      \   'linter_checking': 'lightline#ale#checking',
+      \   'linter_infos': 'lightline#ale#infos',
+      \   'linter_warnings': 'lightline#ale#warnings',
+      \   'linter_errors': 'lightline#ale#errors',
+      \   'linter_ok': 'lightline#ale#ok',
       \ }
 let g:lightline.component_type = {
-      \     'linter_checking': 'right',
-      \     'linter_infos': 'right',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'right',
+      \   'linter_checking': 'right',
+      \   'linter_infos': 'right',
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'error',
+      \   'linter_ok': 'right',
+      \   'cocstatus': 'info',
       \ }
 let g:lightline#ale#indicator_checking = ''
 " let g:lightline#ale#indicator_infos = "\uf129"
@@ -42,13 +54,22 @@ let g:lightline#ale#indicator_warnings = "! "
 let g:lightline#ale#indicator_errors = "✘ "
 let g:lightline#ale#indicator_ok = "OK"
 
-augroup LightLineOnALE
+augroup LightLineOnChanges
   autocmd!
   autocmd User ALEFixPre   call lightline#update()
   autocmd User ALEFixPost  call lightline#update()
   autocmd User ALELintPre  call lightline#update()
   autocmd User ALELintPost call lightline#update()
+  autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+  autocmd User CocGitStatusChange call lightline#update()
 augroup end
+
+" coc-git
+function! LightlineGitBlame() abort
+  let blame = get(b:, 'coc_git_blame', '')
+  " return blame
+  return winwidth(0) > 120 ? blame : ''
+endfunction
 
 function! LightlineModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : '' "&modifiable ? '' : '-'
