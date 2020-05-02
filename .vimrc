@@ -46,6 +46,7 @@ Plug 'Shougo/echodoc.vim'
 call plug#end()
 
 source ~/.vim/lightline.vim
+source ~/.vim/searchable.vim
 
 " Detect filetype
 autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
