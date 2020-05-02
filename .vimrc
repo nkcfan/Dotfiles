@@ -41,6 +41,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Shougo/echodoc.vim'
+Plug 'liuchengxu/vim-which-key'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()
@@ -377,6 +378,12 @@ function! s:show_documentation()
 endfunction
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+" vim-which-key
+nnoremap <silent> <leader>      :<c-u>WhichKey '\'<CR>
+" Note: it does not support vim default mappings because they are not in nmap,
+" such as 'gJ'
+"nnoremap <silent> g             :<C-U>WhichKey 'g'<CR>
 
 " highlightedyank
 let g:highlightedyank_highlight_duration = 200
