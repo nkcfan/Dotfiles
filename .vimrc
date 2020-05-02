@@ -52,6 +52,7 @@ source ~/.vim/searchable.vim
 autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
 autocmd FileType gitcommit setlocal spell
 autocmd FileType help noremap <buffer> q :q<cr>
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 " Add to .vimrc to enable project-specific vimrc
 " exrc allows loading local executing local rc files.
