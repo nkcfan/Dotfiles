@@ -233,7 +233,7 @@ vnoremap <C-G> :Gbrowse!<CR>
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<C-G>u\<CR>"
 
 " grep
-let &grepprg = $HOME . '/.cargo/bin/rg --vimgrep --no-heading'
+let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 
 " Key mappings in insert or command-line mode
 " C-BS
