@@ -254,8 +254,8 @@ nnoremap M D
 
 " Make a text object for previously changed text
 " ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
-xnoremap <silent> <expr> c ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
-onoremap c :normal vc<CR>
+xnoremap <silent> <expr> gp ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
+onoremap gp :normal vgp<CR>
 
 " signify
 " Note: g:signify_realtime will invalidate `previously changed or yanked text`
