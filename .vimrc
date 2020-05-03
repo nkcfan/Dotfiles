@@ -97,8 +97,10 @@ set updatetime=500
 " Prefer lightline status, don't need showmode
 set noshowmode
 " ins-completion
+if !has("nvim")
+    set completeopt+=popup
+endif
 set completeopt-=preview
-set completeopt+=popup
 set completeopt+=longest
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -121,16 +123,18 @@ endif
 " ref: https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim/10216459#10216459
 " map the escape sequences to their Alt combinations in terminal mode
 " ref: https://github.com/macvim-dev/macvim/issues/868#issuecomment-466348034
-function s:tmap_meta(key)
-    call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
-endfunction
-let c='a'
-while c <= 'z'
-  exec "set <M-".c.">=\e".c
-  exec "imap \e".c." <M-".c.">"
-  exec "tnoremap <silent> <M-".c."> <C-W>:call <SID>tmap_meta('".c."')<CR>"
-  let c = nr2char(1+char2nr(c))
-endw
+if !has("nvim")
+    function s:tmap_meta(key)
+        call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
+    endfunction
+    let c='a'
+    while c <= 'z'
+      exec "set <M-".c.">=\e".c
+      exec "imap \e".c." <M-".c.">"
+      exec "tnoremap <silent> <M-".c."> <C-W>:call <SID>tmap_meta('".c."')<CR>"
+      let c = nr2char(1+char2nr(c))
+    endw
+endif
 
 source ~/.vim/slimux.vim
 
