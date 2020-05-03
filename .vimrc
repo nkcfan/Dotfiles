@@ -163,6 +163,9 @@ if has('win32')
 "	let &t_AB="\e[48;5;%dm"
 endif
 
+" Default normal yanks to use the system clipboard
+set clipboard=unnamedplus
+
 " Set mouse in all mode
 set mouse+=a
 " Fix mouse dragging splitters inside tmux
