@@ -200,9 +200,12 @@ endif
 
 set cursorline
 syntax on
-" Disable italics because KiTTY + vim one dark will have very dark gray for
+" Disable italics in terminal because KiTTY + vim one dark will have very dark gray for
 " Comment highlight
-"let g:onedark_terminal_italics = 1
+if &term=='nvim'
+    " Enable in Neovim GUI
+    let g:onedark_terminal_italics = 1
+endif
 colorscheme onedark
 let g:load_doxygen_syntax = 1
 let g:python_highlight_all = 1
