@@ -241,12 +241,14 @@ nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
 " C-Del
+nmap <C-Del> <C-kDel>
 nnoremap <expr><C-kDel> "\"_dw"
 nnoremap <expr><C-X> "dd"
 
 " Key mappings in insert mode
 " Mimic Windows C-Del behavior
 " Note: gJ - Join lines and don't insert or remove any spaces
+imap <C-Del> <C-kDel>
 inoremap <expr> <C-kDel> AtEndOfLine() ? '<C-O>gJ<C-O>"_dw' : '<C-O>"_dw'
 inoremap <M-i> <C-C>:YcmCompleter GoTo<CR>
 inoremap <M-o> <C-C><C-O>
