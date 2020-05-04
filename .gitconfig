@@ -1,3 +1,5 @@
+# To override any config below globally, copy the sections to ~/.gitconfig.local and modify there.
+# To override any config below for specific repo, copy the section to .git/config and modify there.
 [user]
     name = nkcfan
     email = nkcfan@users.noreply.github.com
@@ -104,12 +106,14 @@
 [push]
     default = upstream
 [pager]
-	show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
-	log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
-	diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+    show = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+    log = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
+    diff = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less
 [interactive]
-	diffFilter = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight
+    diffFilter = perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
 [commit]
-	verbose = true
+    verbose = true
+[include]
+    path = ~/.gitconfig.local
