@@ -110,12 +110,28 @@ set incsearch
 if exists('##CmdlineEnter')
     augroup vimrc-incsearch-highlight
         autocmd!
-        autocmd CmdlineEnter [/\?] :set hlsearch
-        autocmd CmdlineEnter [/\?] cnoremap <Tab> <C-G>
-        autocmd CmdlineEnter [/\?] cnoremap <S-Tab> <C-T>
-        autocmd CmdlineLeave [/\?] :set nohlsearch
-        autocmd CmdlineLeave [/\?] cunmap <Tab>
-        autocmd CmdlineLeave [/\?] cunmap <S-Tab>
+        if (has("nvim"))
+            " nvim does not support `[ch]` pattern
+            autocmd CmdlineEnter / :set hlsearch
+            autocmd CmdlineEnter / cnoremap <Tab> <C-G>
+            autocmd CmdlineEnter / cnoremap <S-Tab> <C-T>
+            autocmd CmdlineLeave / :set nohlsearch
+            autocmd CmdlineLeave / cunmap <Tab>
+            autocmd CmdlineLeave / cunmap <S-Tab>
+            autocmd CmdlineEnter \? :set hlsearch
+            autocmd CmdlineEnter \? cnoremap <Tab> <C-G>
+            autocmd CmdlineEnter \? cnoremap <S-Tab> <C-T>
+            autocmd CmdlineLeave \? :set nohlsearch
+            autocmd CmdlineLeave \? cunmap <Tab>
+            autocmd CmdlineLeave \? cunmap <S-Tab>
+        else
+            autocmd CmdlineEnter [/\?] :set hlsearch
+            autocmd CmdlineEnter [/\?] cnoremap <Tab> <C-G>
+            autocmd CmdlineEnter [/\?] cnoremap <S-Tab> <C-T>
+            autocmd CmdlineLeave [/\?] :set nohlsearch
+            autocmd CmdlineLeave [/\?] cunmap <Tab>
+            autocmd CmdlineLeave [/\?] cunmap <S-Tab>
+        endif
     augroup END
 endif
 
