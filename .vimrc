@@ -170,6 +170,10 @@ let &t_SI = "\e[5 q"        " Blink Vertical line in insert mode
 let &t_EI = "\e[2 q"        " Steady Block in normal mode
 let &t_SR = "\e[3 q"        " Blink Underline in replace mode
 
+" Enable undercurl
+let &t_Cs = "\e[6m"
+let &t_Ce = "\e[24m"
+
 " Prevent left moving one character when leaving insert mode
 autocmd InsertLeave * :normal `^
 
@@ -213,6 +217,12 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+
+" Customize highlight after ColorScheme changed
+augroup my_colors
+    autocmd!
+    autocmd ColorScheme * highlight SpellBad gui=undercurl
+augroup END
 
 set cursorline
 syntax on
