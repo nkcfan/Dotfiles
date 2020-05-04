@@ -194,8 +194,8 @@ endif
 " Note: Customize colors before you set colorscheme
 augroup qs_colors
   autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary cterm=underline
+  autocmd ColorScheme * highlight QuickScopePrimary cterm=underline gui=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary cterm=underline gui=underline
 augroup END
 
 " Colors
