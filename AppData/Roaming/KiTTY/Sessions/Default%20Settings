@@ -62,6 +62,7 @@ RemoteCommand\\
 RFCEnviron\0\
 PassiveTelnet\0\
 BackspaceIsDelete\1\
+EnterSendsCrLf\0\
 RXVTHomeEnd\0\
 LinuxFunctionKeys\0\
 NoApplicationKeys\0\
@@ -109,7 +110,7 @@ CRImpliesLF\0\
 DisableArabicShaping\0\
 DisableBidi\0\
 WinNameAlways\1\
-WinTitle\\
+WinTitle\%25%25s%20-%20KiTTY\
 TermWidth\80\
 TermHeight\24\
 Font\Hack\
@@ -273,7 +274,11 @@ Fullscreen\0\
 SaveOnExit\0\
 Icone\1\
 IconeFile\\
+WinSCPProtocol\1\
 SFTPConnect\\
+PSCPOptions\-r\
+WinSCPOptions\\
+WinSCPRawSettings\\
 Scriptfile\\
 ScriptfileContent\\
 AntiIdle\\
@@ -291,5 +296,6 @@ Password\\
 CtrlTabSwitch\0\
 Comment\\
 SCPAutoPwd\0\
+NoFocusReporting\0\
 PortKnocking\\
 DisableAltGr\0\
