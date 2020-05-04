@@ -339,6 +339,7 @@ let g:ale_set_balloons=1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_enabled=1
 augroup disable_ale
+    autocmd!
     autocmd InsertEnter * let g:ale_enabled=0
     autocmd InsertEnter * silent! :call ale#highlight#UpdateHighlights()
     autocmd InsertLeave * let g:ale_enabled=1
