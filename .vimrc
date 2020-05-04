@@ -281,6 +281,7 @@ let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 " Key mappings in insert or command-line mode
 " C-BS
 noremap! <C-H> <C-W>
+noremap! <C-BS> <C-W>
 
 " Commentary
 xmap <C-Q>  <Plug>Commentary
