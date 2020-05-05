@@ -398,7 +398,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let $FZF_DEFAULT_OPTS = '--bind alt-a:toggle-all'
 " Tell FZF to use RG - so we can ignore files, but keep git controlled files
 if has('win32')
-    let $FZF_DEFAULT_COMMAND = '( rg --files & git ls-files ) | sort /unique'
+    let $FZF_DEFAULT_COMMAND = '( rg --files --path-separator "//" & git ls-files ) | sort /unique'
 else
     let $FZF_DEFAULT_COMMAND = '{ rg --files --hidden & git ls-files; } | sort -u'
 endif
