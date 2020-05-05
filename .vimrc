@@ -16,7 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'vim-python/python-syntax'
 Plug 'w0rp/ale'
-Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
+Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
 Plug 'shime/vim-livedown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -40,7 +40,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/echodoc.vim', { 'on': ['EchoDocEnable'] }
 Plug 'liuchengxu/vim-which-key'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
@@ -240,6 +240,14 @@ function! AtEndOfLine()
     return col(".") >= col("$") - 1
 endfunction
 
+" Leader key mappings
+" Note: do not use format like <KeyName>, which is not compatible with
+" vim-which-key
+let maplocalleader = " "
+let mapleader = "\\"
+nnoremap <LocalLeader>b                     :TagbarToggle<CR>
+nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
+
 " Key naming
 execute "set <C-Home>=\e[1;5H"
 execute "set <C-End>=\e[1;5F"
@@ -424,10 +432,11 @@ function! s:show_documentation()
   endif
 endfunction
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nmap <Leader>rn                             <Plug>(coc-rename)
 
 " vim-which-key
-nnoremap <silent> <leader>      :<c-u>WhichKey '\'<CR>
+nnoremap <silent><expr> <Leader>            ":<C-U>WhichKey '" . get(g:,"mapleader","\\") . "'<CR>"
+nnoremap <silent><expr> <LocalLeader>       ":<C-U>WhichKey '" . get(g:,"maplocalleader","\\") . "'<CR>"
 " Note: it does not support vim default mappings because they are not in nmap,
 " such as 'gJ'
 "nnoremap <silent> g             :<C-U>WhichKey 'g'<CR>
