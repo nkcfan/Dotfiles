@@ -275,9 +275,6 @@ inoremap <expr> <CR>   pumvisible() ? "<C-Y>" : "\<C-G>u\<CR>"
 cnoremap <expr> <Up>   pumvisible() ? "<C-P>" : "<Up>"
 cnoremap <expr> <Down> pumvisible() ? "<C-N>" : "<Down>"
 
-" grep
-let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
-
 " Key mappings in insert or command-line mode
 " C-BS
 noremap! <C-H> <C-W>
@@ -313,6 +310,9 @@ xmap ac <plug>(signify-motion-outer-visual)
 " Hunk jumping
 nmap <M-Down> <plug>(signify-next-hunk)
 nmap <M-Up> <plug>(signify-prev-hunk)
+
+" grep
+let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 
 " gutentags
 "let g:gutentags_trace=1
