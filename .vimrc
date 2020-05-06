@@ -379,9 +379,6 @@ imap <C-X><C-K> <plug>(fzf-complete-word)
 imap <C-X><C-F> <plug>(fzf-complete-path)
 imap <C-X><C-J> <plug>(fzf-complete-file-ag)
 imap <C-X><C-L> <plug>(fzf-complete-line)
-" Allow passing optional flags into the Rg command.
-" Example: :Rg myterm -g '*.md'
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " . <q-args>, 1, <bang>0)
 " Starting fzf in a popup window
 " Required:
 " - width [float range [0 ~ 1]]
