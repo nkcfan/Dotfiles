@@ -7,6 +7,7 @@ git init
 git remote add origin git@github.com:nkcfan/Dotfiles.git
 git fetch
 git checkout -t origin/master
+git branch --set-upstream-to=origin/master
 ```
 
 ## Install the dependencies
