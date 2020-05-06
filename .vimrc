@@ -177,12 +177,6 @@ let &t_Ce = "\e[24m"
 " Prevent left moving one character when leaving insert mode
 autocmd InsertLeave * :normal `^
 
-" Fix MSYS environment
-if has('win32')
-"	let &t_AF="\e[38;5;%dm"
-"	let &t_AB="\e[48;5;%dm"
-endif
-
 " Default normal yanks to use the system clipboard
 set clipboard=unnamedplus
 
@@ -268,7 +262,6 @@ nnoremap <expr><C-X> "dd"
 " Note: gJ - Join lines and don't insert or remove any spaces
 imap <C-Del> <C-kDel>
 inoremap <expr> <C-kDel> AtEndOfLine() ? '<C-O>gJ<C-O>"_dw' : '<C-O>"_dw'
-inoremap <M-i> <C-C>:YcmCompleter GoTo<CR>
 inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
