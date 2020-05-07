@@ -3,6 +3,6 @@ FontHeight=10
 MiddleClickAction=void
 RightClickAction=paste
 Term=xterm-256color
-Transparency=low
+Transparency=off
 FontSmoothing=default
 BoldAsFont=yes

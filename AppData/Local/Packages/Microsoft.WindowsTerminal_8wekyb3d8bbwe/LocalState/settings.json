@@ -14,10 +14,13 @@
     // To learn more about global settings, visit https://aka.ms/terminal-global-settings
 
     // If enabled, selections are automatically copied to your clipboard.
-    "copyOnSelect": false,
+    "copyOnSelect": true,
 
     // If enabled, formatted data is also copied to your clipboard
     "copyFormatting": false,
+
+    // Determines the delimiters used in a double click selection
+    "wordDelimiters": " \\()\"':,;<>~!@#$%^&*|+=[]{}~?│",
 
     // A profile specifies a command to execute paired with information about how it should look and feel.
     // Each one of them will appear in the 'New Tab' dropdown,
@@ -31,7 +34,7 @@
             "fontFace": "Cascadia Code PL",
             "fontSize" : 11,
             "useAcrylic" : true,
-            "acrylicOpacity" : 0.75,
+            "acrylicOpacity" : 0.85,
             "closeOnExit" : true
         },
         "list":
