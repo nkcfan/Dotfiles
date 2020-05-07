@@ -49,11 +49,15 @@ call plug#end()
 source ~/.vim/lightline.vim
 source ~/.vim/searchable.vim
 
+syntax on
+let g:xml_syntax_folding = 1
+
 " Detect filetype
 autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
 autocmd FileType gitcommit setlocal spell
 autocmd FileType help noremap <buffer> q :q<cr>
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+autocmd FileType xml setlocal foldmethod=syntax | :%foldopen!
 
 " Add to .vimrc to enable project-specific vimrc
 " exrc allows loading local executing local rc files.
@@ -219,7 +223,6 @@ augroup my_colors
 augroup END
 
 set cursorline
-syntax on
 " Disable italics in terminal because KiTTY + vim one dark will have very dark gray for
 " Comment highlight
 if &term=='nvim'
