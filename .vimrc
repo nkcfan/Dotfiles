@@ -245,6 +245,7 @@ let maplocalleader = " "
 let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
+nnoremap <LocalLeader>R                     :CocUpdate<CR>:PlugUpgrade<CR>:PlugUpdate<CR>
 
 " Key naming
 execute "set <C-Home>=\e[1;5H"
