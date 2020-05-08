@@ -193,6 +193,7 @@ if &term =~ '^screen' || &term =~ '^tmux'
 endif
 
 " quick-scope
+let g:qs_second_highlight=0
 " Note: Customize colors before you set colorscheme
 augroup qs_colors
   autocmd!
