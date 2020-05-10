@@ -1,4 +1,4 @@
-GuiFont! Hack:h10:l
+GuiFont! Cascadia Code PL:h11
 GuiTabline 0
 GuiPopupmenu 0
 
