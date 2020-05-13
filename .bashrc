@@ -85,23 +85,16 @@ prompt() {
     remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
     branch_name=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)
     venv_name=$([[ -n "$VIRTUAL_ENV" ]] && echo "${VIRTUAL_ENV##*/} ")
-    if [[ "$remote_state" == "" ]]; then
-        rstat=""
-    else
-        rstat="${CYAN}("
-        if [[ "$remote_state" == *ahead* ]] && [[ "$remote_state" == *behind* ]]; then
-            ahead_num=$(sed -n 's/\[ahead \([0-9][0-9]*\)[],].*/\1/p' <<< "$remote_state")
-            behind_num=$(sed -n 's/.*behind \([0-9][0-9]*\)\]/\1/p' <<< "$remote_state")
-            rstat="$rstat${RED}$behind_num,${GREEN}$ahead_num"
-        elif [[ "$remote_state" == *ahead* ]]; then
-            ahead_num=$(sed -n 's/\[ahead \([0-9][0-9]*\)[],].*/\1/p' <<< "$remote_state")
-            rstat="$rstat${GREEN}$ahead_num"
-        elif [[ "$remote_state" == *behind* ]]; then
-            behind_num=$(sed -n 's/.*behind \([0-9][0-9]*\)\]/\1/p' <<< "$remote_state")
-            rstat="$rstat${RED}$behind_num"
-        fi
 
-        rstat="$rstat${CYAN})"
+    # Git ahead/behind numbers
+    rstat=""
+    if [[ "$remote_state" == *ahead* ]]; then
+        ahead_num=$(sed -n 's/\[ahead \([0-9][0-9]*\)[],].*/\1/p' <<< "$remote_state")
+        rstat="$rstat${GREEN}⇡$ahead_num"
+    fi
+    if [[ "$remote_state" == *behind* ]]; then
+        behind_num=$(sed -n 's/.*behind \([0-9][0-9]*\)\]/\1/p' <<< "$remote_state")
+        rstat="$rstat${RED}⇣$behind_num"
     fi
 
     if [[ $TERM =~ "256color" ]]; then
@@ -110,7 +103,7 @@ prompt() {
         host_color="\[\e[1;$((31 + $(hostname | cksum | cut -c1-3) % 6))m\]";
     fi
 
-    ## Set tmux window title as git repo name or dir name
+    # Set tmux window title as git repo name or dir name
     base=$(basename `git config --get remote.origin.url || pwd`)
     title=$(perl -pe 's/^((\w{1,2}).*([\-_]))?(\w+)(\.git)?$/\2\3\4/g;' <<< "$base")
     printf "\ek$title\e\\"
