@@ -55,7 +55,6 @@ let g:xml_syntax_folding = 1
 " Detect filetype
 autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
 autocmd FileType gitcommit setlocal spell
-autocmd FileType help noremap <buffer> q :q<cr>
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 autocmd FileType xml setlocal foldmethod=syntax | :%foldopen!
 
@@ -246,6 +245,7 @@ let maplocalleader = " "
 let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
+nnoremap <LocalLeader>q                     :confirm quit<CR>
 nnoremap <LocalLeader>U                     :CocUpdate<CR>:PlugUpgrade<CR>:PlugClean!<CR>:PlugUpdate --sync<CR>
 
 " Key naming
