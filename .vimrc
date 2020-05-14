@@ -445,6 +445,7 @@ nnoremap <silent><expr> <LocalLeader>       ":<C-U>WhichKey '" . get(g:,"maploca
 " Note: it does not support vim default mappings because they are not in nmap,
 " such as 'gJ'
 "nnoremap <silent> g             :<C-U>WhichKey 'g'<CR>
+let g:which_key_use_floating_win = 0
 
 " highlightedyank
 let g:highlightedyank_highlight_duration = 200
