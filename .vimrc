@@ -78,6 +78,7 @@ set laststatus=2
 set cmdheight=2
 " Show line numbers
 set number
+set relativenumber
 " Show invisible char
 set list
 set listchars=tab:⇲\ ,trail:◦
@@ -257,6 +258,12 @@ nnoremap <C-S> :w<CR>
 nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
+" Move by virtual lines when used without a count, and by physical lines when used with a count
+" ref: https://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+noremap <silent> <expr> <Up> (v:count == 0 ? 'g<Up>' : '<Up>')
+noremap <silent> <expr> <Down> (v:count == 0 ? 'g<Down>' : '<Down>')
 " C-Del
 nmap <C-Del> <C-kDel>
 nnoremap <expr><C-kDel> "\"_dw"
