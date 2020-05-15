@@ -109,6 +109,13 @@ set completeopt+=longest
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
+" Dictionary
+if has('win32')
+    set dictionary+=~/.vim/dict/words
+else
+    " Please install the package wamerican
+endif
+
 " incsearch
 set incsearch
 if exists('##CmdlineEnter')
@@ -383,7 +390,6 @@ nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 " Insert mode completion
-imap <C-X><C-K> <plug>(fzf-complete-word)
 imap <C-X><C-F> <plug>(fzf-complete-path)
 imap <C-X><C-J> <plug>(fzf-complete-file-ag)
 imap <C-X><C-L> <plug>(fzf-complete-line)
