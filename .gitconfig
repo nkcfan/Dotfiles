@@ -8,7 +8,7 @@
     autocrlf = input
     editor = vim
 [diff]
-    tool = winmerge
+    tool = vimdiff
     algorithm = patience
 [difftool "winmerge"]
     cmd = \"$PROGRAMFILES/WinMerge/WinMergeU.exe\" -e -u -x -wl -dl "Base" -dr \"$REMOTE\" \"$LOCAL\" \"$REMOTE\"
