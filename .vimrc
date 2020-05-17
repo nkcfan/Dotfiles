@@ -254,6 +254,9 @@ nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
 nnoremap <LocalLeader>q                     :confirm quit<CR>
 nnoremap <LocalLeader>U                     :CocUpdate<CR>:PlugUpgrade<CR>:PlugClean!<CR>:PlugUpdate --sync<CR>
+nmap     <LocalLeader>gs                    :vertical G<CR><C-N>
+nnoremap <LocalLeader>gb                    :Gblame<CR>
+nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
 
 " Key naming
 execute "set <C-Home>=\e[1;5H"
