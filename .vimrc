@@ -252,7 +252,6 @@ let maplocalleader = " "
 let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
-nnoremap <LocalLeader>q                     :confirm quit<CR>
 nnoremap <LocalLeader>U                     :CocUpdate<CR>:PlugUpgrade<CR>:PlugClean!<CR>:PlugUpdate --sync<CR>
 nmap     <LocalLeader>gs                    :vertical G<CR><C-N>
 nnoremap <LocalLeader>gb                    :Gblame<CR>
@@ -265,6 +264,7 @@ execute "set <C-End>=\e[1;5F"
 nnoremap <C-Home> gg
 nnoremap <C-End> G
 nnoremap <C-S> :w<CR>
+nnoremap <M-w> :confirm quit<CR>
 nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
