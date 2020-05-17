@@ -5,6 +5,8 @@
 !.git?*
 !.*rc
 !.*profile
+!.config
+!.config/**
 !.vim
 !.vim/**
 
