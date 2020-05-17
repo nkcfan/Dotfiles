@@ -71,6 +71,7 @@ set wildmenu
 set wildmode=longest:full,full
 set encoding=utf-8
 set selection=exclusive
+set foldlevelstart=20
 " Always show statusline
 set laststatus=2
 " To use echodoc/coc.nvim, you must increase 'cmdheight' value.
