@@ -254,7 +254,8 @@ let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
 nnoremap <LocalLeader>U                     :CocUpdate<CR>:PlugUpgrade<CR>:PlugClean!<CR>:PlugUpdate --sync<CR>
-nmap     <LocalLeader>gs                    :vertical G<CR><C-N>
+" Open fugitive Gstatus and jump to the first unstaged file
+nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gb                    :Gblame<CR>
 nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
 
