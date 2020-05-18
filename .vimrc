@@ -319,6 +319,14 @@ endfunction
 noremap <silent> <Home> :call ExtendedHome()<CR>
 inoremap <silent> <Home> <C-O>:call ExtendedHome()<CR>
 
+" Natural PageUp and PageDown
+" ref: http://vimrc-dissection.blogspot.com/2009/02/fixing-pageup-and-pagedown.html
+map <silent> <PageUp> 1000<C-U>
+map <silent> <PageDown> 1000<C-D>
+imap <silent> <PageUp> <C-O>1000<C-U>
+imap <silent> <PageDown> <C-O>1000<C-D>
+set nostartofline
+
 " Commentary
 xmap <C-Q>  <Plug>Commentary
 nmap <C-Q>  <Plug>Commentary
