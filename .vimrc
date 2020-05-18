@@ -307,6 +307,18 @@ cnoremap <expr> <Down>  pumvisible() ? "<C-N>" : "<Down>"
 noremap! <C-H> <C-W>
 noremap! <C-BS> <C-W>
 
+" Natural Home key
+" ref: https://stackoverflow.com/a/15459337/2514803
+function ExtendedHome()
+    let column = col('.')
+    normal! ^
+    if column == col('.')
+        normal! 0
+    endif
+endfunction
+noremap <silent> <Home> :call ExtendedHome()<CR>
+inoremap <silent> <Home> <C-O>:call ExtendedHome()<CR>
+
 " Commentary
 xmap <C-Q>  <Plug>Commentary
 nmap <C-Q>  <Plug>Commentary
