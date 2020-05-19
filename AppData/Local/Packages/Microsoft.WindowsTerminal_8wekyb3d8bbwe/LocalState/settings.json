@@ -94,6 +94,8 @@
 
         // Proper expected behavior is restored with the following:
         // ref: https://github.com/microsoft/terminal/issues/3729
+        { "command": "unbound", "keys": [ "ctrl+q" ] },
+        { "command": "unbound", "keys": [ "ctrl+v" ] },
         { "command": "unbound", "keys": [ "alt+shift+-" ] },
         { "command": "unbound", "keys": [ "alt+shift+plus" ] },
         { "command": "unbound", "keys": [ "alt+down" ] },
