@@ -5,11 +5,18 @@ cargo install cargo-update
 cargo install-update -a
 
 # nvm
-if nvm install node --reinstall-packages-from=$(nvm current); then
-    nvm alias default node
-    pushd ~//.config/coc/extensions
-    npm rebuild
-    popd
+NVM_DIR="$HOME/.nvm"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+    set +x
+    source "$NVM_DIR/nvm.sh"  # This loads nvm
+    OLD_VER=$(nvm current)
+    if nvm install node --reinstall-packages-from=$OLD_VER; then
+        nvm alias default node
+        pushd ~/.config/coc/extensions
+        npm rebuild
+        popd
+    fi
+    set -x
 fi
 
 # npm
