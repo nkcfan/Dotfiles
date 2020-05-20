@@ -266,7 +266,7 @@ execute "set <C-End>=\e[1;5F"
 nnoremap <C-Home> gg
 nnoremap <C-End> G
 nnoremap <C-S> :w<CR>
-nnoremap <M-w> :confirm quit<CR>
+nnoremap <M-w> :confirm bdelete<CR>
 nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
