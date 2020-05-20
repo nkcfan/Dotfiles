@@ -473,6 +473,24 @@ endfunction
 " Symbol renaming.
 nmap <Leader>rn                             <Plug>(coc-rename)
 
+" diff mode
+" Note: disable internal diff option in order to enable FilterWritePost
+set diffopt-=internal
+" Note: set shelltemp option in order to enable FilterWritePost
+set shelltemp
+" Note: reload colorscheme is not needed for Neovim
+augroup diff_mode
+    autocmd!
+    autocmd FilterWritePost *
+        \ if &diff |
+            \ exec "colorscheme " . g:colors_name |
+            \ exec "nnoremap <buffer><S-Left>    :diffget //2<CR>" |
+            \ exec "nnoremap <buffer><S-Right>   :diffget //3<CR>" |
+        \ endif
+    autocmd BufWinLeave fugitive://*
+        \ exec "colorscheme " . g:colors_name |
+augroup END
+
 " vim-which-key
 nnoremap <silent><expr> <Leader>            ":<C-U>WhichKey '" . get(g:,"mapleader","\\") . "'<CR>"
 nnoremap <silent><expr> <LocalLeader>       ":<C-U>WhichKey '" . get(g:,"maplocalleader","\\") . "'<CR>"
