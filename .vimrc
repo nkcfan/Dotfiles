@@ -356,8 +356,8 @@ xmap ic <plug>(signify-motion-inner-visual)
 omap ac <plug>(signify-motion-outer-pending)
 xmap ac <plug>(signify-motion-outer-visual)
 " Hunk jumping
-nmap <M-Down> <plug>(signify-next-hunk)
-nmap <M-Up> <plug>(signify-prev-hunk)
+nmap <M-Down> <plug>(signify-next-hunk)zz
+nmap <M-Up> <plug>(signify-prev-hunk)zz
 
 " grep
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
@@ -390,8 +390,8 @@ let g:show_spaces_that_precede_tabs = 1
 
 " ALE
 " Moving between ALE warnings and errors quickly
-nmap <silent> <C-S-Up> <Plug>(ale_previous)
-nmap <silent> <C-S-Down> <Plug>(ale_next)
+nmap <silent> <C-S-Up> <Plug>(ale_previous)zz
+nmap <silent> <C-S-Down> <Plug>(ale_next)zz
 " ALE config
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_set_balloons=1
