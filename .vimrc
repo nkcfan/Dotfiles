@@ -263,8 +263,8 @@ nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
 execute "set <C-Home>=\e[1;5H"
 execute "set <C-End>=\e[1;5F"
 
-nnoremap <C-Home> gg
-nnoremap <C-End> G
+nnoremap <C-Home> gg0
+nnoremap <C-End> G$
 nnoremap <C-S> :w<CR>
 nnoremap <M-w> :confirm bdelete<CR>
 nnoremap <expr><C-Left> "b"
