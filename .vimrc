@@ -102,7 +102,7 @@ set updatetime=500
 " Prefer lightline status, don't need showmode
 set noshowmode
 " ins-completion
-if !has("nvim")
+if has("patch-8.1.1880")
     set completeopt+=popup
 endif
 set completeopt-=preview
