@@ -79,6 +79,10 @@ set cmdheight=2
 " Show line numbers
 set number
 set relativenumber
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+endif
 " Show invisible char
 set list
 set listchars=tab:⇲\ ,trail:◦
