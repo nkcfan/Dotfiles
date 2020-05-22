@@ -289,7 +289,7 @@ nnoremap <expr><C-X> "dd"
 " Mimic Windows C-Del behavior
 " Note: gJ - Join lines and don't insert or remove any spaces
 imap <C-Del> <C-kDel>
-inoremap <expr> <C-kDel> AtEndOfLine() ? '<C-O>gJ<C-O>"_dw' : '<C-O>"_dw'
+inoremap <expr> <C-kDel> AtEndOfLine() ? '<C-O>gJ' : '<C-O>"_dw'
 inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
