@@ -155,7 +155,9 @@ endif
 " ref: https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim/10216459#10216459
 " map the escape sequences to their Alt combinations in terminal mode
 " ref: https://github.com/macvim-dev/macvim/issues/868#issuecomment-466348034
-if !has("nvim")
+" Note: tnoremap was introduced since vim 8.0.1108
+" ref: https://github.com/vim/vim/commit/69fbc9e1dab176f345719436cd89d854df0a2abd
+if !has("nvim") && has("patch-8.0.1108")
     function s:tmap_meta(key)
         call term_sendkeys(bufnr('%'), "\<Esc>" . a:key)
     endfunction
