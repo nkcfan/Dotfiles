@@ -400,7 +400,8 @@ nmap <silent> <C-S-Up> <Plug>(ale_previous)zz
 nmap <silent> <C-S-Down> <Plug>(ale_next)zz
 " ALE config
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_set_balloons=1
+" Note: Mouse move triggers mess characters when enabling balloons together with coc.nvim coc-references window open
+"let g:ale_set_balloons=1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_enabled=1
 " Disable ALE text highlight in insert mode to help readability
