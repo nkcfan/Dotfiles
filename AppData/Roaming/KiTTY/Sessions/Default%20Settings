@@ -63,7 +63,7 @@ RFCEnviron\0\
 PassiveTelnet\0\
 BackspaceIsDelete\1\
 EnterSendsCrLf\0\
-RXVTHomeEnd\0\
+RXVTHomeEnd\3\
 LinuxFunctionKeys\0\
 NoApplicationKeys\0\
 NoApplicationCursors\0\
