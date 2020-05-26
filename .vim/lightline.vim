@@ -54,7 +54,7 @@ let g:lightline#ale#indicator_warnings = "! "
 let g:lightline#ale#indicator_errors = "✘ "
 let g:lightline#ale#indicator_ok = "OK"
 
-augroup LightLineOnChanges
+augroup LightlineOnChanges
   autocmd!
   autocmd User ALEFixPre   call lightline#update()
   autocmd User ALEFixPost  call lightline#update()

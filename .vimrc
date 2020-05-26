@@ -238,16 +238,12 @@ augroup my_colors
 augroup END
 
 set cursorline
-" Disable italics in terminal because KiTTY + vim one dark will have very dark gray for
-" Comment highlight
-if &term=='nvim'
-    " Enable in Neovim GUI
-    let g:onedark_terminal_italics = 1
-endif
-colorscheme onedark
 let g:load_doxygen_syntax = 1
 let g:python_highlight_all = 1
 
+" onedark colorscheme
+source ~/.vim/onedark.vim
+colorscheme onedark
 function! AtEndOfLine()
     return col(".") >= col("$") - 1
 endfunction

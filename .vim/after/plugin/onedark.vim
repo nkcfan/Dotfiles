@@ -22,10 +22,3 @@ for key in keys(s:palette)
 endfor
 
 let g:lightline#colorscheme#onedark#palette = lightline#colorscheme#fill(s:palette)
-
-" Fine tune colorscheme for hlsearch
-call onedark#set_highlight("Search", { "fg": onedark#GetColors().yellow, "bg": onedark#GetColors().comment_grey })
-call onedark#set_highlight("IncSearch", { "fg": onedark#GetColors().black, "bg": onedark#GetColors().yellow })
-
-" Fine tune colorscheme for syntax highlight
-call onedark#set_highlight("Macro", { "fg": onedark#GetColors().cyan })
