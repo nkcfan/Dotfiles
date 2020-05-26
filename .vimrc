@@ -38,6 +38,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'pearofducks/ansible-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Shougo/echodoc.vim', { 'on': ['EchoDocEnable'] }
@@ -244,6 +245,11 @@ let g:python_highlight_all = 1
 " onedark colorscheme
 source ~/.vim/onedark.vim
 colorscheme onedark
+" gruvbox
+let g:gruvbox_contrast_dark = "hard"
+let g:gitgutter_override_sign_column_highlight = 1
+colorscheme gruvbox
+
 function! AtEndOfLine()
     return col(".") >= col("$") - 1
 endfunction

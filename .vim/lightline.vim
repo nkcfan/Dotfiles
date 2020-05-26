@@ -1,6 +1,6 @@
 " special char ref: https://github.com/source-foundry/Hack/issues/124
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'gruvbox',
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '│' },
       \ 'active': {
