@@ -262,10 +262,11 @@ let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
 nnoremap <LocalLeader>U                     :CocUpdateSync<CR>:PlugUpgrade<CR>:PlugClean!<CR>:PlugUpdate --sync<CR>
+nnoremap <LocalLeader>gb                    :Gblame<CR>
+nnoremap <LocalLeader>gk                    :Gbrowse!<CR>
+nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
-nnoremap <LocalLeader>gb                    :Gblame<CR>
-nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
 
 " Key naming
 execute "set <C-Home>=\e[1;5H"
