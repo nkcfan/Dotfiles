@@ -164,10 +164,10 @@ if !has("nvim") && has("patch-8.0.1108")
     endfunction
     let c='a'
     while c <= 'z'
-      exec "set <M-".c.">=\e".c
-      exec "imap \e".c." <M-".c.">"
-      exec "tnoremap <silent> <M-".c."> <C-W>:call <SID>tmap_meta('".c."')<CR>"
-      let c = nr2char(1+char2nr(c))
+        exec "set <M-".c.">=\e".c
+        exec "imap \e".c." <M-".c.">"
+        exec "tnoremap <silent> <M-".c."> <C-W>:call <SID>tmap_meta('".c."')<CR>"
+        let c = nr2char(1+char2nr(c))
     endw
 endif
 
