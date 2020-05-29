@@ -300,6 +300,11 @@ inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
 inoremap <C-V> <Nop>
 cnoremap <C-V> <Nop>
+" Note: tnoremap was introduced since vim 8.0.1108
+" ref: https://github.com/vim/vim/commit/69fbc9e1dab176f345719436cd89d854df0a2abd
+if !has("nvim") && has("patch-8.0.1108")
+    tnoremap <C-V> <Nop>
+endif
 " Github link
 vnoremap <C-G> :Gbrowse!<CR>
 " Use <CR> to confirm completion, `<C-G>u` means break undo chain at current position.
