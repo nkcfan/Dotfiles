@@ -1,9 +1,7 @@
 # Alias definitions.
 UNAME=`uname`
 function _alias_std() {
-    alias ls='ls --color '
-    alias ll='ls --color -la'
-    alias l.='ls --color -d .*'
+    function ls() { $(which ls) --color $@; }
 }
 function _alias_osx() {
     alias ls='ls -G '
@@ -14,25 +12,11 @@ function _alias_osx() {
     alias f='open -a Finder ./'
 }
 function _alias_linux() {
-    alias up='sudo sh -c "apt-get update;apt-get dist-upgrade;apt-get autoremove;apt-get autoclean"'
+    return
 }
 function _alias_common() {
-    alias ..='cd ../'                           # Go back 1 directory level
-    alias ...='cd ../../'                       # Go back 2 directory levels
-    alias ....='cd ../../..'                    # Go back 3 directory levels
-    alias 'bk=cd $OLDPWD'
-    alias ~="cd ~"                              # Go Home
-    alias c='clear'                             # Clear terminal display
-    alias psg='ps aux | grep'
-    alias unrarall='for f in *.rar;do unrar e "$f";done'
-    function gp() { w=$1; f=$2; shift 2; grep -nrI "$w" --include "$f" $@; }
-
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    function gp() { w=$1; f=$2; shift 2; $(which grep) -nrI "$w" --include "$f" $@; }
+    function grep() { $(which grep) --color $@; }
 }
 
 ## Set aliases
