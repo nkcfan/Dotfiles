@@ -23,7 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
 Plug 'svermeulen/vim-cutlass'
-Plug 'epeli/slimux'
+Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
