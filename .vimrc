@@ -463,8 +463,8 @@ let g:livedown_open = 0
 
 " coc.nvim
 " GoTo code navigation.
-nmap <silent> vv <Plug>(coc-definition)
-nmap <silent> gD <Plug>(coc-declaration)
+nmap <silent> vv <Plug>(coc-definition)zz
+nmap <silent> gD <Plug>(coc-declaration)zz
 "nmap <silent> gy <Plug>(coc-type-definition)
 "nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> rr <Plug>(coc-references)
