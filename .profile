@@ -55,7 +55,7 @@ if [[ "$UNAME" == "Linux" ]]; then
     # Enable rbenv shims and autocompletion
     eval "$(rbenv init -)"
     # Set manpage to use color
-    # Note: please instal most package
+    # Note: please install most package
     export MANPAGER=most
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=true
