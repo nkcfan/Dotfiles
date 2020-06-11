@@ -12,6 +12,12 @@ git branch --set-upstream-to=origin/master
 
 ## Install the dependencies
 
+### build toolchain
+```
+sudo apt-get install build-essential
+sudo apt-get install pkg-config libssl-dev
+```
+
 ### node / npm / nvm
 Follow https://github.com/nvm-sh/nvm#installing-and-updating
 
@@ -20,5 +26,18 @@ Follow https://github.com/nvm-sh/nvm#usage
 ### pip
 Follow https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py
 
+#### pip packages
+```
+pip3 install tldr
+```
+
 ### tpm
 Follow https://github.com/tmux-plugins/tpm#installation
+
+### cargo
+Follow https://doc.rust-lang.org/cargo/getting-started/installation.html
+
+#### cargo packages
+```
+cargo install ripgrep
+```

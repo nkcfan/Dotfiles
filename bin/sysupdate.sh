@@ -1,6 +1,7 @@
 #!/bin/bash -ex
 
 # cargo crates
+# Note: depends on pkg-config libssl-dev
 cargo install cargo-update
 cargo install-update -a
 
