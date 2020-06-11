@@ -17,6 +17,7 @@ function _alias_linux() {
 function _alias_common() {
     function gp() { w=$1; f=$2; shift 2; $(which grep) -nrI "$w" --include "$f" $@; }
     function grep() { $(which grep) --color $@; }
+    function egrep() { $(which egrep) --color $@; }
     # Python command line client for tldr
     function tldr() { LANG=en_us.UTF8 $(which tldr) $@; }
 }
