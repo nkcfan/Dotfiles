@@ -2,4 +2,5 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
-set winblend=30
+set winblend=5
+set pumblend=5
