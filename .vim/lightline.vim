@@ -14,7 +14,6 @@ let g:lightline = {
       \     [ 'percent'],
       \     [ 'fileformat', 'fileencoding', 'filetype' ],
       \     [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_infos', 'linter_ok' ],
-      \     [ 'blame' ]
       \   ],
       \ },
       \ 'component_function': {
@@ -32,6 +31,10 @@ let g:lightline = {
       \   'blame': 'LightlineGitBlame',
       \ },
       \ }
+
+if !exists('*nvim_buf_set_virtual_text')
+    call add(g:lightline.active.right, ['blame'])
+endif
 
 let g:lightline.component_expand = {
       \   'linter_checking': 'lightline#ale#checking',
