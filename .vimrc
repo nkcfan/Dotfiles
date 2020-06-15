@@ -424,9 +424,9 @@ nnoremap <silent> <M-p> :Buffers<CR>
 " Find in current buffer
 nnoremap <C-F> :BLines<Space>
 " Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+nmap <Leader><tab> <plug>(fzf-maps-n)
+xmap <Leader><tab> <plug>(fzf-maps-x)
+omap <Leader><tab> <plug>(fzf-maps-o)
 " Insert mode completion
 imap <C-X><C-F> <plug>(fzf-complete-path)
 imap <C-X><C-J> <plug>(fzf-complete-file-ag)
