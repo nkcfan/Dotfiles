@@ -284,7 +284,6 @@ noremap <silent> <expr> <Down> (v:count == 0 ? 'g<Down>' : '<Down>')
 " C-Del
 nmap <C-Del> <C-kDel>
 nnoremap <expr><C-kDel> "\"_dw"
-nnoremap <expr><C-X> "dd"
 
 " Key mappings in insert mode
 " Mimic Windows C-Del behavior
