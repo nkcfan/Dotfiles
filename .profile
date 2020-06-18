@@ -72,5 +72,7 @@ else # Windows
     #export EDITOR="'$PROGRAMFILES/Notepad++/notepad++.exe'"
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=true
+    # Enable syslink
+    export MSYS=winsymlinks:nativestrict
 fi
 
