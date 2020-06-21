@@ -291,8 +291,9 @@ nnoremap <expr><C-kDel> "\"_dw"
 " Key mappings in insert mode
 " Mimic Windows C-Del behavior
 " Note: gJ - Join lines and don't insert or remove any spaces
+" Note: ◦<C-O>x - To erase a visible char in order to keep indentation
 imap <C-Del> <C-kDel>
-inoremap <expr> <C-kDel> AtEndOfLine() ? '<C-O>gJ' : '<C-O>"_dw'
+inoremap <expr> <C-kDel> AtEndOfLine() ? '◦<C-O>x<C-O>gJ' : '<C-O>"_dw'
 inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
