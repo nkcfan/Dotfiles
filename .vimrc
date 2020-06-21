@@ -193,7 +193,10 @@ let &t_Ce = "\e[24m"
 autocmd InsertLeave * :normal `^
 
 " Default normal yanks to use the system clipboard
-set clipboard=unnamedplus
+" Note: only in GUI nvim
+if has('nvim') && exists('g:GuiLoaded')
+    set clipboard=unnamedplus
+endif
 
 " Set mouse in all mode
 set mouse+=a
