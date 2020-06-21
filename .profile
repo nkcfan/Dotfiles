@@ -33,6 +33,9 @@ pathmunge() {
 pathmunge "$HOME/.local/bin"
 pathmunge "$HOME/.rbenv/bin"
 pathmunge "$HOME/.cargo/bin"
+pathmunge "$HOME/.yarn/bin"
+pathmunge "$HOME/.config/yarn/global/node_modules/.bin"
+pathmunge "$HOME/.cabal/bin"
 pathmunge "$HOME/bin"
 pathmunge "$HOME/Library/Python/2.7/bin"
 pathmunge /opt/local/sbin
