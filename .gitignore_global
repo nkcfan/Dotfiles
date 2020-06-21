@@ -13,6 +13,10 @@ tags
 # Python virtual env
 */lib/python?.?/
 
+# Python package temp
+deb_dist/*
+**/deb_dist/*
+
 # Debian package temp
 debian/usr/*
 debian/*/{DEBIAN,usr}/*
