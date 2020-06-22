@@ -190,7 +190,7 @@ let &t_Cs = "\e[6m"
 let &t_Ce = "\e[24m"
 
 " Prevent left moving one character when leaving insert mode
-autocmd InsertLeave * :normal `^
+autocmd InsertLeave * :normal! `^
 
 " Default normal yanks to use the system clipboard
 " Note: only in GUI nvim
@@ -356,7 +356,7 @@ nnoremap M D
 " Make a text object for previously changed text
 " ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
 xnoremap <silent> <expr> gp ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
-onoremap gp :normal vgp<CR>
+onoremap gp :normal! vgp<CR>
 
 " signify
 " Note: g:signify_realtime will invalidate `previously changed or yanked text`

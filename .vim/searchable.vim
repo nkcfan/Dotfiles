@@ -17,11 +17,11 @@ function! SearchableChangeAdapter(type, ...)
     let sel_save = &selection
     let &selection = "inclusive"
     if a:type == 'line'
-        silent execute 'normal `[V`]"sy'
+        silent execute 'normal! `[V`]"sy'
     elseif a:type == 'block'
-        silent execute 'normal `[\<C-V>`]"sy'
+        silent execute 'normal! `[\<C-V>`]"sy'
     else
-        silent execute 'normal `[v`]"sy'
+        silent execute 'normal! `[v`]"sy'
     endif
     let &selection = sel_save
     call SearchableChangeAdapter(visualmode(), 1)
