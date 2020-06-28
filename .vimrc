@@ -118,6 +118,15 @@ else
     " Please install the package wamerican
 endif
 
+" Scroll hit to middle if not on same page
+" If cursor is in first or last line of window, scroll to middle line.
+" ref: https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
+function s:MaybeMiddle()
+  if winline() == 1 || winline() == winheight(0)
+    normal! zz
+  endif
+endfunction
+
 " incsearch
 set incsearch
 if exists('##CmdlineEnter')
@@ -369,8 +378,8 @@ xmap ic <plug>(signify-motion-inner-visual)
 omap ac <plug>(signify-motion-outer-pending)
 xmap ac <plug>(signify-motion-outer-visual)
 " Hunk jumping
-nmap <M-Down> <plug>(signify-next-hunk)zz
-nmap <M-Up> <plug>(signify-prev-hunk)zz
+nmap <M-Down> <plug>(signify-next-hunk):call <SID>MaybeMiddle()<CR>
+nmap <M-Up> <plug>(signify-prev-hunk):call <SID>MaybeMiddle()<CR>
 
 " grep
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
@@ -403,8 +412,8 @@ let g:show_spaces_that_precede_tabs = 1
 
 " ALE
 " Moving between ALE warnings and errors quickly
-nmap <silent> <C-S-Up> <Plug>(ale_previous)zz
-nmap <silent> <C-S-Down> <Plug>(ale_next)zz
+nmap <silent> <C-S-Up> <Plug>(ale_previous):call <SID>MaybeMiddle()<CR>
+nmap <silent> <C-S-Down> <Plug>(ale_next):call <SID>MaybeMiddle()<CR>
 " ALE config
 let g:ale_lint_on_text_changed = 'never'
 " Note: Mouse move triggers mess characters when enabling balloons together with coc.nvim coc-references window open
@@ -462,8 +471,8 @@ let g:livedown_open = 0
 
 " coc.nvim
 " GoTo code navigation.
-nmap <silent> vv <Plug>(coc-definition)zz
-nmap <silent> gD <Plug>(coc-declaration)zz
+nmap <silent> vv :<C-u>call CocAction('jumpDefinition')<CR>:call <SID>MaybeMiddle()<CR>
+nmap <silent> gD :<C-u>call CocAction('jumpDeclaration')<CR>:call <SID>MaybeMiddle()<CR>
 "nmap <silent> gy <Plug>(coc-type-definition)
 "nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> rr <Plug>(coc-references)
