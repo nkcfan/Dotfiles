@@ -2,7 +2,7 @@
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '│' },
+      \ 'subseparator': { 'left': '', 'right': '' },
       \ 'active': {
       \   'left': [
       \     [ 'mode', 'paste', 'gutentags', 'cocstatus' ],
@@ -10,8 +10,8 @@ let g:lightline = {
       \     [ 'ctrlpmark', 'fugitive' ]
       \   ],
       \   'right': [
-      \     [ 'lineinfo'],
-      \     [ 'percent'],
+      \     [ 'lineinfo' ],
+      \     [ 'percent', 'indicator' ],
       \     [ 'fileformat', 'fileencoding', 'filetype' ],
       \     [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_infos', 'linter_ok' ],
       \   ],
@@ -29,6 +29,7 @@ let g:lightline = {
       \   'ctrlpmark': 'CtrlPMark',
       \   'cocstatus': 'coc#status',
       \   'blame': 'LightlineGitBlame',
+      \   'indicator': 'LineNoIndicator',
       \ },
       \ }
 
@@ -169,3 +170,4 @@ endfunction
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
+let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
