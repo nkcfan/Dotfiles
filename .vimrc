@@ -39,7 +39,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'pearofducks/ansible-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Shougo/echodoc.vim', { 'on': ['EchoDocEnable'] }
