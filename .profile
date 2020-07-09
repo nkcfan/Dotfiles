@@ -36,6 +36,7 @@ pathmunge "$HOME/.cargo/bin"
 pathmunge "$HOME/.yarn/bin"
 pathmunge "$HOME/.config/yarn/global/node_modules/.bin"
 pathmunge "$HOME/.cabal/bin"
+pathmunge "$HOME/go/bin"
 pathmunge "$HOME/bin"
 pathmunge "$HOME/Library/Python/2.7/bin"
 pathmunge /opt/local/sbin

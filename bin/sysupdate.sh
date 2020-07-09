@@ -29,3 +29,6 @@ pip2 install pip-review
 python2 -m pip_review --interactive
 pip3 install pip-review
 python3 -m pip_review --interactive
+
+# go
+go get -u all
