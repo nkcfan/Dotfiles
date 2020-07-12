@@ -1,7 +1,7 @@
 # Alias definitions.
 UNAME=`uname`
 function _alias_std() {
-    function ls() { $(which ls) --color $@; }
+    function ls() { $(which ls) --color "$@"; }
 }
 function _alias_osx() {
     alias ls='ls -G '
@@ -15,14 +15,14 @@ function _alias_linux() {
     return
 }
 function _alias_common() {
-    function gp() { w=$1; f=$2; shift 2; $(which grep) -nrI "$w" --include "$f" $@; }
-    function grep() { $(which grep) --color $@; }
-    function egrep() { $(which egrep) --color $@; }
+    function gp() { w=$1; f=$2; shift 2; $(which grep) -nrI "$w" --include "$f" "$@"; }
+    function grep() { $(which grep) --color "$@"; }
+    function egrep() { $(which egrep) --color "$@"; }
     # Python command line client for tldr
-    function tldr() { LANG=en_us.UTF8 $(which tldr) $@; }
+    function tldr() { LANG=en_us.UTF8 $(which tldr) "$@"; }
     # ripgrep without heading
     # Note: -n is needed for non-tty to get line number
-    function rg () { $(which rg) -n --no-heading $@; }
+    function rg () { $(which rg) -n --no-heading "$@"; }
 }
 
 ## Set aliases
