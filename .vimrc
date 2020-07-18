@@ -291,8 +291,10 @@ nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
 " Move by virtual lines when used without a count, and by physical lines when used with a count
 " ref: https://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" And push long jump into jumplist
+" ref: https://medium.com/breathe-publication/understanding-vims-jump-list-7e1bfc72cdf0
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : (v:count == 1 ? '' : "m'" . v:count ) . 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : (v:count == 1 ? '' : "m'" . v:count ) . 'k')
 noremap <silent> <expr> <Up> (v:count == 0 ? 'g<Up>' : '<Up>')
 noremap <silent> <expr> <Down> (v:count == 0 ? 'g<Down>' : '<Down>')
 " C-Del
