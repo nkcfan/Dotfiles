@@ -484,6 +484,7 @@ nmap <silent> rr <Plug>(coc-references)
 let g:coc_global_extensions = [
             \ 'coc-git',
             \ 'coc-python',
+            \ 'coc-pyright',
             \ ]
 " Snippet expand and jump
 let g:coc_snippet_next = '<Tab>'
