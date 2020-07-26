@@ -436,10 +436,10 @@ augroup disable_ale_insert
 augroup END
 
 " fzf
-nnoremap <silent> <C-P> :FZF -m<CR>
+nnoremap <LocalLeader>p :FZF -m<CR>
 nnoremap <silent> <M-p> :Buffers<CR>
 " Find in current buffer
-nnoremap <C-F> :BLines<Space>
+nnoremap <C-F> :BLines<Space><C-R>=expand('<cword>')<CR>
 " Mapping selecting mappings
 nmap <Leader><tab> <plug>(fzf-maps-n)
 xmap <Leader><tab> <plug>(fzf-maps-x)
