@@ -483,7 +483,6 @@ nmap <silent> rr <Plug>(coc-references)
 " CoC Settings
 let g:coc_global_extensions = [
             \ 'coc-git',
-            \ 'coc-python',
             \ 'coc-pyright',
             \ ]
 " Snippet expand and jump
