@@ -103,7 +103,7 @@
 [merge]
 #    ff = false
 [pull]
-#    ff = only
+    ff = only
 [push]
     default = upstream
 [pager]
