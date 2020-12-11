@@ -13,7 +13,7 @@ let g:lightline = {
       \     [ 'lineinfo' ],
       \     [ 'percent', 'indicator' ],
       \     [ 'fileformat', 'fileencoding', 'filetype' ],
-      \     [ 'linter_checking', 'linter_warnings', 'linter_errors', 'linter_infos', 'linter_ok' ],
+      \     [ 'linter_checking', 'linter_infos', 'linter_warnings', 'linter_errors', 'linter_ok' ],
       \   ],
       \ },
       \ 'component_function': {
