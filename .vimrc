@@ -241,12 +241,6 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" Customize highlight after ColorScheme changed
-augroup my_colors
-    autocmd!
-    autocmd ColorScheme * highlight SpellBad gui=undercurl
-augroup END
-
 set cursorline
 let g:load_doxygen_syntax = 1
 let g:python_highlight_all = 1
@@ -258,6 +252,9 @@ colorscheme onedark
 let g:gruvbox_contrast_dark = "hard"
 let g:gitgutter_override_sign_column_highlight = 1
 let g:gruvbox_invert_selection = 0
+if !exists('g:GuiLoaded')
+    let g:gruvbox_guisp_fallback = "bg"
+endif
 colorscheme gruvbox
 
 function! AtEndOfLine()
