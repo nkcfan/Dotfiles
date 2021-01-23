@@ -6,14 +6,18 @@ endif
 
 call plug#begin('~/.vim/bundle')
 " The following are examples of different formats supported.
+if has('nvim-0.5.0')
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+else
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
+    Plug 'vim-python/python-syntax'
+endif
 Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'vim-python/python-syntax'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
 Plug 'shime/vim-livedown'
