@@ -14,7 +14,6 @@ else
     Plug 'vim-python/python-syntax'
 endif
 Plug 'wellle/targets.vim'
-Plug 'michaeljsmith/vim-indent-object'
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
