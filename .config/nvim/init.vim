@@ -22,6 +22,15 @@ if has('nvim-0.5.0')
                 enable = true,  -- false will disable the whole extension
                 disable = {},  -- list of language that will be disabled
             },
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "vii",
+                    scope_incremental = "ii",
+                    node_incremental = "<CR>",
+                    node_decremental = "<BS>",
+                },
+            },
             refactor = {
                 highlight_definitions = { enable = true },
                 highlight_current_scope = { enable = false },
