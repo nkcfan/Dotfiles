@@ -15,6 +15,7 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
         pushd ~/.config/coc/extensions
         npm rebuild
         popd
+        echo 'Please `nvm uinstall` old versions!'
     fi
     set -x
 fi
@@ -22,6 +23,7 @@ fi
 # npm
 # TODO: no need to upgate npm, since it is managed by nvm
 #npm install -g npm@latest
+nvm install-latest-npm
 npm update -g
 
 # pip

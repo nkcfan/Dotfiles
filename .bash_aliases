@@ -23,6 +23,17 @@ function _alias_common() {
     # ripgrep without heading
     # Note: -n is needed for non-tty to get line number
     function rg () { $(which rg) -n --no-heading "$@"; }
+    # node will disapear after nvm upgrade/uninstall in another session
+    function node() {
+        local bin
+        if ! bin=`which node`; then
+            nvm use default 2>&1 > /dev/null
+            if ! bin=`which node`; then
+                bin="node"
+            fi
+        fi
+        ${bin} "$@"
+    }
 }
 
 ## Set aliases
