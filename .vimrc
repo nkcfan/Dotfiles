@@ -436,10 +436,8 @@ let g:ale_sh_bashate_options = '-i E006'
 " come back
 augroup disable_ale_insert
     autocmd!
-    autocmd InsertEnter * let g:ale_enabled=0
-    autocmd InsertEnter * silent! :call ale#highlight#UpdateHighlights()
-    autocmd InsertLeave * let g:ale_enabled=1
-    autocmd InsertLeave * silent! :call ale#highlight#UpdateHighlights()
+    autocmd InsertEnter * silent! let g:ale_enabled=0 | call ale#highlight#UpdateHighlights()
+    autocmd InsertLeave * silent! let g:ale_enabled=1 | call ale#highlight#UpdateHighlights()
 augroup END
 
 " fzf
