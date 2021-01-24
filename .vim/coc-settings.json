@@ -7,7 +7,7 @@
     "suggest.noselect": false,
     "suggest.minTriggerInputLength": 2,
     "diagnostic.displayByAle": true,
-    "diagnostic.virtualText": true,
+    "diagnostic.virtualText": false,
     "diagnostic.virtualTextPrefix": " ✘✘✘ ",
     "python.linting.enabled": false,
     "python.linting.flake8Enabled": true,
