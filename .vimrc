@@ -500,7 +500,7 @@ function! s:show_documentation()
   endif
 endfunction
 " Symbol renaming.
-nmap <Leader>rn                             <Plug>(coc-rename)
+nnoremap <Leader>rn                         :ALERename<CR>
 
 " diff mode
 " Note: disable internal diff option in order to enable FilterWritePost
