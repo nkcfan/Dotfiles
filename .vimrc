@@ -8,6 +8,7 @@ call plug#begin('~/.vim/bundle')
 " The following are examples of different formats supported.
 if has('nvim-0.5.0')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    Plug 'nvim-treesitter/nvim-treesitter-refactor'
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'

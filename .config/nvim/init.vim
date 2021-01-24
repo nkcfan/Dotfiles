@@ -22,6 +22,10 @@ if has('nvim-0.5.0')
                 enable = true,  -- false will disable the whole extension
                 disable = {},  -- list of language that will be disabled
             },
+            refactor = {
+                highlight_definitions = { enable = true },
+                highlight_current_scope = { enable = false },
+            },
         }
 EOF
 endif
