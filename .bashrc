@@ -76,10 +76,10 @@ COLOREND="\[\e[00m\]"
 prompt() {
     if [[ $? -eq 0 ]]; then
         exit_status="${LBLUE}\$"
-        exit_symbol="${LBLUE}\[✔\]"
+        exit_symbol="${LBLUE}✔"
     else
         exit_status="${LRED}\$"
-        exit_symbol="${LRED}\[✘\]"
+        exit_symbol="${LRED}✘"
     fi
 
     remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
