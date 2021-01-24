@@ -523,6 +523,7 @@ augroup END
 " vim-which-key
 nnoremap <silent><expr> <Leader>            ":<C-U>WhichKey '" . get(g:,"mapleader","\\") . "'<CR>"
 nnoremap <silent><expr> <LocalLeader>       ":<C-U>WhichKey '" . get(g:,"maplocalleader","\\") . "'<CR>"
+nnoremap <silent> g                         :<C-U>WhichKey 'g'<CR>
 " Show vim-which-key in fugitive filetype
 augroup fugitive_which_key
     autocmd!
@@ -533,13 +534,11 @@ augroup fugitive_which_key
         \ nnoremap <buffer><silent><expr> r     ":<C-U>WhichKey 'r'<CR>" |
         \ nnoremap <buffer><silent><expr> [     ":<C-U>WhichKey '['<CR>" |
         \ nnoremap <buffer><silent><expr> ]     ":<C-U>WhichKey 'd'<CR>" |
-        "\ nnoremap <buffer><silent><expr> g     ":<C-U>WhichKey 'g'<CR>" |
+        \ nnoremap <buffer><silent><expr> g     ":<C-U>WhichKey 'g'<CR>" |
         " EOL
 augroup END
-" Note: it does not support vim default mappings because they are not in nmap,
-" such as 'gJ'
-"nnoremap <silent> g             :<C-U>WhichKey 'g'<CR>
 let g:which_key_use_floating_win = 0
+let g:which_key_fallback_to_native_key = 1
 
 " highlightedyank
 let g:highlightedyank_highlight_duration = 200
