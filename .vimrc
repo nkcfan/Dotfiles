@@ -25,6 +25,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
+Plug 'edkolev/tmuxline.vim'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'svermeulen/vim-cutlass'
 Plug 'jpalardy/vim-slime'

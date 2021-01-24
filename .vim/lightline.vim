@@ -1,6 +1,5 @@
 " special char ref: https://github.com/source-foundry/Hack/issues/124
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' },
       \ 'active': {
@@ -32,6 +31,25 @@ let g:lightline = {
       \   'indicator': 'LineNoIndicator',
       \ },
       \ }
+
+" Use vim colors in lightline.vim
+" Note: ColorScheme autocmd must appear before you set colorscheme
+augroup LightlineOnColorScheme
+  autocmd!
+  autocmd VimEnter,ColorScheme * silent! let g:lightline.colorscheme = g:colors_name
+  " autocmd VimLeave * !tmux source-file ~/.tmux.conf
+augroup END
+
+" Use lightline.vim colors in tmux
+" Note: ColorScheme autocmd must appear before you set colorscheme
+" TODO: add VisualEnter if supported by vim
+augroup tmuxline
+  autocmd!
+  autocmd VimEnter,ColorScheme,InsertLeave * silent! Tmuxline lightline
+  autocmd InsertEnter * silent! Tmuxline lightline_insert
+  "autocmd VisualEnter * silent! Tmuxline lightline_visual
+  autocmd VimLeave * !tmux source-file ~/.tmux.conf
+augroup END
 
 if !exists('*nvim_buf_set_virtual_text')
     call add(g:lightline.active.right, ['blame'])
