@@ -115,6 +115,10 @@ set completeopt-=preview
 set completeopt+=longest
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+" Show substitution effect incrementally
+if exists('&inccommand')
+    set inccommand=split
+endif
 
 " Dictionary
 if has('win32')
