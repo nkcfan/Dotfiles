@@ -340,6 +340,8 @@ cnoremap <expr> <Down>  pumvisible() ? "<C-N>" : "<Down>"
 " C-BS
 noremap! <C-H> <C-W>
 noremap! <C-BS> <C-W>
+vnoremap <BS> "_d
+inoremap <M-BS> <C-W>
 
 " Natural Home key
 " ref: https://stackoverflow.com/a/15459337/2514803
