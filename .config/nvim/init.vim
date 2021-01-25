@@ -28,7 +28,7 @@ if has('nvim-0.5.0')
                     init_selection = "vii",
                     scope_incremental = "ii",
                     node_incremental = "<CR>",
-                    node_decremental = "<BS>",
+                    node_decremental = "<S-CR>",
                 },
             },
             refactor = {
