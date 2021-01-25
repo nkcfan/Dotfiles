@@ -509,6 +509,7 @@ endfunction
 " Symbol renaming.
 nnoremap <Leader>rn                         :ALERename<CR>
 vnoremap <Leader>fm                         :Neoformat<CR>
+nnoremap <Leader>fm                         :ALEFix<CR>
 
 " diff mode
 " Note: disable internal diff option in order to enable FilterWritePost
