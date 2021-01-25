@@ -5,6 +5,12 @@ source ~/.vimrc
 set winblend=5
 set pumblend=5
 
+" highlightedyank
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * lua vim.highlight.on_yank()
+augroup END
+
 if has('nvim-0.5.0')
     lua <<EOF
 require "nvim-treesitter.configs".setup {

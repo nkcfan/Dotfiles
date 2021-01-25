@@ -18,7 +18,6 @@ else
 endif
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'machakann/vim-highlightedyank'
 Plug 'sbdchd/neoformat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
@@ -549,9 +548,6 @@ augroup fugitive_which_key
 augroup END
 let g:which_key_use_floating_win = 0
 let g:which_key_fallback_to_native_key = 1
-
-" highlightedyank
-let g:highlightedyank_highlight_duration = 200
 
 " Yank to tmux
 if exists("##TextYankPost")
