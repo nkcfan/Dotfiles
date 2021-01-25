@@ -9,11 +9,13 @@ call plug#begin('~/.vim/bundle')
 if has('nvim-0.5.0')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
     Plug 'nvim-treesitter/nvim-treesitter-refactor'
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
+    Plug 'wellle/targets.vim'
+    Plug 'tommcdo/vim-exchange'
 endif
-Plug 'wellle/targets.vim'
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
@@ -37,7 +39,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-ninja-feet'
 Plug 'unblevable/quick-scope'
 Plug 'ConradIrwin/vim-bracketed-paste'
