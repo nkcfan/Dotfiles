@@ -40,17 +40,6 @@ augroup LightlineOnColorScheme
   " autocmd VimLeave * !tmux source-file ~/.tmux.conf
 augroup END
 
-" Use lightline.vim colors in tmux
-" Note: ColorScheme autocmd must appear before you set colorscheme
-" TODO: add VisualEnter if supported by vim
-augroup tmuxline
-  autocmd!
-  autocmd VimEnter,ColorScheme,InsertLeave * silent! Tmuxline lightline
-  autocmd InsertEnter * silent! Tmuxline lightline_insert
-  "autocmd VisualEnter * silent! Tmuxline lightline_visual
-  autocmd VimLeave * !tmux source-file ~/.tmux.conf
-augroup END
-
 if !exists('*nvim_buf_set_virtual_text')
     call add(g:lightline.active.right, ['blame'])
 endif
