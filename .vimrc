@@ -77,7 +77,7 @@ set path+=**
 set wildmenu
 set wildmode=longest:full,full
 set encoding=utf-8
-set selection=exclusive
+"set selection=exclusive        " conflict with nvim-treesitter
 set foldlevelstart=20
 " Always show statusline
 set laststatus=2
