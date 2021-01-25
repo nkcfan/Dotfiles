@@ -510,6 +510,7 @@ endfunction
 " Symbol renaming.
 nnoremap <Leader>rn                         :ALERename<CR>
 vnoremap <Leader>fm                         :Neoformat<CR>
+vnoremap <Leader>fi                         :Neoformat! 
 nnoremap <Leader>fm                         :ALEFix<CR>
 
 " diff mode
