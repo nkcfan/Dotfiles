@@ -17,6 +17,7 @@ Plug 'wellle/targets.vim'
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
+Plug 'sbdchd/neoformat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'w0rp/ale'
@@ -507,6 +508,7 @@ function! s:show_documentation()
 endfunction
 " Symbol renaming.
 nnoremap <Leader>rn                         :ALERename<CR>
+vnoremap <Leader>fm                         :Neoformat<CR>
 
 " diff mode
 " Note: disable internal diff option in order to enable FilterWritePost
