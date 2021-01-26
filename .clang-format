@@ -45,6 +45,7 @@ BreakBeforeBinaryOperators: All
 BreakBeforeBraces: Custom
 BraceWrapping:
   AfterControlStatement: true
+  AfterCaseLabel: true
   BeforeCatch: true
   BeforeElse: true
   AfterFunction: true
