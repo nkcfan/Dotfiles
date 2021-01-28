@@ -46,6 +46,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'stephpy/vim-yaml'
 Plug 'joshdick/onedark.vim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/sonokai'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Shougo/echodoc.vim', { 'on': ['EchoDocEnable'] }
@@ -268,6 +269,11 @@ if !exists('g:GuiLoaded')
     let g:gruvbox_guisp_fallback = "bg"
 endif
 colorscheme gruvbox
+" sonokai
+let g:sonokai_style = "shusia"
+let g:sonokai_disable_italic_comment = 1
+" let g:sonokai_transparent_background = 1
+colorscheme sonokai
 
 function! AtEndOfLine()
     return col(".") >= col("$") - 1
