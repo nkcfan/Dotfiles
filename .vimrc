@@ -339,8 +339,6 @@ cnoremap <C-V> <Nop>
 if !has("nvim") && has("patch-8.0.1108")
     tnoremap <C-V> <Nop>
 endif
-" Github link
-vnoremap <C-G> :Gbrowse!<CR>
 " Use <CR> to confirm completion, `<C-G>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <CR>    pumvisible() ? "<C-Y>" : "<C-G>u<CR>"
