@@ -440,7 +440,9 @@ nmap <silent> <C-S-Down> <Plug>(ale_next):call <SID>MaybeMiddle()<CR>
 " ALE config
 let g:ale_lint_on_text_changed = 'never'
 " Note: Mouse move triggers mess characters when enabling balloons together with coc.nvim coc-references window open
-"let g:ale_set_balloons=1
+" Note: seems working well with coc-fzf, only in vim
+let g:ale_set_balloons=1
+let g:ale_floating_preview=1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_enabled=1
 let g:ale_sh_bashate_options = '-i E006'
