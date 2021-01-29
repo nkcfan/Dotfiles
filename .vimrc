@@ -293,6 +293,11 @@ noremap  <LocalLeader>gk                    :Gbrowse!<CR>
 nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
+" Symbol renaming.
+nnoremap <Leader>rn                         :ALERename<CR>
+vnoremap <Leader>fm                         :Neoformat<CR>
+nnoremap <Leader>fm                         :ALEFix<CR>
+vnoremap <Leader>fi                         :Neoformat! 
 
 " Key naming
 execute "set <C-Home>=\e[1;5H"
@@ -517,11 +522,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-" Symbol renaming.
-nnoremap <Leader>rn                         :ALERename<CR>
-vnoremap <Leader>fm                         :Neoformat<CR>
-vnoremap <Leader>fi                         :Neoformat! 
-nnoremap <Leader>fm                         :ALEFix<CR>
 
 " diff mode
 " Note: disable internal diff option in order to enable FilterWritePost
