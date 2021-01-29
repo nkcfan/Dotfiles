@@ -222,7 +222,8 @@ endif
 " Set mouse in all mode
 set mouse+=a
 " Fix mouse dragging splitters inside tmux
-if &term =~ '^screen' || &term =~ '^tmux'
+" Note: ttymouse is not supported in nvim
+if !has('nvim') && (&term =~ '^screen' || &term =~ '^tmux')
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
