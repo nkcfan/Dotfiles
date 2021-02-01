@@ -1,5 +1,10 @@
 #!/bin/bash -ex
 
+# coc.nvim dependencies
+python2 -m pip install pynvim jedi
+python3 -m pip install pynvim jedi
+npm install -g neovim
+
 # cargo crates
 # Note: depends on pkg-config libssl-dev
 cargo install cargo-update
