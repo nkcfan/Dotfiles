@@ -225,17 +225,6 @@ if !has('nvim') && (&term =~ '^screen' || &term =~ '^tmux')
     set ttymouse=xterm2
 endif
 
-" quick-scope
-let g:qs_second_highlight=0
-" Trigger a highlight in the appropriate direction when pressing these keys:
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" Note: Customize colors before you set colorscheme
-augroup qs_colors
-  autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary cterm=underline gui=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary cterm=underline gui=underline
-augroup END
-
 " Colors
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -258,19 +247,7 @@ let g:python_highlight_all = 1
 
 " onedark colorscheme
 colorscheme onedark
-" gruvbox
-let g:gruvbox_contrast_dark = "hard"
-let g:gitgutter_override_sign_column_highlight = 1
-let g:gruvbox_invert_selection = 0
-if !exists('g:GuiLoaded')
-    let g:gruvbox_guisp_fallback = "bg"
-endif
 colorscheme gruvbox
-" sonokai
-let g:sonokai_style = "shusia"
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-" let g:sonokai_transparent_background = 1
 colorscheme sonokai
 
 function! AtEndOfLine()
@@ -407,53 +384,10 @@ nmap <M-Up> <plug>(signify-prev-hunk):call <SID>MaybeMiddle()<CR>
 " grep
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 
-" gutentags
-"let g:gutentags_trace=1
-let g:gutentags_ctags_extra_args = ['--languages=AnsiblePlaybook,Autoconf,Automake,Awk,Basic,C,C#,C++,Clojure,CPreProcessor,CUDA,DosBatch,Erlang,Fortran,Go,Iniconf,Java,JavaProperties,JavaScript,Lisp,Lua,M4,Make,MatLab,Maven2,ObjectiveC,OCaml,Pascal,Perl,Perl6,pod,Python,PythonLoggingConfig,R,RpmSpec,RSpec,Ruby,Rust,Scheme,Sh,SQL,SystemVerilog,Tcl,TclOO,Tex,Verilog,VHDL,Vim,XSLT,YACC,Yaml']
-let g:gutentags_ctags_extra_args += ['--tag-relative=yes', '--fields=+ailmnS', '--c-kinds=+p', '--c++-kinds=+p', '--extras=+q']
-let g:gutentags_file_list_command = expand('~/.cargo/bin/rg --files')
-let g:gutentags_ctags_exclude = ['*.ini', '*.min.js', '*.css']
-augroup MyGutentagsStatusLineRefresher
-    autocmd!
-    autocmd User GutentagsUpdating call lightline#update()
-    autocmd User GutentagsUpdated call lightline#update()
-augroup END
-
-" Prepare system wide ctags
-let g:gutentags_ctags_executable = 'ctags'
-let s:systags = expand('~/.vim/systags')
-let s:sysincludes = ['/usr/include', '/usr/local/include']
-if !filereadable(s:systags) && executable(g:gutentags_ctags_executable)
-    let cmd = join([g:gutentags_ctags_executable, '-R', '-f', s:systags] + g:gutentags_ctags_extra_args + s:sysincludes)
-    call system(cmd)
-endif
-let &tags .= ',' . s:systags
-
-" vim-better-whitespace
-let g:strip_whitelines_at_eof = 1
-let g:show_spaces_that_precede_tabs = 1
-
 " ALE
 " Moving between ALE warnings and errors quickly
 nmap <silent> <C-S-Up> <Plug>(ale_previous):call <SID>MaybeMiddle()<CR>
 nmap <silent> <C-S-Down> <Plug>(ale_next):call <SID>MaybeMiddle()<CR>
-" ALE config
-let g:ale_lint_on_text_changed = 'never'
-" Note: Mouse move triggers mess characters when enabling balloons together with coc.nvim coc-references window open
-" Note: seems working well with coc-fzf, only in vim
-let g:ale_set_balloons=1
-let g:ale_floating_preview=1
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_enabled=1
-let g:ale_sh_bashate_options = '-i E006'
-" Disable ALE text highlight in insert mode to help readability
-" Note: Leave insert mode by <Esc>, if <C-C> then ALE text highlight will not
-" come back
-augroup disable_ale_insert
-    autocmd!
-    autocmd InsertEnter * silent! let g:ale_enabled=0 | call ale#highlight#UpdateHighlights()
-    autocmd InsertLeave * silent! let g:ale_enabled=1 | call ale#highlight#UpdateHighlights()
-augroup END
 
 " fzf
 nnoremap <LocalLeader>p :FZF -m<CR>
@@ -468,30 +402,6 @@ omap <Leader><tab> <plug>(fzf-maps-o)
 imap <C-X><C-F> <plug>(fzf-complete-path)
 imap <C-X><C-J> <plug>(fzf-complete-file-ag)
 imap <C-X><C-L> <plug>(fzf-complete-line)
-" Starting fzf in a popup window
-" Required:
-" - width [float range [0 ~ 1]]
-" - height [float range [0 ~ 1]]
-" Optional:
-" - xoffset [float default 0.5 range [0 ~ 1]]
-" - yoffset [float default 0.5 range [0 ~ 1]]
-" - highlight [string default 'Comment']: Highlight group for border
-" - border [string default 'rounded']: Border style
-"   - 'rounded' / 'sharp' / 'horizontal' / 'vertical' / 'top' / 'bottom' / 'left' / 'right'
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-" <M-a> to select all in fzf window
-" Note: this is required because no default binding
-let $FZF_DEFAULT_OPTS = '--bind alt-a:toggle-all'
-" Tell FZF to use RG - so we can ignore files, but keep git controlled files
-if has('win32')
-    let $FZF_DEFAULT_COMMAND = '( rg --files --path-separator "//" & git ls-files ) | sort /unique'
-else
-    let $FZF_DEFAULT_COMMAND = '{ rg --files --hidden & git ls-files; } | sort -u'
-endif
-
-" vim-livedown
-let g:livedown_autorun = 1
-let g:livedown_open = 0
 
 " coc.nvim
 " GoTo code navigation.
@@ -539,26 +449,6 @@ augroup diff_mode
     autocmd BufWinLeave fugitive://*
         \ exec "colorscheme " . g:colors_name |
 augroup END
-
-" vim-which-key
-nnoremap <silent><expr> <Leader>            ":<C-U>WhichKey '" . get(g:,"mapleader","\\") . "'<CR>"
-nnoremap <silent><expr> <LocalLeader>       ":<C-U>WhichKey '" . get(g:,"maplocalleader","\\") . "'<CR>"
-nnoremap <silent> g                         :<C-U>WhichKey 'g'<CR>
-" Show vim-which-key in fugitive filetype
-augroup fugitive_which_key
-    autocmd!
-    " Note: it does not support vim default mappings because they are not in nmap
-    autocmd FileType fugitive
-        \ nnoremap <buffer><silent><expr> c     ":<C-U>WhichKey 'c'<CR>" |
-        \ nnoremap <buffer><silent><expr> d     ":<C-U>WhichKey 'd'<CR>" |
-        \ nnoremap <buffer><silent><expr> r     ":<C-U>WhichKey 'r'<CR>" |
-        \ nnoremap <buffer><silent><expr> [     ":<C-U>WhichKey '['<CR>" |
-        \ nnoremap <buffer><silent><expr> ]     ":<C-U>WhichKey 'd'<CR>" |
-        \ nnoremap <buffer><silent><expr> g     ":<C-U>WhichKey 'g'<CR>" |
-        " EOL
-augroup END
-let g:which_key_use_floating_win = 0
-let g:which_key_fallback_to_native_key = 1
 
 " Yank to tmux
 if exists("##TextYankPost")
