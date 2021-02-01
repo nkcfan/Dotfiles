@@ -55,7 +55,6 @@ Plug 'liuchengxu/vim-which-key'
 " Initialize plugin system
 call plug#end()
 
-source ~/.vim/lightline.vim
 source ~/.vim/searchable.vim
 
 syntax on
@@ -188,8 +187,6 @@ if !has("nvim") && has("patch-8.0.1108")
     endw
 endif
 
-source ~/.vim/slimux.vim
-
 " tmux will send xterm-style keys when xterm-keys is on
 " ref: http://unix.stackexchange.com/questions/29907/how-to-get-vim-to-work-with-tmux-properly/34723#34723
 if &term =~ '^screen' || &term =~ '^tmux'
@@ -260,7 +257,6 @@ let g:load_doxygen_syntax = 1
 let g:python_highlight_all = 1
 
 " onedark colorscheme
-source ~/.vim/onedark.vim
 colorscheme onedark
 " gruvbox
 let g:gruvbox_contrast_dark = "hard"
