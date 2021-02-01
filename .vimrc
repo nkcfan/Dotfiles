@@ -403,35 +403,6 @@ imap <C-X><C-F> <plug>(fzf-complete-path)
 imap <C-X><C-J> <plug>(fzf-complete-file-ag)
 imap <C-X><C-L> <plug>(fzf-complete-line)
 
-" coc.nvim
-" GoTo code navigation.
-nmap <silent> vv :<C-u>call CocAction('jumpDefinition')<CR>:call <SID>MaybeMiddle()<CR>
-nmap <silent> gD :<C-u>call CocAction('jumpDeclaration')<CR>:call <SID>MaybeMiddle()<CR>
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> rr <Plug>(coc-references)
-" CoC Settings
-let g:coc_global_extensions = [
-            \ 'coc-git',
-            \ 'coc-pyright',
-            \ ]
-" Snippet expand and jump
-let g:coc_snippet_next = '<Tab>'
-let g:coc_snippet_prev = '<S-Tab>'
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  elseif (g:ale_enabled)
-    call ale#hover#ShowAtCursor()
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
 " diff mode
 " Note: disable internal diff option in order to enable FilterWritePost
 set diffopt-=internal
