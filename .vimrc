@@ -245,9 +245,14 @@ set cursorline
 let g:load_doxygen_syntax = 1
 let g:python_highlight_all = 1
 
-" onedark colorscheme
+" Choose a colorscheme
 colorscheme onedark
 colorscheme gruvbox
+" sonokai
+let g:sonokai_style = 'shusia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+" let g:sonokai_transparent_background = 1
 colorscheme sonokai
 
 function! AtEndOfLine()
