@@ -6,7 +6,7 @@ let g:lightline = {
       \   'left': [
       \     [ 'mode', 'paste', 'gutentags', 'cocstatus' ],
       \     [ 'readonly', 'filename', 'modified' ],
-      \     [ 'ctrlpmark', 'fugitive' ]
+      \     [ 'fugitive' ]
       \   ],
       \   'right': [
       \     [ 'lineinfo' ],
@@ -25,7 +25,6 @@ let g:lightline = {
       \   'fileencoding': 'LightlineFileencoding',
       \   'mode': 'LightlineMode',
       \   'modified': 'LightlineModified',
-      \   'ctrlpmark': 'CtrlPMark',
       \   'cocstatus': 'coc#status',
       \   'blame': 'LightlineGitBlame',
       \   'indicator': 'LineNoIndicator',
@@ -93,8 +92,7 @@ endfunction
 function! LightlineFilename()
   "let fname = expand('%:t')
   let fname = fnamemodify(expand("%"), ":~:.")
-  return fname == 'ControlP' && has_key(g:lightline, 'ctrlp_item') ? g:lightline.ctrlp_item :
-        \ &ft == 'tagbar' ? '' :
+  return  &ft == 'tagbar' ? '' :
         \ &ft == 'fugitiveblame' ? '' :
         \ fname =~ '__Gundo\|NERD_tree' ? '' :
         \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
@@ -130,7 +128,6 @@ endfunction
 function! LightlineMode()
   let fname = expand('%:t')
   return fname == '__Tagbar__' ? 'Tagbar' :
-        \ fname == 'ControlP' ? 'CtrlP' :
         \ fname == '__Gundo__' ? 'Gundo' :
         \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
         \ fname =~ 'NERD_tree' ? 'NERDTree' :
@@ -138,33 +135,6 @@ function! LightlineMode()
         \ &ft == 'vimfiler' ? 'VimFiler' :
         \ &ft == 'vimshell' ? 'VimShell' :
         \ winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
-
-function! CtrlPMark()
-  if expand('%:t') =~ 'ControlP' && has_key(g:lightline, 'ctrlp_item')
-    call lightline#link('iR'[g:lightline.ctrlp_regex])
-    return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
-          \ , g:lightline.ctrlp_next], 0)
-  else
-    return ''
-  endif
-endfunction
-
-let g:ctrlp_status_func = {
-  \ 'main': 'CtrlPStatusFunc_1',
-  \ 'prog': 'CtrlPStatusFunc_2',
-  \ }
-
-function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
-  let g:lightline.ctrlp_regex = a:regex
-  let g:lightline.ctrlp_prev = a:prev
-  let g:lightline.ctrlp_item = a:item
-  let g:lightline.ctrlp_next = a:next
-  return lightline#statusline(0)
-endfunction
-
-function! CtrlPStatusFunc_2(str)
-  return lightline#statusline(0)
 endfunction
 
 let g:tagbar_status_func = 'TagbarStatusFunc'
