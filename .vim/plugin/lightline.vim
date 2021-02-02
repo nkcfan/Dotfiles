@@ -25,7 +25,7 @@ let g:lightline = {
       \   'fileencoding': 'LightlineFileencoding',
       \   'mode': 'LightlineMode',
       \   'modified': 'LightlineModified',
-      \   'cocstatus': 'coc#status',
+      \   'cocstatus': 'LightlineCocStatus',
       \   'blame': 'LightlineGitBlame',
       \   'indicator': 'LineNoIndicator',
       \ },
@@ -56,7 +56,6 @@ let g:lightline.component_type = {
       \   'linter_warnings': 'warning',
       \   'linter_errors': 'error',
       \   'linter_ok': 'right',
-      \   'cocstatus': 'info',
       \ }
 let g:lightline#ale#indicator_checking = ''
 let g:lightline#ale#indicator_infos = "🛈 "
@@ -73,6 +72,15 @@ augroup LightlineOnChanges
   autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
   autocmd User CocGitStatusChange call lightline#update()
 augroup end
+
+" coc.nvim
+function! LightlineCocStatus() abort
+  if exists('*coc#status')
+    return coc#status()
+  else
+    return ''
+  endif
+endfunction
 
 " coc-git
 function! LightlineGitBlame() abort
