@@ -32,10 +32,10 @@ let g:lightline = {
       \ }
 
 " Use vim colors in lightline.vim
-" Note: ColorScheme autocmd must appear before you set colorscheme
+let g:lightline.colorscheme = g:colors_name
 augroup LightlineOnColorScheme
   autocmd!
-  autocmd VimEnter,ColorScheme * silent! let g:lightline.colorscheme = g:colors_name | call lightline#init()
+  autocmd ColorScheme * silent! let g:lightline.colorscheme = g:colors_name
   " autocmd VimLeave * !tmux source-file ~/.tmux.conf
 augroup END
 
