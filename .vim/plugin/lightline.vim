@@ -17,7 +17,7 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
-      \   'gutentags': 'gutentags#statusline',
+      \   'gutentags': 'LightlineGutentags',
       \   'fugitive': 'LightlineFugitive',
       \   'filename': 'LightlineFilename',
       \   'fileformat': 'LightlineFileformat',
@@ -72,6 +72,15 @@ augroup LightlineOnChanges
   autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
   autocmd User CocGitStatusChange call lightline#update()
 augroup end
+
+" gutentags
+function! LightlineGutentags() abort
+  if exists('*gutentags#statusline')
+    return gutentags#statusline()
+  else
+    return ''
+  endif
+endfunction
 
 " coc.nvim
 function! LightlineCocStatus() abort
