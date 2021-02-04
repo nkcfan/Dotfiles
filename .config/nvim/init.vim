@@ -13,4 +13,5 @@ augroup END
 
 if has('nvim-0.5.0')
     lua require('treesitter_config')
+    nnoremap <LocalLeader>th                    :TSBufToggle highlight<CR>
 endif
