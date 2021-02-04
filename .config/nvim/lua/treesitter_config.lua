@@ -1,3 +1,33 @@
+local define_modules = require("nvim-treesitter").define_modules
+local query = require("nvim-treesitter.query")
+
+local foldmethod_backups = {}
+local foldexpr_backups = {}
+
+-- folding module
+-- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/475#issuecomment-748532035
+define_modules(
+    {
+        folding = {
+            enable = true,
+            attach = function(bufnr)
+                -- Fold settings are actually window based...
+                foldmethod_backups[bufnr] = vim.wo.foldmethod
+                foldexpr_backups[bufnr] = vim.wo.foldexpr
+                vim.wo.foldmethod = "expr"
+                vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+            end,
+            detach = function(bufnr)
+                vim.wo.foldmethod = foldmethod_backups[bufnr]
+                vim.wo.foldexpr = foldexpr_backups[bufnr]
+                foldmethod_backups[bufnr] = nil
+                foldexpr_backups[bufnr] = nil
+            end,
+            is_supported = query.has_folds
+        }
+    }
+)
+
 require "nvim-treesitter.configs".setup {
     ensure_installed = {
         "bash",
@@ -9,6 +39,7 @@ require "nvim-treesitter.configs".setup {
         "python",
         "yaml"
     }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    folding,
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = {} -- list of language that will be disabled
