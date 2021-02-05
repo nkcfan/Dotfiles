@@ -395,7 +395,7 @@ nmap <silent> <C-S-Up> <Plug>(ale_previous):call <SID>MaybeMiddle()<CR>
 nmap <silent> <C-S-Down> <Plug>(ale_next):call <SID>MaybeMiddle()<CR>
 
 " fzf
-nnoremap <LocalLeader>p :FZF -m<CR>
+nnoremap <C-P> :FZF -m<CR>
 nnoremap <silent> <M-p> :Buffers<CR>
 " Find in current buffer
 nnoremap <C-F> :BLines<Space><C-R>=expand('<cword>')<CR>
