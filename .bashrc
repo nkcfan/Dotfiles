@@ -144,6 +144,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Setting fd as the default source for fzf
+UNAME=`uname`
+if [[ "$UNAME" == "Linux" ]]; then
+    export FZF_DEFAULT_COMMAND='{ rg --files --hidden & git ls-files; } | sort -u'
+else # Windows
+    export FZF_DEFAULT_COMMAND='( rg --files --path-separator "//" & git ls-files ) | sort /unique'
+fi
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Key mappings for fzf
 # ref: https://github.com/junegunn/fzf/issues/546#issuecomment-213891483
