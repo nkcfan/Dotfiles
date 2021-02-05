@@ -145,6 +145,10 @@ if ! shopt -oq posix; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Key mappings for fzf
+# ref: https://github.com/junegunn/fzf/issues/546#issuecomment-213891483
+bind -x '"\C-p": fzf-file-widget'
+bind '"\C-t": transpose-chars'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
