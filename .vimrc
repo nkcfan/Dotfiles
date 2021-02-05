@@ -388,6 +388,7 @@ nmap <M-Up> <plug>(signify-prev-hunk):call <SID>MaybeMiddle()<CR>
 
 " grep
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
+set grepformat^=%f:%l:%c:%m
 
 " ALE
 " Moving between ALE warnings and errors quickly
