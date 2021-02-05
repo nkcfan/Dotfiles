@@ -259,6 +259,15 @@ function! AtEndOfLine()
     return col(".") >= col("$") - 1
 endfunction
 
+function UpgradeAll()
+    if exists('*coc#util#update_extensions')
+        call coc#util#update_extensions()
+    endif
+    execute 'PlugUpgrade'
+    execute 'PlugClean!'
+    execute 'PlugUpdate --sync'
+endfunction
+
 " Leader key mappings
 " Note: do not use format like <KeyName>, which is not compatible with
 " vim-which-key
@@ -266,7 +275,7 @@ let maplocalleader = " "
 let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
-nnoremap <LocalLeader>U                     :CocUpdateSync<CR>:PlugUpgrade<CR>:PlugClean!<CR>:PlugUpdate --sync<CR>
+nnoremap <LocalLeader>U                     :call UpgradeAll()<CR>
 nnoremap <LocalLeader>gb                    :Gblame<CR>
 noremap  <LocalLeader>gk                    :Gbrowse!<CR>
 nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
