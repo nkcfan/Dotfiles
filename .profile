@@ -56,6 +56,7 @@ export TM_C_FLAGS="$TM_C_FLAGS -Wc++11-extensions"
 
 UNAME=`uname`
 if [[ "$UNAME" == "Linux" ]]; then
+    export EDITOR="vi"
     # Enable rbenv shims and autocompletion
     eval "$(rbenv init -)"
     # Set manpage to use color
