@@ -178,6 +178,10 @@ if exists('##CmdlineEnter')
     augroup END
 endif
 
+" Key naming
+execute "set <C-Home>=\e[1;5H"
+execute "set <C-End>=\e[1;5F"
+
 " map the escape sequences to their Alt combinations
 " ref: https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim/10216459#10216459
 " map the escape sequences to their Alt combinations in terminal mode
@@ -296,10 +300,6 @@ nnoremap <Leader>rn                         :ALERename<CR>
 vnoremap <Leader>fm                         :Neoformat<CR>
 nnoremap <Leader>fm                         :ALEFix<CR>
 vnoremap <Leader>fi                         :Neoformat! 
-
-" Key naming
-execute "set <C-Home>=\e[1;5H"
-execute "set <C-End>=\e[1;5F"
 
 nnoremap <C-Home> gg0
 nnoremap <C-End> G$
