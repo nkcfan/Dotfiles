@@ -61,10 +61,13 @@ syntax on
 let g:xml_syntax_folding = 1
 
 " Detect filetype
-autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
-autocmd FileType gitcommit setlocal spell
-autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
-autocmd FileType xml setlocal foldmethod=syntax | :%foldopen!
+augroup detect_filetype
+    autocmd!
+    autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
+    autocmd FileType gitcommit setlocal spell
+    autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+    autocmd FileType xml setlocal foldmethod=syntax | :%foldopen!
+augroup END
 
 " Add to .vimrc to enable project-specific vimrc
 " exrc allows loading local executing local rc files.
