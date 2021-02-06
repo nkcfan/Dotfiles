@@ -65,6 +65,7 @@ augroup detect_filetype
     autocmd!
     autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
     autocmd FileType gitcommit setlocal spell
+    autocmd User Fugitive if &buftype == '' | :Git! difftool | :cclose \| endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
     autocmd FileType xml setlocal foldmethod=syntax | :%foldopen!
 augroup END
@@ -295,6 +296,7 @@ noremap  <LocalLeader>gk                    :Gbrowse!<CR>
 nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
+nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
 " Symbol renaming.
 nnoremap <Leader>rn                         :ALERename<CR>
 vnoremap <Leader>fm                         :Neoformat<CR>
@@ -314,6 +316,12 @@ nmap <silent> <expr> <C-S-Up>               ':<C-U>' . v:count . 'labove<CR>:cal
 nmap <silent> <expr> <C-S-Down>             ':<C-U>' . v:count . 'lbelow<CR>:call <SID>MaybeMiddle()<CR>'
 nnoremap <silent> <C-S-Left>                :lolder<CR>
 nnoremap <silent> <C-S-Right>               :lnewer<CR>
+
+" Move quickly in quickfix list from current line
+nmap <silent> <expr> <S-Down>               ':<C-U>' . v:count . 'cbelow<CR>:call <SID>MaybeMiddle()<CR>'
+nmap <silent> <expr> <S-Up>                 ':<C-U>' . v:count . 'cabove<CR>:call <SID>MaybeMiddle()<CR>'
+nnoremap <silent> <S-Left>                  :colder<CR>
+nnoremap <silent> <S-Right>                 :cnewer<CR>
 
 " Move by virtual lines when used without a count, and by physical lines when used with a count
 " ref: https://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
@@ -408,9 +416,6 @@ omap ic <plug>(signify-motion-inner-pending)
 xmap ic <plug>(signify-motion-inner-visual)
 omap ac <plug>(signify-motion-outer-pending)
 xmap ac <plug>(signify-motion-outer-visual)
-" Hunk jumping
-nmap <M-Down> <plug>(signify-next-hunk):call <SID>MaybeMiddle()<CR>
-nmap <M-Up> <plug>(signify-prev-hunk):call <SID>MaybeMiddle()<CR>
 
 " grep
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
