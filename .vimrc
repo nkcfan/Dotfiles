@@ -305,6 +305,13 @@ nnoremap <M-w> :confirm bdelete<CR>
 nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
+
+" Move quickly in loclist from current line
+nmap <silent> <expr> <C-S-Up>               ':<C-U>' . v:count . 'labove<CR>:call <SID>MaybeMiddle()<CR>'
+nmap <silent> <expr> <C-S-Down>             ':<C-U>' . v:count . 'lbelow<CR>:call <SID>MaybeMiddle()<CR>'
+nnoremap <silent> <C-S-Left>                :lolder<CR>
+nnoremap <silent> <C-S-Right>               :lnewer<CR>
+
 " Move by virtual lines when used without a count, and by physical lines when used with a count
 " ref: https://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
 " And push long jump into jumplist
@@ -405,11 +412,6 @@ nmap <M-Up> <plug>(signify-prev-hunk):call <SID>MaybeMiddle()<CR>
 " grep
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 set grepformat^=%f:%l:%c:%m
-
-" ALE
-" Moving between ALE warnings and errors quickly
-nmap <silent> <C-S-Up> <Plug>(ale_previous):call <SID>MaybeMiddle()<CR>
-nmap <silent> <C-S-Down> <Plug>(ale_next):call <SID>MaybeMiddle()<CR>
 
 " fzf
 nnoremap <C-P> :FZF -m<CR>
