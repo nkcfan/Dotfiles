@@ -418,8 +418,6 @@ set grepformat^=%f:%l:%c:%m
 " fzf
 nnoremap <C-P> :FZF -m<CR>
 nnoremap <silent> <M-p> :Buffers<CR>
-" Find in current buffer
-nnoremap <C-F> :BLines<Space><C-R>=expand('<cword>')<CR>
 " Mapping selecting mappings
 nmap <Leader><tab> <plug>(fzf-maps-n)
 xmap <Leader><tab> <plug>(fzf-maps-x)
