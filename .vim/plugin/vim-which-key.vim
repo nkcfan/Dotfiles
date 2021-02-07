@@ -12,7 +12,6 @@ augroup fugitive_which_key
         \ nnoremap <buffer><silent><expr> r     ":<C-U>WhichKey 'r'<CR>" |
         \ nnoremap <buffer><silent><expr> [     ":<C-U>WhichKey '['<CR>" |
         \ nnoremap <buffer><silent><expr> ]     ":<C-U>WhichKey 'd'<CR>" |
-        \ nnoremap <buffer><silent><expr> g     ":<C-U>WhichKey 'g'<CR>" |
         " EOL
 augroup END
 let g:which_key_use_floating_win = 0
