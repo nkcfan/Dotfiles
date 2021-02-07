@@ -56,6 +56,7 @@ Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
 source ~/.vim/searchable.vim
+source ~/.vim/quickfix.vim
 
 syntax on
 let g:xml_syntax_folding = 1
@@ -143,7 +144,7 @@ endif
 " Scroll hit to middle if not on same page
 " If cursor is in first or last line of window, scroll to middle line.
 " ref: https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
-function s:MaybeMiddle()
+function MaybeMiddle()
   if winline() == 1 || winline() == winheight(0)
     normal! zz
   endif
@@ -310,18 +311,6 @@ nnoremap <M-w> :confirm bdelete<CR>
 nnoremap <expr><C-Left> "b"
 nnoremap <expr><C-Right> "w"
 nnoremap <expr><BS> "X"
-
-" Move quickly in loclist from current line
-nmap <silent> <expr> <C-S-Up>               ':<C-U>' . v:count . 'labove<CR>:call <SID>MaybeMiddle()<CR>'
-nmap <silent> <expr> <C-S-Down>             ':<C-U>' . v:count . 'lbelow<CR>:call <SID>MaybeMiddle()<CR>'
-nnoremap <silent> <C-S-Left>                :lolder<CR>
-nnoremap <silent> <C-S-Right>               :lnewer<CR>
-
-" Move quickly in quickfix list from current line
-nmap <silent> <expr> <S-Down>               ':<C-U>' . v:count . 'cbelow<CR>:call <SID>MaybeMiddle()<CR>'
-nmap <silent> <expr> <S-Up>                 ':<C-U>' . v:count . 'cabove<CR>:call <SID>MaybeMiddle()<CR>'
-nnoremap <silent> <S-Left>                  :colder<CR>
-nnoremap <silent> <S-Right>                 :cnewer<CR>
 
 " Move by virtual lines when used without a count, and by physical lines when used with a count
 " ref: https://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
