@@ -389,12 +389,6 @@ imap <silent> <PageUp> <C-O>1000<C-U>
 imap <silent> <PageDown> <C-O>1000<C-D>
 set nostartofline
 
-" Commentary
-xmap <C-Q>  <Plug>Commentary
-nmap <C-Q>  <Plug>Commentary
-omap <C-Q>  <Plug>Commentary
-nmap <C-Q><C-Q> <Plug>CommentaryLine
-
 " Cutlass
 nnoremap m d
 xnoremap m d
