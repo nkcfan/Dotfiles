@@ -1,3 +1,7 @@
+if !exists(':FZF')
+    finish
+endif
+
 " Starting fzf in a popup window
 " Required:
 " - width [float range [0 ~ 1]]
@@ -18,3 +22,17 @@ if empty($FZF_DEFAULT_COMMAND)
 else
     let $FZF_DEFAULT_COMMAND = $FZF_DEFAULT_COMMAND
 endif
+
+" Insert mode completion
+" imap <C-X><C-K> <plug>(fzf-complete-word)
+imap <C-X><C-F> <plug>(fzf-complete-path)
+imap <C-X><C-J> <plug>(fzf-complete-file-ag)
+imap <C-X><C-L> <plug>(fzf-complete-line)
+
+" Mapping selecting mappings
+nmap <Leader><tab> <plug>(fzf-maps-n)
+xmap <Leader><tab> <plug>(fzf-maps-x)
+omap <Leader><tab> <plug>(fzf-maps-o)
+
+nnoremap <C-P> :FZF -m<CR>
+nnoremap <silent> <M-p> :Buffers<CR>

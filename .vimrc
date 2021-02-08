@@ -406,18 +406,6 @@ xmap ac <plug>(signify-motion-outer-visual)
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 set grepformat^=%f:%l:%c:%m
 
-" fzf
-nnoremap <C-P> :FZF -m<CR>
-nnoremap <silent> <M-p> :Buffers<CR>
-" Mapping selecting mappings
-nmap <Leader><tab> <plug>(fzf-maps-n)
-xmap <Leader><tab> <plug>(fzf-maps-x)
-omap <Leader><tab> <plug>(fzf-maps-o)
-" Insert mode completion
-imap <C-X><C-F> <plug>(fzf-complete-path)
-imap <C-X><C-J> <plug>(fzf-complete-file-ag)
-imap <C-X><C-L> <plug>(fzf-complete-line)
-
 " diff mode
 " Note: disable internal diff option in order to enable FilterWritePost
 set diffopt-=internal
