@@ -151,29 +151,31 @@ function MaybeMiddle()
 endfunction
 
 " incsearch
-set incsearch
+" Disable incsearch/hlsearch because default on in Neovim
+set noincsearch
+set nohlsearch
 if exists('##CmdlineEnter')
     augroup vimrc-incsearch-highlight
         autocmd!
         if (has("nvim"))
             " nvim does not support `[ch]` pattern
-            autocmd CmdlineEnter / :set hlsearch
+            autocmd CmdlineEnter / set incsearch | set hlsearch
             autocmd CmdlineEnter / cnoremap <Tab> <C-G>
             autocmd CmdlineEnter / cnoremap <S-Tab> <C-T>
-            autocmd CmdlineLeave / :set nohlsearch
+            autocmd CmdlineLeave / set noincsearch | set nohlsearch
             autocmd CmdlineLeave / cunmap <Tab>
             autocmd CmdlineLeave / cunmap <S-Tab>
-            autocmd CmdlineEnter \? :set hlsearch
+            autocmd CmdlineEnter \? set incsearch | set hlsearch
             autocmd CmdlineEnter \? cnoremap <Tab> <C-G>
             autocmd CmdlineEnter \? cnoremap <S-Tab> <C-T>
-            autocmd CmdlineLeave \? :set nohlsearch
+            autocmd CmdlineLeave \? set noincsearch | set nohlsearch
             autocmd CmdlineLeave \? cunmap <Tab>
             autocmd CmdlineLeave \? cunmap <S-Tab>
         else
-            autocmd CmdlineEnter [/\?] :set hlsearch
+            autocmd CmdlineEnter [/\?] set incsearch | set hlsearch
             autocmd CmdlineEnter [/\?] cnoremap <Tab> <C-G>
             autocmd CmdlineEnter [/\?] cnoremap <S-Tab> <C-T>
-            autocmd CmdlineLeave [/\?] :set nohlsearch
+            autocmd CmdlineLeave [/\?] set noincsearch | set nohlsearch
             autocmd CmdlineLeave [/\?] cunmap <Tab>
             autocmd CmdlineLeave [/\?] cunmap <S-Tab>
         endif
