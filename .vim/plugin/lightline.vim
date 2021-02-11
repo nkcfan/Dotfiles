@@ -109,13 +109,24 @@ endfunction
 function! LightlineFilename()
   "let fname = expand('%:t')
   let fname = fnamemodify(expand("%"), ":~:.")
-  return  &ft == 'tagbar' ? '' :
-        \ &ft == 'fugitiveblame' ? '' :
-        \ fname =~ '__Gundo\|NERD_tree' ? '' :
-        \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \ &ft == 'unite' ? unite#get_status_string() :
-        \ &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ ('' != fname ? fname : '[No Name]')
+  " Distinguish the current buffer is location list or quickfix
+  " ref: https://stackoverflow.com/a/53491991/2514803
+  if &ft == 'qf'
+    if getwininfo(win_getid())[0]['loclist'] == 1
+      return '<C-S-PageUp> to close loclist'
+    else
+      return '<S-PageUp> to close quickfix'
+    endif
+  else
+    return  &ft == 'tagbar' ? '' :
+          \ &ft == 'qf' ? '<S-Up> to close quickfix' :
+          \ &ft == 'fugitiveblame' ? '' :
+          \ fname =~ '__Gundo\|NERD_tree' ? '' :
+          \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
+          \ &ft == 'unite' ? unite#get_status_string() :
+          \ &ft == 'vimshell' ? vimshell#get_status_string() :
+          \ ('' != fname ? fname : '[No Name]')
+  endif
 endfunction
 
 function! LightlineFugitive()
