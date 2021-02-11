@@ -1,4 +1,7 @@
 " coc.nvim
+if !exists('*CocAction')
+    finish
+endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
