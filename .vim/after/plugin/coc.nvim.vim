@@ -1,4 +1,10 @@
 " coc.nvim
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 " GoTo code navigation.
 nmap <silent> vv :<C-u>call CocAction('jumpDefinition')<CR>
 nmap <silent> gD :<C-u>call CocAction('jumpDeclaration')<CR>
