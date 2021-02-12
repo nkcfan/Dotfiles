@@ -10,17 +10,19 @@ if has('nvim-0.5.0')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
     Plug 'nvim-treesitter/nvim-treesitter-refactor'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
     Plug 'wellle/targets.vim'
     Plug 'tommcdo/vim-exchange'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'antoinemadec/coc-fzf'
 endif
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
 Plug 'shime/vim-livedown'
