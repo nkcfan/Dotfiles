@@ -401,10 +401,10 @@ onoremap gp :normal! vgp<CR>
 " invalidate them too.
 let g:signify_realtime = 0
 " hunk text object
-omap ic <plug>(signify-motion-inner-pending)
-xmap ic <plug>(signify-motion-inner-visual)
-omap ac <plug>(signify-motion-outer-pending)
-xmap ac <plug>(signify-motion-outer-visual)
+omap ih <plug>(signify-motion-inner-pending)
+xmap ih <plug>(signify-motion-inner-visual)
+omap ah <plug>(signify-motion-outer-pending)
+xmap ah <plug>(signify-motion-outer-visual)
 
 " grep
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
