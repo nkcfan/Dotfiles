@@ -13,6 +13,7 @@ if has('nvim-0.5.0')
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
     Plug 'nathunsmitty/nvim-ale-diagnostic'
+    Plug 'ojroques/nvim-lspfuzzy'
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
