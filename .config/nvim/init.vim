@@ -16,6 +16,7 @@ if has('nvim-0.5.0')
     nnoremap <LocalLeader>th                    :TSBufToggle highlight<CR>
 
     lua require('lsp_config')
+    lua require('telescope_config')
     lua require('completion_config')
     let g:completion_auto_change_source = 1
     let g:completion_trigger_keyword_length = 2
