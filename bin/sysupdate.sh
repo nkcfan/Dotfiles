@@ -8,6 +8,8 @@ npm install -g neovim
 # cargo crates
 # Note: depends on pkg-config libssl-dev
 cargo install cargo-update
+cargo install ripgrep
+cargo install bat
 cargo install-update -a
 
 # nvm
