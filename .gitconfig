@@ -6,7 +6,7 @@
 [core]
     excludesfile = ~/.gitignore_global
     autocrlf = input
-    editor = vim
+    editor = vi
     symlinks = true
 [diff]
     tool = vimdiff
