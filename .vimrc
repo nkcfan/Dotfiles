@@ -306,9 +306,6 @@ nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
 " Symbol renaming.
 nnoremap <Leader>rn                         :ALERename<CR>
-vnoremap <Leader>fm                         :Neoformat<CR>
-nnoremap <Leader>fm                         :ALEFix<CR>
-vnoremap <Leader>fi                         :Neoformat! 
 
 nnoremap <C-Home> gg0
 nnoremap <C-End> G$
