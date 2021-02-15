@@ -18,7 +18,7 @@ else
 endif
 Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'sbdchd/neoformat'
+Plug 'Chiel92/vim-autoformat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'w0rp/ale'
