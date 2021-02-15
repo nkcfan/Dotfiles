@@ -91,6 +91,25 @@ require "nvim-treesitter.configs".setup {
                 ["<LocalLeader><LocalLeader>A"] = "@parameter.inner",
                 ["<LocalLeader><LocalLeader>S"] = "@statement.outer"
             }
-        }
+        },
+        move = {
+            enable = true,
+            goto_next_start = {
+                ["]m"] = "@function.outer",
+                ["]]"] = "@class.outer",
+            },
+            goto_next_end = {
+                ["]M"] = "@function.outer",
+                ["]["] = "@class.outer",
+            },
+            goto_previous_start = {
+                ["[m"] = "@function.outer",
+                ["[["] = "@class.outer",
+            },
+            goto_previous_end = {
+                ["[M"] = "@function.outer",
+                ["[]"] = "@class.outer",
+            },
+        },
     }
 }
