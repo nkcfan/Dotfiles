@@ -54,7 +54,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/sonokai'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Shougo/echodoc.vim', { 'on': ['EchoDocEnable'] }
 Plug 'liuchengxu/vim-which-key'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
@@ -92,8 +91,6 @@ set encoding=utf-8
 set foldlevelstart=20
 " Always show statusline
 set laststatus=2
-" To use echodoc/coc.nvim, you must increase 'cmdheight' value.
-set cmdheight=2
 " Show line numbers
 set number
 set relativenumber
@@ -300,7 +297,6 @@ endfunction
 let maplocalleader = " "
 let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
-nnoremap <LocalLeader>e                     :EchoDocEnable<CR>
 nnoremap <LocalLeader>U                     :call UpgradeAll()<CR>
 nnoremap <LocalLeader>gb                    :Gblame<CR>
 noremap  <LocalLeader>gk                    :Gbrowse!<CR>
