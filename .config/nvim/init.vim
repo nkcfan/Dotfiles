@@ -17,6 +17,9 @@ if has('nvim-0.5.0')
 
     lua require('lsp_config')
     lua require('telescope_config')
+    nnoremap <silent> <C-S-PageDown>            :Telescope loclist<CR>
+    nnoremap <silent> <S-PageDown>              :Telescope quickfix<CR>
+
     lua require('completion_config')
     let g:completion_auto_change_source = 1
     let g:completion_trigger_keyword_length = 2
