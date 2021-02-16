@@ -62,9 +62,6 @@ Plug 'liuchengxu/vim-which-key'
 " Initialize plugin system
 call plug#end()
 
-source ~/.vim/searchable.vim
-source ~/.vim/quickfix.vim
-
 syntax on
 let g:xml_syntax_folding = 1
 
