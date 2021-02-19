@@ -71,6 +71,7 @@ augroup LightlineOnChanges
   autocmd User ALELintPost call lightline#update()
   autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
   autocmd User CocGitStatusChange call lightline#update()
+  autocmd User LspDiagnosticsChanged call lightline#update()
 augroup end
 
 " gutentags
