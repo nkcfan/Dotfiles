@@ -295,6 +295,7 @@ nnoremap <LocalLeader>U                     :call UpgradeAll()<CR>
 nnoremap <LocalLeader>gb                    :Gblame<CR>
 noremap  <LocalLeader>gk                    :Gbrowse!<CR>
 nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
+noremap  <LocalLeader>gu                    :SignifyHunkUndo<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
