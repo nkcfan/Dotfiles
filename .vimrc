@@ -33,6 +33,7 @@ Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
 Plug 'shime/vim-livedown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'zackhsi/fzf-tags'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
 Plug 'drzel/vim-line-no-indicator'
