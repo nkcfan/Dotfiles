@@ -7,7 +7,7 @@ GuiPopupmenu 0
 set clipboard=unnamedplus
 
 " Paste with <Shift> + <Insert>
-imap <S-Insert> <C-R>*
+imap <expr> <S-Insert> XTermPasteBegin("")."<C-R>*<f29>"
 cmap <S-Insert> <C-R>*
 
 let $TMP="/tmp"
