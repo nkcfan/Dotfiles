@@ -11,6 +11,11 @@ let g:ale_enabled=1
 let g:ale_virtualtext_cursor = 1
 let g:ale_virtualtext_prefix = '    ■ '
 
+" linters
+let g:ale_linters = {
+            \ 'text': ['alex'],
+            \}
+
 let g:ale_sh_bashate_options = '-i E006'
 " Disable ALE text highlight in insert mode to help readability
 " Note: Leave insert mode by <Esc>, if <C-C> then ALE text highlight will not
