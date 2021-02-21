@@ -232,12 +232,6 @@ let &t_Ce = "\e[24m"
 " Prevent left moving one character when leaving insert mode
 autocmd InsertLeave * :normal! `^
 
-" Default normal yanks to use the system clipboard
-" Note: only in GUI nvim
-if has('nvim') && exists('g:GuiLoaded')
-    set clipboard=unnamedplus
-endif
-
 " Set mouse in all mode
 set mouse+=a
 " Fix mouse dragging splitters inside tmux
