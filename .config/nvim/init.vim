@@ -17,6 +17,7 @@ if has('nvim-0.5.0')
 
     lua require('lsp_config')
     lua require('telescope_config')
+    nnoremap <silent> z=                        :Telescope spell_suggest<CR>
     nnoremap <silent> <C-S-PageDown>            :Telescope loclist<CR>
     nnoremap <silent> <S-PageDown>              :Telescope quickfix<CR>
 

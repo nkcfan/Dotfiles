@@ -70,7 +70,8 @@ let g:xml_syntax_folding = 1
 augroup detect_filetype
     autocmd!
     autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
-    autocmd FileType gitcommit setlocal spell
+    autocmd FileType gitcommit,c,cpp,python,markdown,vim setlocal spell
+    autocmd BufRead,BufNewFile * if &spell | syntax enable | endif
     autocmd User Fugitive if &buftype == '' | :Git! difftool | :cclose \| endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
     autocmd FileType xml setlocal foldmethod=syntax | :%foldopen!
@@ -286,6 +287,17 @@ function UpgradeAll()
     execute 'PlugUpdate --sync'
 endfunction
 
+" Toggle spell checking
+" ref: https://gist.github.com/brandonpittman/9d15134057c7267a88a8
+function! ToggleSpellCheck()
+  set spell!
+  if &spell
+    echo "Spellcheck ON"
+  else
+    echo "Spellcheck OFF"
+  endif
+endfunction
+
 " Leader key mappings
 " Note: do not use format like <KeyName>, which is not compatible with
 " vim-which-key
@@ -300,6 +312,7 @@ noremap  <LocalLeader>gu                    :SignifyHunkUndo<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
+nnoremap <LocalLeader>ts                    :call ToggleSpellCheck()<CR>
 " Symbol renaming.
 nnoremap <Leader>rn                         :ALERename<CR>
 
