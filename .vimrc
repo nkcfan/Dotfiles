@@ -126,6 +126,7 @@ set completeopt-=preview
 set completeopt+=longest
 " Recommended completeopt for coc.nvim or completion-nvim
 set completeopt+=menuone,noinsert
+let &spellfile = expand('~/.vim/spell/' . &spelllang . '.' . &encoding . '.add')
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 " Show substitution effect incrementally
