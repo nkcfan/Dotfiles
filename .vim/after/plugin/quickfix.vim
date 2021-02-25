@@ -18,6 +18,7 @@ augroup quickfix_nofocus
     autocmd!
     autocmd QuickFixCmdPre * let g:mybufname=bufname('%')
     autocmd QuickFixCmdPost lvimgrep botright lopen | exec bufwinnr(g:mybufname) . 'wincmd w'
+    autocmd QuitPre * lclose | cclose
 augroup END
 
 " ref: https://stackoverflow.com/a/63162084/2514803
