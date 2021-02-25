@@ -8,3 +8,5 @@ vim.g.completion_chain_complete_list = {
 
 vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy', 'all'}
 vim.g.completion_matching_smart_case = 1
+vim.g.completion_auto_change_source = 1
+vim.g.completion_trigger_keyword_length = 2

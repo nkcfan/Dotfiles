@@ -22,8 +22,6 @@ if has('nvim-0.5.0')
     nnoremap <silent> <S-PageDown>              :Telescope quickfix<CR>
 
     lua require('completion_config')
-    let g:completion_auto_change_source = 1
-    let g:completion_trigger_keyword_length = 2
     " Use completion-nvim in every buffer
     autocmd BufEnter * lua require'completion'.on_attach()
 endif
