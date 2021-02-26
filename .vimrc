@@ -73,7 +73,7 @@ augroup detect_filetype
     autocmd!
     autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
     autocmd FileType gitcommit,c,cpp,python,markdown,vim setlocal spell
-    autocmd BufRead,BufNewFile * if &spell | syntax enable | endif
+    autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
     autocmd User Fugitive if &buftype == '' | :Git! difftool | :cclose \| endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
     autocmd FileType xml setlocal foldmethod=syntax | :%foldopen!
