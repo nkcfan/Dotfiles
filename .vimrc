@@ -421,24 +421,6 @@ xmap ah <plug>(signify-motion-outer-visual)
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 set grepformat^=%f:%l:%c:%m
 
-" diff mode
-" Note: disable internal diff option in order to enable FilterWritePost
-set diffopt-=internal
-" Note: set shelltemp option in order to enable FilterWritePost
-set shelltemp
-" Note: reload colorscheme is not needed for Neovim
-augroup diff_mode
-    autocmd!
-    autocmd FilterWritePost *
-        \ if &diff |
-            \ exec "colorscheme " . g:colors_name |
-            \ exec "nnoremap <buffer><S-Left>    :diffget //2<CR>" |
-            \ exec "nnoremap <buffer><S-Right>   :diffget //3<CR>" |
-        \ endif
-    autocmd BufWinLeave fugitive://*
-        \ exec "colorscheme " . g:colors_name |
-augroup END
-
 " Yank to tmux
 if exists("##TextYankPost")
     function! s:onYanked() abort
