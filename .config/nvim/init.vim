@@ -5,6 +5,10 @@ source ~/.vimrc
 set winblend=5
 set pumblend=5
 
+if has('win32')
+    let $TMP="/tmp"
+endif
+
 " highlightedyank
 augroup highlight_yank
     autocmd!
@@ -14,6 +18,7 @@ augroup END
 if has('nvim-0.4.0')
     if exists('g:started_by_firenvim')
         set guifont=Hack:h16
+        set clipboard=unnamedplus
     endif
     if !exists('*OnUIEnter')
         function! OnUIEnter(event)

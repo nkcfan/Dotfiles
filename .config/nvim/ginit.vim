@@ -9,5 +9,3 @@ set clipboard=unnamedplus
 " Paste with <Shift> + <Insert>
 imap <expr> <S-Insert> XTermPasteBegin("")."<C-R>*<f29>"
 cmap <S-Insert> <C-R>*
-
-let $TMP="/tmp"
