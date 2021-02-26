@@ -60,6 +60,7 @@ Plug 'sainnhe/sonokai'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vim-which-key'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()

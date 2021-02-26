@@ -11,6 +11,27 @@ augroup highlight_yank
     au TextYankPost * lua vim.highlight.on_yank()
 augroup END
 
+if has('nvim-0.4.0')
+    if exists('g:started_by_firenvim')
+        set guifont=Hack:h16
+    endif
+    if !exists('*OnUIEnter')
+        function! OnUIEnter(event)
+            let l:ui = nvim_get_chan_info(a:event.chan)
+            if has_key(l:ui, 'client') && has_key(l:ui.client, "name")
+                if l:ui.client.name == "Firenvim"
+                    source $MYVIMRC
+                endif
+            endif
+        endfunction
+    endif
+    augroup firenvim
+        autocmd!
+        autocmd UIEnter * ++nested call OnUIEnter(v:event)
+        autocmd BufEnter github.com_*.txt set filetype=markdown
+    augroup END
+endif
+
 if has('nvim-0.5.0')
     lua require('treesitter_config')
     nnoremap <LocalLeader>th                    :TSBufToggle highlight<CR>
