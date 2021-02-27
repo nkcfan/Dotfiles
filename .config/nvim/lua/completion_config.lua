@@ -6,7 +6,6 @@ vim.g.completion_chain_complete_list = {
     }
 }
 
-vim.g.completion_enable_auto_popup = 0
 vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
 vim.g.completion_matching_smart_case = 1
 vim.g.completion_auto_change_source = 1

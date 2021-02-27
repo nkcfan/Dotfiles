@@ -48,8 +48,6 @@ if has('nvim-0.5.0')
     nnoremap <silent> <S-PageDown>              :Telescope quickfix<CR>
 
     lua require('completion_config')
-    imap <Tab>                                  <Plug>(completion_smart_tab)
-    imap <S-Tab>                                <Plug>(completion_smart_s_tab)
     " Use completion-nvim in every buffer
     autocmd BufEnter * lua require'completion'.on_attach()
 endif
