@@ -95,9 +95,6 @@ set encoding=utf-8
 set foldlevelstart=20
 " Always show statusline
 set laststatus=2
-" Show line numbers
-set number
-set relativenumber
 " Show invisible char
 set list
 set listchars=tab:⇲\ ,trail:◦
@@ -301,6 +298,21 @@ function! ToggleSpellCheck()
   endif
 endfunction
 
+" Toggle signcolumn
+function! ToggleSignColumn()
+    if &number == 1
+        set signcolumn=no
+        set nonumber
+        set norelativenumber
+    else
+        set signcolumn=auto
+        set number
+        set relativenumber
+    endif
+endfunction
+
+" Show line numbers
+call ToggleSignColumn()
 " Leader key mappings
 " Note: do not use format like <KeyName>, which is not compatible with
 " vim-which-key
@@ -316,6 +328,7 @@ noremap  <LocalLeader>gu                    :SignifyHunkUndo<CR>
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
 nnoremap <LocalLeader>ts                    :call ToggleSpellCheck()<CR>
+nnoremap <LocalLeader>tn                    :call ToggleSignColumn()<CR>
 " Symbol renaming.
 nnoremap <Leader>rn                         :ALERename<CR>
 
