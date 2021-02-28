@@ -373,10 +373,7 @@ endif
 " Use <CR> to confirm completion, `<C-G>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <CR>    pumvisible() ? "<C-Y>" : "<C-G>u<CR>"
-inoremap <expr> <Space> pumvisible() ? "<C-E><Space>" : "<Space>"
 inoremap <expr> <Tab>   pumvisible() ? "<C-Y>" : "<Tab>"
-inoremap <expr> <Left>  pumvisible() ? "<C-E>" : "<Left>"
-inoremap <expr> <Right> pumvisible() ? "<C-Y>" : "<Right>"
 " Command mode wildmenu key mappings
 cnoremap <expr> <Up>    pumvisible() ? "<C-P>" : "<Up>"
 cnoremap <expr> <Down>  pumvisible() ? "<C-N>" : "<Down>"
