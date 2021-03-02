@@ -4,6 +4,7 @@ let g:ale_lint_on_text_changed = 'never'
 " Note: seems working well with coc-fzf, only in vim
 let g:ale_set_balloons=1
 let g:ale_floating_preview=1
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_enabled=1
 
