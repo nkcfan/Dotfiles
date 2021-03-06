@@ -40,7 +40,7 @@ function! JustFindAdapter(type, ...)
     if a:0  " invoked from visual mode, use '< and '> marks.
         " Escape register for \V grep to prevent special char of regex
         let @s = escape(getreg('s'), '/\')
-        call feedkeys(":lvimgrep /\\V" . @s . "/gj %\<Left>\<Left>\<Left>\<Left>\<Left>")
+        call feedkeys(":lvimgrep /\\V\\<" . @s . "\\>/gj %\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>")
         " call feedkeys(':BLines ' . @s)
         return
     endif
