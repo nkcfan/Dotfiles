@@ -41,7 +41,6 @@ Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
 Plug 'drzel/vim-line-no-indicator'
 Plug 'svermeulen/vim-cutlass'
 Plug 'jpalardy/vim-slime'
-Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
