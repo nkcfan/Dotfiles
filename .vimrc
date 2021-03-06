@@ -71,7 +71,7 @@ let g:xml_syntax_folding = 1
 augroup detect_filetype
     autocmd!
     autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
-    autocmd FileType gitcommit,c,cpp,python,markdown,vim setlocal spell
+    autocmd FileType gitcommit,c,cpp,python,markdown,vim,yaml setlocal spell
     autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
     autocmd User Fugitive if &buftype == '' | call feedkeys(":Git! difftool | cclose\<CR>") | endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
@@ -131,6 +131,9 @@ set shortmess+=c
 if exists('&inccommand')
     set inccommand=split
 endif
+
+" vim-yaml
+let g:yaml_limit_spell = 1
 
 " netrw
 let g:netrw_banner = 0
