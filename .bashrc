@@ -146,7 +146,7 @@ fi
 
 # Setting fd as the default source for fzf
 UNAME=`uname`
-if [[ "$UNAME" == "Linux" ]]; then
+if [[ "$UNAME" == "Linux" || "$UNAME" == "MINGW"* ]]; then
     export FZF_DEFAULT_COMMAND='{ rg --files --hidden & git ls-files; } | sort -u'
 else # Windows
     export FZF_DEFAULT_COMMAND='( rg --files --path-separator "//" & git ls-files ) | sort /unique'
