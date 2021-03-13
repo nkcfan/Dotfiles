@@ -47,7 +47,7 @@ if has('nvim-0.5.0')
     nnoremap <silent> <C-S-PageDown>            :Telescope loclist<CR>
     nnoremap <silent> <S-PageDown>              :Telescope quickfix<CR>
 
-    lua require('completion_config')
-    " Use completion-nvim in every buffer
-    autocmd BufEnter * lua require'completion'.on_attach()
+    autocmd BufEnter * lua require('lsp_signature').on_attach()
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#lsp#handler_enabled = v:false
 endif

@@ -15,7 +15,9 @@ if has('nvim-0.5.0')
     Plug 'nvim-treesitter/nvim-treesitter-refactor'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'deoplete-plugins/deoplete-lsp'
+    Plug 'ray-x/lsp_signature.nvim'
     Plug 'nathunsmitty/nvim-ale-diagnostic'
     Plug 'ojroques/nvim-lspfuzzy'
 else
