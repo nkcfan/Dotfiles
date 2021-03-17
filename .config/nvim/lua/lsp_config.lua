@@ -3,7 +3,7 @@ local ale = require("nvim-ale-diagnostic")
 local fuzzy = require("lspfuzzy").setup {}
 
 local map = function(type, key, value)
-    vim.fn.nvim_buf_set_keymap(0, type, key, value, {noremap = true, silent = true})
+    vim.api.nvim_buf_set_keymap(0, type, key, value, {noremap = true, silent = true})
 end
 
 local custom_attach = function(client)
