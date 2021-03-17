@@ -23,20 +23,24 @@ augroup END
 
 " ref: https://stackoverflow.com/a/63162084/2514803
 function! ToggleQuickFix()
-    if empty(filter(getwininfo(), 'v:val.quickfix'))
+    if empty(filter(getwininfo(), 'v:val.quickfix')) && empty(filter(getwininfo(), 'v:val.loclist'))
         let g:mybufname=bufname('%')
         copen
         exec bufwinnr(g:mybufname) . 'wincmd w'
     else
         cclose
+        lclose
+        pclose
     endif
 endfunction
 function! ToggleLocList()
-    if empty(filter(getwininfo(), 'v:val.loclist'))
+    if empty(filter(getwininfo(), 'v:val.quickfix')) && empty(filter(getwininfo(), 'v:val.loclist'))
         let g:mybufname=bufname('%')
         lopen
         exec bufwinnr(g:mybufname) . 'wincmd w'
     else
+        cclose
         lclose
+        pclose
     endif
 endfunction
