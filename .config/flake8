@@ -1,5 +1,10 @@
 [flake8]
 ignore=
+    E201,  # Whitespace after '('
+    E202,  # Whitespace before ')'
+    E203,  # Whitespace before ':'
+    E211,  # Whitespace before '('
+    E203,  # Whitespace before ':'
     E251,  # Unexpected spaces around keyword / parameter equals
     E302,  # Expected 2 blank lines, found 0
     E501,  # Line too long
