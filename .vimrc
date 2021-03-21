@@ -58,6 +58,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'stephpy/vim-yaml'
 Plug 'joshdick/onedark.vim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'bluz71/vim-moonfly-colors'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vim-which-key'
@@ -271,6 +272,7 @@ let g:python_highlight_all = 1
 " Choose a colorscheme
 colorscheme gruvbox
 colorscheme onedark
+colorscheme moonfly
 
 function! AtEndOfLine()
     return col(".") >= col("$") - 1
