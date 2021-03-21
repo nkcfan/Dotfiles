@@ -78,7 +78,7 @@ augroup detect_filetype
     autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
     autocmd User Fugitive if &buftype == '' | call feedkeys(":Git! difftool | cclose | echon '' \<CR>") | endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
-    autocmd FileType xml setlocal foldmethod=syntax | :%foldopen!
+    autocmd FileType xml setlocal foldmethod=syntax | call feedkeys(":%foldopen!\<CR>")
 augroup END
 
 " Add to .vimrc to enable project-specific vimrc
