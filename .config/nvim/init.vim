@@ -16,6 +16,14 @@ augroup highlight_yank
 augroup END
 
 if has('nvim-0.4.0')
+    if exists('g:neovide')
+        set guifont=Hasklig:h15
+        set clipboard=unnamedplus
+        imap <expr> <S-Insert> XTermPasteBegin("")."<C-R>*<f29>"
+        cmap <S-Insert> <C-R>*
+
+        " let g:neovide_fullscreen=v:true
+    endif
     if exists('g:started_by_firenvim')
         set guifont=Hack:h16
         set clipboard=unnamedplus
