@@ -38,8 +38,10 @@ if has('nvim-0.4.0')
 endif
 
 if has('nvim-0.5.0')
-    lua require('treesitter_config')
-    nnoremap <LocalLeader>th                    :TSBufToggle highlight<CR>
+    if !has('win32')
+        lua require('treesitter_config')
+        nnoremap <LocalLeader>th                    :TSBufToggle highlight<CR>
+    endif
 
     lua require('lsp_config')
     lua require('telescope_config')
