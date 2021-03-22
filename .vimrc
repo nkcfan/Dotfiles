@@ -59,6 +59,7 @@ Plug 'stephpy/vim-yaml'
 Plug 'joshdick/onedark.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'sainnhe/sonokai'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vim-which-key'
@@ -270,9 +271,15 @@ let g:load_doxygen_syntax = 1
 let g:python_highlight_all = 1
 
 " Choose a colorscheme
-colorscheme gruvbox
-colorscheme onedark
-colorscheme moonfly
+" colorscheme gruvbox
+" colorscheme onedark
+" colorscheme moonfly
+" sonokai
+let g:sonokai_style = 'shusia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+" let g:sonokai_transparent_background = 1
+colorscheme sonokai
 
 function! AtEndOfLine()
     return col(".") >= col("$") - 1
