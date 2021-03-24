@@ -1,0 +1,31 @@
+allow:
+  - invalid
+  - sanity-check
+  - special
+  - add
+  - dummy
+  - obvious
+  - just
+  - basically
+  - simple
+  - easy
+  - of-course
+  - clearly
+  - master
+  - masters
+  - whitespace
+  - whitespaces
+  - hang
+  - host-hostess
+
+  - execute
+  - executed
+  - execution
+  - failed
+  - failure
+  - failures
+  - kill
+  - trap
+  - traps
+  - period
+  - remain
