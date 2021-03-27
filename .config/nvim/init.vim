@@ -48,10 +48,12 @@ endif
 if has('nvim-0.5.0')
     if !has('win32')
         lua require('treesitter_config')
-        nnoremap <LocalLeader>th                    :TSBufToggle highlight<CR>
+        nnoremap <silent> <LocalLeader>th       :TSBufToggle highlight<CR>
     endif
 
     lua require('lsp_config')
+    nnoremap <silent> <LocalLeader>tv           :lua require("virtual_text").toggle()<CR>
+
     lua require('telescope_config')
     nnoremap <silent> z=                        :Telescope spell_suggest<CR>
     nnoremap <silent> <C-S-PageDown>            :Telescope loclist<CR>
