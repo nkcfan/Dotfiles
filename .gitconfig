@@ -73,7 +73,7 @@
     g = grep -n
     hist = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --abbrev-commit --date=relative
     in = log --pretty=tformat:\"%h %ad | %s%d [%an]\" --date=short ..@{u}
-    l = log --pretty=tformat:\"%h %ad | %s%d [%an]\" --date=short
+    l = log --pretty=tformat:\"%h %ad | %s [%an]\" --date=short
     last = log -p --max-count=1 --word-diff
     lastref = rev-parse --short HEAD
     lasttag = describe --tags --abbrev=0
