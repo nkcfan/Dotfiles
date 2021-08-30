@@ -335,8 +335,8 @@ let maplocalleader = " "
 let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>U                     :call UpgradeAll()<CR>
-nnoremap <LocalLeader>gb                    :Gblame<CR>
-noremap  <LocalLeader>gk                    :Gbrowse!<CR>
+nnoremap <LocalLeader>gb                    :Git blame<CR>
+noremap  <LocalLeader>gk                    :GBrowse!<CR>
 nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
 noremap  <LocalLeader>gu                    :SignifyHunkUndo<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
