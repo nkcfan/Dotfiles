@@ -131,10 +131,6 @@ set completeopt+=menuone,noinsert
 let &spellfile = expand('~/.vim/spell/' . &spelllang . '.' . &encoding . '.add')
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-" Show substitution effect incrementally
-if exists('&inccommand')
-    set inccommand=split
-endif
 
 " vim-yaml
 let g:yaml_limit_spell = 1
