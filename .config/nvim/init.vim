@@ -62,4 +62,19 @@ if has('nvim-0.5.0')
     autocmd BufEnter * lua require('lsp_signature').on_attach()
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#lsp#handler_enabled = v:false
+
+    lua <<EOF
+    require('gitsigns').setup({
+        current_line_blame = true,
+        current_line_blame_opts = {
+          virt_text = true,
+          virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+          delay = 500,
+          ignore_whitespace = false,
+        },
+        current_line_blame_formatter_opts = {
+          relative_time = false
+        },
+    })
+EOF
 endif

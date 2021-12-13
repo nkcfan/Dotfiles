@@ -20,6 +20,7 @@ if has('nvim-0.5.0')
     Plug 'ray-x/lsp_signature.nvim'
     Plug 'nathunsmitty/nvim-ale-diagnostic'
     Plug 'ojroques/nvim-lspfuzzy'
+    Plug 'lewis6991/gitsigns.nvim'
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
@@ -27,8 +28,8 @@ else
     Plug 'tommcdo/vim-exchange'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'antoinemadec/coc-fzf'
+    Plug 'mhinz/vim-signify'
 endif
-Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
 Plug 'w0rp/ale'
