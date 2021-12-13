@@ -21,6 +21,7 @@ if has('nvim-0.5.0')
     Plug 'nathunsmitty/nvim-ale-diagnostic'
     Plug 'ojroques/nvim-lspfuzzy'
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'numToStr/Comment.nvim'
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
@@ -29,6 +30,7 @@ else
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'antoinemadec/coc-fzf'
     Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-commentary'
 endif
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
@@ -44,7 +46,6 @@ Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
 Plug 'drzel/vim-line-no-indicator'
 Plug 'svermeulen/vim-cutlass'
 Plug 'jpalardy/vim-slime'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
