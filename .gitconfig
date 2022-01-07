@@ -30,7 +30,7 @@
 [credential]
     helper = ! \"$GIT_CREDENTIAL_HELPER\"
 [help]
-    format = html
+    format = man
 [pack]
     packSizeLimit = 2g
 [rebase]
