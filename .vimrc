@@ -376,7 +376,6 @@ inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
 " Disable i_CTRL-V in favor for i_CTRL-Q
 " Note: <Nop> does work well in Neovim
-inoremap <silent> <C-V>                     <C-O>:<CR>
 cnoremap <silent> <C-V>                     a<BS>
 " Note: tnoremap was introduced since vim 8.0.1108
 " ref: https://github.com/vim/vim/commit/69fbc9e1dab176f345719436cd89d854df0a2abd
