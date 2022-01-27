@@ -374,14 +374,6 @@ imap <C-Del> <C-kDel>
 inoremap <expr> <C-kDel> AtEndOfLine() ? '◦<C-O>x<C-O>gJ' : '<C-O>"_dw'
 inoremap <M-o> <C-C><C-O>
 inoremap <C-S> <C-O>:w<CR>
-" Disable i_CTRL-V in favor for i_CTRL-Q
-" Note: <Nop> does work well in Neovim
-cnoremap <silent> <C-V>                     a<BS>
-" Note: tnoremap was introduced since vim 8.0.1108
-" ref: https://github.com/vim/vim/commit/69fbc9e1dab176f345719436cd89d854df0a2abd
-if !has("nvim") && has("patch-8.0.1108")
-    tnoremap <C-V> <Nop>
-endif
 " Use <CR> to confirm completion, `<C-G>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <CR>    pumvisible() ? "<C-Y>" : "<C-G>u<CR>"
