@@ -1,2 +1,5 @@
 [PasteStrings]
 kitty.exe=+{INS}
+
+[Ditto]
+DBPath3=%APPDATA%\Ditto\Ditto.db
