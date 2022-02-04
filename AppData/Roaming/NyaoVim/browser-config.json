@@ -1,0 +1,13 @@
+{
+    "window_options": {
+        "fullscreen": false,
+        "alwaysOnTop": false,
+        "webPreferences": {
+            "plugins": true
+        }
+    },
+    "remember_window_state": true,
+    "single_instance": true,
+    "show_menubar": false
+}
+
