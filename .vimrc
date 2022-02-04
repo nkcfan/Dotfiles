@@ -22,6 +22,7 @@ if has('nvim-0.5.0')
     Plug 'ojroques/nvim-lspfuzzy'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'numToStr/Comment.nvim'
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
@@ -65,7 +66,6 @@ Plug 'sainnhe/sonokai'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vim-which-key'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()
