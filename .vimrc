@@ -335,8 +335,8 @@ nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>U                     :call UpgradeAll()<CR>
 nnoremap <LocalLeader>gb                    :Git blame<CR>
 noremap  <LocalLeader>gk                    :GBrowse!<CR>
-nnoremap <LocalLeader>gd                    :SignifyHunkDiff<CR>
-noremap  <LocalLeader>gu                    :SignifyHunkUndo<CR>
+nnoremap <LocalLeader>gd                    <cmd>Gitsigns preview_hunk<CR>
+noremap  <LocalLeader>gu                    <cmd>Gitsigns reset_hunk<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
