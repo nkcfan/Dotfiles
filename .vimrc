@@ -66,6 +66,7 @@ Plug 'sainnhe/sonokai'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vim-which-key'
+Plug 'https://github.com/alok/notational-fzf-vim'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()
@@ -448,3 +449,7 @@ if exists("##TextYankPost")
         autocmd TextYankPost * call s:onYanked()
     augroup END
 endif
+
+" notational-fzf-vim
+let g:nv_search_paths = ['~/wiki']
+let g:nv_use_ignore_files = 0
