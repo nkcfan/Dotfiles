@@ -78,7 +78,7 @@ let g:xml_syntax_folding = 1
 augroup detect_filetype
     autocmd!
     autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
-    autocmd FileType gitcommit,c,cpp,python,markdown,vim,yaml call DefaultSpellCheck()
+    autocmd FileType gitcommit,c,cpp,go,python,markdown,vim,yaml call DefaultSpellCheck()
     autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
     autocmd User Fugitive if &buftype == '' | call feedkeys(":Git! difftool | cclose | echon '' \<CR>") | endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
