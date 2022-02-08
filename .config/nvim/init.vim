@@ -3,7 +3,7 @@ let &packpath=&runtimepath
 source ~/.vimrc
 
 set winblend=5
-set pumblend=5
+set pumblend=0
 
 if has('win32')
     let $TMP="/tmp"
