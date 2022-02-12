@@ -70,6 +70,7 @@ if has('nvim-0.5.0')
     nnoremap <silent> z=                        :Telescope spell_suggest<CR>
     nnoremap <silent> <C-S-PageDown>            :Telescope loclist<CR>
     nnoremap <silent> <S-PageDown>              :Telescope quickfix<CR>
+    nnoremap <silent> <M-p>                     <cmd>Telescope buffers<CR>
 
     autocmd BufEnter * lua require('lsp_signature').on_attach()
 

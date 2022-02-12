@@ -36,7 +36,6 @@ xmap <Leader><tab> <plug>(fzf-maps-x)
 omap <Leader><tab> <plug>(fzf-maps-o)
 
 nnoremap <C-P> :FZF -m<CR>
-nnoremap <silent> <M-p> :Buffers<CR>
 
 " fzf_tags
 nmap <C-]> <Plug>(fzf_tags)
