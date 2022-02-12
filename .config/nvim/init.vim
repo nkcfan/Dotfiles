@@ -72,8 +72,10 @@ if has('nvim-0.5.0')
     nnoremap <silent> <S-PageDown>              :Telescope quickfix<CR>
 
     autocmd BufEnter * lua require('lsp_signature').on_attach()
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#lsp#handler_enabled = v:false
+
+    " Note: init lspkind before nvim-cmp
+    lua require('lspkind_config')
+    lua require('cmp_config')
 
     lua <<EOF
     require('gitsigns').setup({

@@ -15,14 +15,23 @@ if has('nvim-0.5.0')
     Plug 'nvim-treesitter/nvim-treesitter-refactor'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'neovim/nvim-lspconfig'
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'deoplete-plugins/deoplete-lsp'
+    Plug 'onsails/lspkind-nvim'
     Plug 'ray-x/lsp_signature.nvim'
     Plug 'nathunsmitty/nvim-ale-diagnostic'
     Plug 'ojroques/nvim-lspfuzzy'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'numToStr/Comment.nvim'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+
+    " For nvim-cmp
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    " For luasnip users.
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
