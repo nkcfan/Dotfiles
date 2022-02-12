@@ -18,13 +18,10 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let $FZF_DEFAULT_OPTS = '--bind alt-a:toggle-all'
 " Tell FZF to use RG - so we can ignore files, but keep git controlled files
 if empty($FZF_DEFAULT_COMMAND)
+    " Note: because cmd will not run .bashrc, there is no FZF_DEFAULT_COMMAND env var
     if has('win32')
-        let $FZF_DEFAULT_COMMAND = '( rg --files --path-separator "//" & git ls-files ) | sort /unique'
-    else
-        let $FZF_DEFAULT_COMMAND = '{ rg --files --hidden & git ls-files; } | sort -u'
+        let $FZF_DEFAULT_COMMAND = '( rg --files --path-separator "/" & git ls-files ) | sort /unique'
     endif
-else
-    let $FZF_DEFAULT_COMMAND = $FZF_DEFAULT_COMMAND
 endif
 
 " Insert mode completion
