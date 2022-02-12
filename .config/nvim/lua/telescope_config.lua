@@ -6,6 +6,12 @@ require("telescope").setup {
         },
         sorting_strategy = "ascending",
     },
+    pickers = {
+        buffers = {
+            ignore_current_buffer = true,
+            sort_mru = true,
+        },
+    },
     extensions = {
         fzy_native = {
             override_generic_sorter = false,
