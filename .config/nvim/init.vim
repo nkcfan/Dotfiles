@@ -87,21 +87,7 @@ if has('nvim-0.5.0')
     " on hesitation, bring up the panel
     nnoremap <LocalLeader>k :lua require('telekasten').panel()<CR>
 
-    lua <<EOF
-    require('gitsigns').setup({
-        current_line_blame = true,
-        current_line_blame_opts = {
-          virt_text = true,
-          virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-          delay = 500,
-          ignore_whitespace = false,
-        },
-        current_line_blame_formatter_opts = {
-          relative_time = false
-        },
-    })
-EOF
-
+    lua require('gitsign_config')
     lua require('Comment').setup()
 endif
 

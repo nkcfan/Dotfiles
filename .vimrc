@@ -40,7 +40,6 @@ else
     Plug 'tommcdo/vim-exchange'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'antoinemadec/coc-fzf'
-    Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-commentary'
 endif
 Plug 'ntpeters/vim-better-whitespace'
@@ -346,8 +345,6 @@ nnoremap <LocalLeader>b                     :TagbarToggle<CR>
 nnoremap <LocalLeader>U                     :call UpgradeAll()<CR>
 nnoremap <LocalLeader>gb                    :Git blame<CR>
 noremap  <LocalLeader>gk                    :GBrowse!<CR>
-nnoremap <LocalLeader>gd                    <cmd>Gitsigns preview_hunk<CR>
-noremap  <LocalLeader>gu                    <cmd>Gitsigns reset_hunk<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
@@ -430,17 +427,6 @@ nnoremap M D
 " ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text
 xnoremap <silent> <expr> gp ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1) . '`[<CR>'
 onoremap gp :normal! vgp<CR>
-
-" signify
-" Note: g:signify_realtime will invalidate `previously changed or yanked text`
-" so '[  `[  ']  `] will not work, even not realtime, file saving will
-" invalidate them too.
-let g:signify_realtime = 0
-" hunk text object
-omap ih <plug>(signify-motion-inner-pending)
-xmap ih <plug>(signify-motion-inner-visual)
-omap ah <plug>(signify-motion-outer-pending)
-xmap ah <plug>(signify-motion-outer-visual)
 
 " grep
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
