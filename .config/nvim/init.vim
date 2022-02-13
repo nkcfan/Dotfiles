@@ -88,6 +88,9 @@ if has('nvim-0.5.0')
     nnoremap <LocalLeader>k :lua require('telekasten').panel()<CR>
 
     lua require('gitsign_config')
+    autocmd InsertEnter * :Gitsigns toggle_current_line_blame
+    autocmd InsertLeave * :Gitsigns toggle_current_line_blame
+
     lua require('Comment').setup()
 endif
 
