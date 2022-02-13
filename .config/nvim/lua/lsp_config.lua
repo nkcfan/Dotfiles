@@ -34,3 +34,51 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 lsp.bashls.setup {on_attach = custom_attach}
 lsp.clangd.setup {on_attach = custom_attach}
 lsp.pyright.setup {on_attach = custom_attach}
+
+-- lua
+-- set the path to the sumneko installation
+local sumneko_root_path = vim.fn.stdpath("data") .. "/lspinstall/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/" .. "/lua-language-server"
+lsp.sumneko_lua.setup {
+    on_attach = custom_attach,
+    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = "LuaJIT",
+                -- Setup your lua path
+                path = (function()
+                    local path = vim.split(package.path, ";")
+                    table.insert(path, "?.lua")
+                    table.insert(path, "?/init.lua")
+                    table.insert(path, "?/?.lua")
+                    table.insert(path, "lua/?.lua")
+                    table.insert(path, "lua/?/init.lua")
+                    return path
+                end)()
+                -- path = vim.split(package.path, ";")
+                -- path = {"?.lua", "?/init.lua", "?/?.lua"}
+            },
+            diagnostics = {
+                enable = true,
+                -- Get the language server to recognize the `vim` global
+                -- globals = {"hs", "vim", "it", "describe", "before_each", "after_each"},
+                disable = {"lowercase-global"}
+            },
+            workspace = {
+                ignoreDir = {},
+                maxPreload = 1000,
+                preloadFileSize = 100,
+                useGitIgnore = true,
+                -- Make the server aware of Neovim runtime files
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME")] = true,
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.expand("$VIMRUNTIME/lua/vim")] = true,
+                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+                }
+            }
+        }
+    }
+}
