@@ -78,6 +78,15 @@ if has('nvim-0.5.0')
     lua require('lspkind_config')
     lua require('cmp_config')
 
+    lua require('telekasten_config')
+    nnoremap <LocalLeader>kf :lua require('telekasten').find_notes()<CR>
+    nnoremap <LocalLeader>kd :lua require('telekasten').find_daily_notes()<CR>
+    nnoremap <LocalLeader>kg :lua require('telekasten').search_notes()<CR>
+    nnoremap <LocalLeader>kk :lua require('telekasten').follow_link()<CR>
+
+    " on hesitation, bring up the panel
+    nnoremap <LocalLeader>k :lua require('telekasten').panel()<CR>
+
     lua <<EOF
     require('gitsigns').setup({
         current_line_blame = true,
