@@ -2,6 +2,14 @@ local lsp = require("lspconfig")
 local ale = require("nvim-ale-diagnostic")
 local fuzzy = require("lspfuzzy").setup {}
 
+vim.lsp.handlers["textDocument/hover"] =
+    vim.lsp.with(
+    vim.lsp.handlers.hover,
+    {
+        border = "single"
+    }
+)
+
 local map = function(type, key, value)
     vim.api.nvim_buf_set_keymap(0, type, key, value, {noremap = true, silent = true})
 end
