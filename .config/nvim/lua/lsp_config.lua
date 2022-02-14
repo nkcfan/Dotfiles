@@ -33,7 +33,29 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lsp.bashls.setup {on_attach = custom_attach}
 lsp.clangd.setup {on_attach = custom_attach}
-lsp.pyright.setup {on_attach = custom_attach}
+
+lsp.jedi_language_server.setup {
+    on_attach = custom_attach,
+    settings = {
+        diagnostics = {
+            enable = true
+        },
+        completion = {
+            -- disableSnippets = true
+        },
+        jediSettings = {
+            -- autoImportModules = {"numpy", "pandas"},
+            -- debug = true
+        },
+        workspace = {
+            extraPaths = {},
+            symbols = {
+                ignoreFolders = {".nox", ".tox", ".venv", "__pycache__", "venv", "build"},
+                maxSymbols = 20
+            }
+        }
+    }
+}
 
 -- lua
 -- set the path to the sumneko installation
