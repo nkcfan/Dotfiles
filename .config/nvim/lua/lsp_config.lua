@@ -65,6 +65,19 @@ lsp.jedi_language_server.setup {
     }
 }
 
+lsp.gopls.setup {
+    on_attach = custom_attach,
+    cmd = {"gopls", "serve"},
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true
+            },
+            staticcheck = true
+        }
+    }
+}
+
 -- lua
 -- set the path to the sumneko installation
 local sumneko_root_path = vim.fn.stdpath("data") .. "/lspinstall/lua-language-server"
