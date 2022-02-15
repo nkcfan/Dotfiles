@@ -16,17 +16,15 @@ augroup highlight_yank
 augroup END
 
 if has('nvim-0.4.0')
-    if exists('g:nyaovim_version')
-        " workaround for nyaovim's weird argv issue
-        " ref: https://github.com/rhysd/NyaoVim/issues/142#issuecomment-470254909
-        " delete first arg
-        execute '1argd'
-        " close current buffer
-        execute 'bd'
-
+    if exists('g:neoray')
         set clipboard=unnamedplus
         imap <expr> <S-Insert> XTermPasteBegin("")."<C-R>*<f29>"
         cmap <S-Insert> <C-R>*
+
+        NeoraySet CursorAnimTime 0
+        NeoraySet WindowState maximized
+        NeoraySet ContextMenuOn false
+        NeoraySet KeyFullscreen <M-CR>
     endif
     if exists('g:neovide')
         set guifont=Hasklig:h15
