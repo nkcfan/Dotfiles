@@ -40,10 +40,11 @@ else
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'antoinemadec/coc-fzf'
     Plug 'tpope/vim-commentary'
+    Plug 'w0rp/ale'
+    Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
 endif
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
-Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
 Plug 'plasticboy/vim-markdown'
 Plug 'shime/vim-livedown'
@@ -51,7 +52,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'zackhsi/fzf-tags'
 Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
 Plug 'drzel/vim-line-no-indicator'
 Plug 'svermeulen/vim-cutlass'
 Plug 'jpalardy/vim-slime'
