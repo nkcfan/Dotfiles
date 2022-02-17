@@ -1,5 +1,4 @@
 local lsp = require("lspconfig")
-local ale = require("nvim-ale-diagnostic")
 local fuzzy = require("lspfuzzy").setup {}
 
 vim.lsp.handlers["textDocument/hover"] =

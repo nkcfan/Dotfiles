@@ -17,7 +17,6 @@ if has('nvim-0.5.0')
     Plug 'neovim/nvim-lspconfig'
     Plug 'onsails/lspkind-nvim'
     Plug 'ray-x/lsp_signature.nvim'
-    Plug 'nathunsmitty/nvim-ale-diagnostic'
     Plug 'ojroques/nvim-lspfuzzy'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'numToStr/Comment.nvim'
