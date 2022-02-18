@@ -95,7 +95,6 @@ endfunction
 " coc-git
 function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
-  " return blame
   return winwidth(0) > 120 ? blame : ''
 endfunction
 
@@ -108,7 +107,6 @@ function! LightlineReadonly()
 endfunction
 
 function! LightlineFilename()
-  "let fname = expand('%:t')
   let fname = fnamemodify(expand("%"), ":~:.")
   " Distinguish the current buffer is location list or quickfix
   " ref: https://stackoverflow.com/a/53491991/2514803
