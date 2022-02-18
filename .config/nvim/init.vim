@@ -74,6 +74,7 @@ if has('nvim-0.5.0')
 
     " Note: init lspkind before nvim-cmp
     lua require('lspkind_config')
+    lua require('diagnostics_config')
     lua require('cmp_config')
     lua require('null_ls_config')
 
