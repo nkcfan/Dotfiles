@@ -19,12 +19,4 @@ if !has('nvim-0.5.0')
     let g:ale_virtualtext_prefix = '    ■ '
 
     let g:ale_sh_bashate_options = '-i E006'
-    " Disable ALE text highlight in insert mode to help readability
-    " Note: Leave insert mode by <Esc>, if <C-C> then ALE text highlight will not
-    " come back
-    augroup disable_ale_insert
-        autocmd!
-        autocmd InsertEnter * silent! let g:ale_enabled=0 | call ale#highlight#UpdateHighlights()
-        autocmd InsertLeave * silent! let g:ale_enabled=1 | call ale#highlight#UpdateHighlights()
-    augroup END
 endif
