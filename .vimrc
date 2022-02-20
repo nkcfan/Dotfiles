@@ -351,8 +351,7 @@ nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
 nnoremap <LocalLeader>ts                    :call ToggleSpellCheck()<CR>
 nnoremap <LocalLeader>tn                    :call ToggleSignColumn()<CR>
-" Symbol renaming.
-nnoremap <Leader>rn                         :ALERename<CR>
+nnoremap <LocalLeader>ym                    :let @*=trim(execute('1messages')) \| echo 'Last message yanked'<CR>
 
 nnoremap <C-Home> gg0
 nnoremap <C-End> G$
