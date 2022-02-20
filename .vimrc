@@ -144,6 +144,11 @@ let &spellfile = expand('~/.vim/spell/' . &spelllang . '.' . &encoding . '.add')
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
+" Running the native Windows vim in msys or cygwin, do no use bash
+if has('win32')
+    let &shell='cmd.exe'
+endif
+
 " vim-yaml
 let g:yaml_limit_spell = 1
 
