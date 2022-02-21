@@ -71,8 +71,6 @@ if has('nvim-0.5.0')
     nnoremap <silent> <S-PageDown>              :Telescope quickfix<CR>
     nnoremap <silent> <M-p>                     <cmd>Telescope buffers<CR>
 
-    autocmd BufEnter * lua require('lsp_signature').on_attach()
-
     " Note: init lspkind before nvim-cmp
     lua require('lspkind_config')
     lua require('diagnostics_config')

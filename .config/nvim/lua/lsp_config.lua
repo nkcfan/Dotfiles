@@ -16,6 +16,7 @@ end
 local custom_attach = function(client)
     print("LSP started.")
     -- require "completion".on_attach(client)
+    require('lsp_signature').on_attach()
 
     map("n", "vv", "<cmd>lua vim.lsp.buf.definition()<CR>")
     map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
