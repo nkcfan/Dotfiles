@@ -47,7 +47,7 @@ null_ls.setup({
 
         -- Spell checking
         null_ls.builtins.diagnostics.codespell.with({
-            disabled_filetypes = { "" },
+            disabled_filetypes = { "", "messages" },
             args = { "--builtin", "clear,rare,code", "-" }
         }),
 
