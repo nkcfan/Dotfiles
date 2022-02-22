@@ -107,6 +107,7 @@ lsp.sumneko_lua.setup {
                 enable = true,
                 -- Get the language server to recognize the `vim` global
                 -- globals = {"hs", "vim", "it", "describe", "before_each", "after_each"},
+                globals = {"vim"},
                 disable = {"lowercase-global"}
             },
             workspace = {
