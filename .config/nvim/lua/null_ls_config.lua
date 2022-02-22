@@ -22,12 +22,15 @@ null_ls.setup({
     sources = {
         -- Python
         -- null_ls.builtins.formatting.autopep8,
-        null_ls.builtins.formatting.black,
+        -- null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.yapf,
         null_ls.builtins.formatting.isort,
         null_ls.builtins.diagnostics.flake8,
 
-        -- JS yaml html markdown
-        null_ls.builtins.formatting.prettier,
+        -- JS yaml html markdown css json
+        null_ls.builtins.formatting.prettier.with({
+            extra_args = { "--tab-width", tostring(vim.o.shiftwidth) }
+        }),
 
         -- C/C++
         -- Formatting is handled by clangd language server
