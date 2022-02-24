@@ -6,3 +6,9 @@ neoray-win64.exe=+{INS}
 
 [Ditto]
 DBPath3=%APPDATA%\Ditto\Ditto.db
+QP_ShortCut_26_0_A=13
+QP_ShortCut_26_0_B=0
+QP_ShortCut_23_0_A=1
+QP_ShortCut_23_0_B=0
+QP_ShortCut_23_1_A=0
+QP_ShortCut_23_1_B=0
