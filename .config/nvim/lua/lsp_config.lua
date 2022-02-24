@@ -1,5 +1,6 @@
 local lsp = require("lspconfig")
 local fuzzy = require("lspfuzzy").setup {}
+local fidget = require("fidget").setup {}
 
 vim.lsp.handlers["textDocument/hover"] =
     vim.lsp.with(

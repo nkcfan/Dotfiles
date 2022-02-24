@@ -20,6 +20,7 @@ if has('nvim-0.5.0')
     Plug 'ray-x/lsp_signature.nvim'
     Plug 'ojroques/nvim-lspfuzzy'
     Plug 'jose-elias-alvarez/null-ls.nvim'
+    Plug 'j-hui/fidget.nvim'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'numToStr/Comment.nvim'
     Plug 'renerocksai/telekasten.nvim'
