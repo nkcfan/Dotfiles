@@ -21,6 +21,7 @@ cmp.setup {
         { name = "path" },
         { name = "luasnip" },
         { name = "buffer", keyword_length = 2 },
+        { name = "spell", keyword_length = 4 },
     },
 
     snippet = {
@@ -39,7 +40,16 @@ cmp.setup {
     },
 
     formatting = {
-        format = lspkind.cmp_format(),
+        format = lspkind.cmp_format {
+            menu = {
+                buffer = '[buf]',
+                nvim_lsp = '[lsp]',
+                nvim_lua = '[lua]',
+                path = '[path]',
+                luasnip = '[snip]',
+                spell = '[spl]',
+            },
+        },
     },
 
     experimental = {
