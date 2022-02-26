@@ -10,12 +10,32 @@ vim.lsp.handlers["textDocument/hover"] =
     }
 )
 
+local progress_handler = vim.lsp.handlers["$/progress"]
+local send_progress = function(client_id, token, value)
+    progress_handler(
+        nil,
+        {
+            token = token,
+            value = {
+                kind = value.kind,
+                title = value.title,
+                percentage = value.percentage,
+                message = value.message,
+            }
+        },
+        {
+            client_id = client_id
+        }
+    )
+end
+
 local map = function(type, key, value)
     vim.api.nvim_buf_set_keymap(0, type, key, value, {noremap = true, silent = true})
 end
 
 local custom_attach = function(client)
-    print("LSP started.")
+    send_progress(client.id, 0, {kind = "begin", title = "on_attach"})
+
     -- require "completion".on_attach(client)
     require('lsp_signature').on_attach()
 
@@ -35,6 +55,8 @@ local custom_attach = function(client)
     -- map("n", "<Leader>=", "<cmd>lua vim.lsp.buf.formatting()<CR>")
     -- map("n", "<Leader>ai", "<cmd>lua vim.lsp.buf.incoming_calls()<CR>")
     -- map("n", "<Leader>ao", "<cmd>lua vim.lsp.buf.outgoing_calls()<CR>")
+
+    send_progress(client.id, 0, {kind = "end", title = "on_attach"})
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

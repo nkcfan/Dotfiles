@@ -6,12 +6,8 @@ local map = function(type, key, value)
 end
 
 local custom_attach = function(client)
-    print("NullLs started.")
-    -- require "completion".on_attach(client)
-
     map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
     map("n", "<Leader>ra", "<cmd>Telescope lsp_code_actions<CR>")
-    -- map("n", "<Leader>ee", "<cmd>lua vim.lsp.util.show_line_diagnostics()<CR>")
     map("n", "g=", "<cmd>lua vim.lsp.buf.formatting()<CR>")
     map("v", "g=", ":lua vim.lsp.buf.range_formatting()<CR>")
 end
