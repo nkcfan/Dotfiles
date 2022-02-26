@@ -118,7 +118,6 @@ function! LightlineFilename()
     endif
   else
     return  &ft == 'tagbar' ? '' :
-          \ &ft == 'qf' ? '<S-Up> to close quickfix' :
           \ &ft == 'fugitiveblame' ? '' :
           \ fname =~ '__Gundo\|NERD_tree' ? '' :
           \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
