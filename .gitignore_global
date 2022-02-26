@@ -1,6 +1,7 @@
 *~
 .DS_Store
 .pc/
+.git/
 
 *.swp
 *.pyc
@@ -9,6 +10,9 @@
 *history*
 *hst*
 tags
+
+# Node modules
+**/node_modules/*
 
 # Python virtual env
 */lib/python?.?/
