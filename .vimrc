@@ -52,6 +52,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
 Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
 Plug 'plasticboy/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'zackhsi/fzf-tags'
@@ -89,7 +90,8 @@ let g:xml_syntax_folding = 1
 " Detect filetype
 augroup detect_filetype
     autocmd!
-    autocmd BufRead,BufNewFile */ansible/{**/,}*.yml set filetype=yaml.ansible
+    autocmd BufNewFile,BufFilePre,BufRead */ansible/{**/,}*.yml set filetype=yaml.ansible
+    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
     autocmd FileType gitcommit,c,cpp,go,python,markdown,vim,yaml call DefaultSpellCheck()
     autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
     autocmd User Fugitive if &buftype == '' | call feedkeys(":Git! difftool | cclose | echon '' \<CR>") | endif
