@@ -341,6 +341,7 @@ function! ToggleSignColumn()
 endfunction
 
 " Show line numbers
+set nonumber
 call ToggleSignColumn()
 " Leader key mappings
 " Note: do not use format like <KeyName>, which is not compatible with
@@ -354,8 +355,9 @@ noremap  <LocalLeader>gk                    :GBrowse!<CR>
 " Open fugitive Gstatus and jump to the first unstaged file
 nmap     <LocalLeader>gs                    :vertical G<CR>gU
 nnoremap <LocalLeader>gq                    :Git! difftool<CR>:cclose<CR>
-nnoremap <LocalLeader>ts                    :call ToggleSpellCheck()<CR>
 nnoremap <LocalLeader>tn                    :call ToggleSignColumn()<CR>
+nnoremap <LocalLeader>ts                    :call ToggleSpellCheck()<CR>
+nnoremap <LocalLeader>tw                    <cmd>ToggleWhitespace<CR>
 nnoremap <LocalLeader>ym                    :let @*=trim(execute('1messages')) \| echo 'Last message yanked'<CR>
 
 nnoremap <C-Home> gg0
