@@ -10,6 +10,7 @@ npm install -g neovim
 cargo install cargo-update
 cargo install ripgrep
 cargo install bat
+cargo install stylua
 cargo install-update -a
 
 # nvm

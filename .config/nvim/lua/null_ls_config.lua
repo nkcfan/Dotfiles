@@ -36,9 +36,9 @@ null_ls.setup({
         -- null_ls.builtins.diagnostics.markdownlint,
 
         -- Lua
-        -- cargo install stylua
-        -- add ~/.cargo/bin to PATH
-        -- null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.stylua.with {
+            extra_args = { "--indent-type", "Spaces", "--indent-width", tostring(vim.o.shiftwidth) }
+        },
 
         -- Shell
         null_ls.builtins.diagnostics.shellcheck,
