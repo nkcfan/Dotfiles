@@ -34,8 +34,9 @@ if has('nvim-0.5.0')
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'f3fora/cmp-spell'
     " For luasnip users.
-    Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'rafamadriz/friendly-snippets'
 else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
