@@ -456,3 +456,8 @@ endif
 " notational-fzf-vim
 let g:nv_search_paths = ['~/wiki']
 let g:nv_use_ignore_files = 0
+
+" BibTeX
+command! -bar -nargs=1 Doi2bib0 read !doi2bib <args>
+" Retab the bib
+command! -nargs=1 Doi2bib Doi2bib0 <args> | :normal! vgp<CR> | :retab
