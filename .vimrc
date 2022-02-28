@@ -24,6 +24,7 @@ if has('nvim-0.5.0')
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'numToStr/Comment.nvim'
     Plug 'renerocksai/telekasten.nvim'
+    Plug 'danilamihailov/beacon.nvim'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
     " For nvim-cmp
