@@ -73,6 +73,10 @@ cmp.setup {
         },
     },
 
+    matching = {
+        disallow_prefix_unmatching = true,
+    },
+
     experimental = {
         native_menu = false,
         ghost_text = false,
