@@ -7,9 +7,9 @@ virtual_text.show = true
 virtual_text.toggle = function()
     virtual_text.show = not virtual_text.show
     if virtual_text.show then
-        vim.diagnostic.enable()
+        vim.diagnostic.show(nil, 0)
     else
-        vim.diagnostic.disable()
+        vim.diagnostic.hide(nil, 0)
     end
 end
 

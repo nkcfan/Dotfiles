@@ -65,6 +65,8 @@ if has('nvim-0.5.0')
     lua require('fidget_config')
     lua require('lsp_config')
     nnoremap <silent> <LocalLeader>tv           :lua require("virtual_text").toggle()<CR>
+    lua require('diagnostics_config')
+    nnoremap <silent> <LocalLeader>td           :lua require("diagnostics_config").toggle()<CR>
 
     lua require('telescope_config')
     nnoremap <silent> z=                        :Telescope spell_suggest<CR>
@@ -74,7 +76,6 @@ if has('nvim-0.5.0')
 
     " Note: init lspkind before nvim-cmp
     lua require('lspkind_config')
-    lua require('diagnostics_config')
     lua require('snip_config')
     lua require('cmp_config')
     lua require('null_ls_config')

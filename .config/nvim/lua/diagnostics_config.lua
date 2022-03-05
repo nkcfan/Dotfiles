@@ -18,3 +18,18 @@ vim.diagnostic.config({
         severity = { min = vim.diagnostic.severity.HINT },
     },
 })
+
+local diagnostic = {}
+
+diagnostic.enabled = true
+
+diagnostic.toggle = function()
+    diagnostic.enabled = not diagnostic.enabled
+    if diagnostic.enabled then
+        vim.diagnostic.enable()
+    else
+        vim.diagnostic.disable()
+    end
+end
+
+return diagnostic
