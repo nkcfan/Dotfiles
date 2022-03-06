@@ -419,10 +419,36 @@ inoremap <silent> <Home> <C-O>:call ExtendedHome()<CR>
 
 " Natural PageUp and PageDown
 " ref: http://vimrc-dissection.blogspot.com/2009/02/fixing-pageup-and-pagedown.html
-map <silent> <PageUp> 1000<C-U>
-map <silent> <PageDown> 1000<C-D>
-imap <silent> <PageUp> <C-O>1000<C-U>
-imap <silent> <PageDown> <C-O>1000<C-D>
+" Note: scroll window instead of moving cursor near the tail of file
+function ExtendedPageDown(prefix)
+    let a = line('.') - line('w0')
+    let b = line('$') - line('w$')
+
+    if a < b - 1 || b >= winheight(0)
+        return a:prefix.."1000\<C-D>"
+    elseif b > 1
+        return a:prefix..string(b).."\<C-E>"
+    else
+        return ""
+    endif
+endfunction
+" Note: scroll window instead of moving cursor near the head of file
+function ExtendedPageUp(prefix)
+    let a = line('w$') - line('.')
+    let b = line('w0')
+
+    if a < b - 1 || b >= winheight(0)
+        return a:prefix.."1000\<C-U>"
+    elseif b > 1
+        return a:prefix..string(b - 1).."\<C-Y>"
+    else
+        return ""
+    endif
+endfunction
+noremap     <expr> <PageUp>     ExtendedPageUp("")
+noremap     <expr> <PageDown>   ExtendedPageDown("")
+inoremap    <expr> <PageUp>     ExtendedPageUp("\<C-O>")
+inoremap    <expr> <PageDown>   ExtendedPageDown("\<C-O>")
 set nostartofline
 
 " Cutlass
