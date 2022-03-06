@@ -57,6 +57,29 @@ if has('nvim-0.4.0')
 endif
 
 if has('nvim-0.5.0')
+    function GitFileStatus()
+        let file = expand("%")
+        if empty(file)
+            return ""
+        endif
+        let filestatus = system("git status --porcelain " . shellescape(file))
+        return filestatus[0:1]
+    endfunction
+
+    function RespectGitFileStatus()
+        if GitFileStatus() == "UU"
+            if exists(':TSBufDisable')
+                execute 'TSBufDisable highlight'
+            endif
+            lua vim.diagnostic.disable(0, nil)
+        endif
+    endfunction
+
+    augroup respectgit
+        autocmd!
+        autocmd BufNewFile,BufFilePre,BufRead * call RespectGitFileStatus()
+    augroup END
+
     if !has('win32')
         lua require('treesitter_config')
         nnoremap <silent> <LocalLeader>th       :TSBufToggle highlight<CR>
