@@ -7,4 +7,5 @@ ignore=
     E203,  # Whitespace before ':'
     E251,  # Unexpected spaces around keyword / parameter equals
     E302,  # Expected 2 blank lines, found 0
+    E303,  # Too many blank lines
     E501,  # Line too long
