@@ -34,3 +34,6 @@ debian/.debhelper/*
 .ccls-cache/
 .clangd/
 autom4te.cache/
+
+# swagger
+**/swagger-ui-bundle.js*
