@@ -1,3 +1,7 @@
+if has('nvim-0.5.0')
+    finish
+endif
+
 " Fine tune colorscheme for lightline
 let s:palette = g:lightline#colorscheme#onedark#palette
 let s:palette.insert.left = [ ['darkestcyan', 'white', 'bold'], ['white', 'darkblue'] ]

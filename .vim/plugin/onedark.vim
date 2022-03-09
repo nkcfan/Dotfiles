@@ -1,7 +1,5 @@
-" Enable italics in Neovim GUI
-" Note: Disable italics in terminal because KiTTY + vim one dark will have very dark gray for comment highlight
-if has('nvim') && exists('g:GuiLoaded')
-    let g:onedark_terminal_italics = 1
+if has('nvim-0.5.0')
+    finish
 endif
 
 augroup colorset

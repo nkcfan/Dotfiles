@@ -7,6 +7,7 @@ endif
 call plug#begin('~/.vim/bundle')
 " The following are examples of different formats supported.
 if has('nvim-0.5.0')
+    Plug 'navarasu/onedark.nvim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -39,6 +40,7 @@ if has('nvim-0.5.0')
     Plug 'L3MON4D3/LuaSnip'
     Plug 'rafamadriz/friendly-snippets'
 else
+    Plug 'joshdick/onedark.vim'
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
     Plug 'wellle/targets.vim'
@@ -74,7 +76,6 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'pearofducks/ansible-vim'
 Plug 'stephpy/vim-yaml'
-Plug 'joshdick/onedark.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'sainnhe/sonokai'

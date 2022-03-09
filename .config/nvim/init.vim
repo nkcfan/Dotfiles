@@ -82,6 +82,7 @@ if has('nvim-0.5.0')
         nnoremap <silent> <LocalLeader>th       :TSBufToggle highlight<CR>
     endif
 
+    lua require('onedark_config')
     lua require('fidget_config')
     lua require('lsp_config')
     nnoremap <silent> <LocalLeader>tv           :lua require("virtual_text").toggle()<CR>
