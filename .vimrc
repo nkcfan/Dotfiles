@@ -496,3 +496,6 @@ let g:nv_use_ignore_files = 0
 command! -bar -nargs=1 Doi2bib0 read !doi2bib <args>
 " Retab the bib
 command! -nargs=1 Doi2bib Doi2bib0 <args> | :normal! vgp<CR> | :retab
+
+" To debug highlight group
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
