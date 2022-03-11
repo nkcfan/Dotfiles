@@ -5,6 +5,7 @@ ignore=
     E203,  # Whitespace before ':'
     E211,  # Whitespace before '('
     E203,  # Whitespace before ':'
+    E261,  # at least two spaces before inline comment
     E251,  # Unexpected spaces around keyword / parameter equals
     E302,  # Expected 2 blank lines, found 0
     E303,  # Too many blank lines
