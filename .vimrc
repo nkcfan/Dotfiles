@@ -51,6 +51,7 @@ else
     Plug 'tpope/vim-commentary'
     Plug 'w0rp/ale'
     Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
+    Plug 'ConradIrwin/vim-bracketed-paste'
 endif
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
@@ -72,7 +73,6 @@ Plug 'cedarbaum/fugitive-azure-devops.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'tommcdo/vim-ninja-feet'
 Plug 'unblevable/quick-scope'
-Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'pearofducks/ansible-vim'
