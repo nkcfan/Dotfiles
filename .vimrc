@@ -382,22 +382,23 @@ nnoremap <silent> <expr> j (v:count == 0 ? 'gj' : (v:count == 1 ? '' : "m'" . v:
 nnoremap <silent> <expr> k (v:count == 0 ? 'gk' : (v:count == 1 ? '' : "m'" . v:count ) . 'k')
 noremap <silent> <expr> <Up> (v:count == 0 ? 'g<Up>' : '<Up>')
 noremap <silent> <expr> <Down> (v:count == 0 ? 'g<Down>' : '<Down>')
-" C-Del
-nmap <C-Del> <C-kDel>
-nnoremap <expr><C-kDel> '"_dw'
-" nnoremap <Del> "_x
-nmap <Del> d
+
+" Del will follow the register of `d`
+nmap <Del> dl
 smap <Del> d
 xmap <Del> d
 
-" Key mappings in insert mode
 " Mimic Windows C-Del behavior
+nmap <C-Del> <C-kDel>
+imap <C-Del> <C-kDel>
+nmap <C-kDel> dw
 " Note: gJ - Join lines and don't insert or remove any spaces
 " Note: ◦<C-O>x - To erase a visible char in order to keep indentation
-imap <C-Del> <C-kDel>
 inoremap <expr> <C-kDel> AtEndOfLine() ? '◦<C-O>x<C-O>gJ' : '<C-O>"_dw'
-inoremap <M-o> <C-C><C-O>
+
+" Save to file
 inoremap <C-S> <C-O>:w<CR>
+
 " Use <CR> to confirm completion, `<C-G>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <CR>    pumvisible() ? "<C-Y>" : "<C-G>u<CR>"
