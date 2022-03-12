@@ -473,7 +473,7 @@ let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 set grepformat^=%f:%l:%c:%m
 
 " Yank to tmux
-if exists("##TextYankPost")
+if !has("nvim") && exists("##TextYankPost")
     function! s:onYanked() abort
         if $TMUX != ''
             call system("tmux load-buffer -", v:event.regcontents)
