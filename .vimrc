@@ -9,6 +9,7 @@ call plug#begin('~/.vim/bundle')
 if has('nvim-0.5.0')
     Plug 'navarasu/onedark.nvim'
     Plug 'EdenEast/nightfox.nvim'
+    Plug 'folke/tokyonight.nvim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
