@@ -131,7 +131,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 " Line wrap
-" To insert the elipsis, press ctrl-vu followed by the numeric code for elipsis: 2026
 set wrap linebreak
 set showbreak=↺
 " Allows the left and right arrow keys to wrap around lines
