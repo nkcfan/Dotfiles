@@ -151,7 +151,6 @@ set completeopt-=preview
 set completeopt+=longest
 " Recommended completeopt for coc.nvim or completion-nvim
 set completeopt+=menuone,noinsert
-let &spellfile = expand('~/.vim/spell/' . &spelllang . '.' . &encoding . '.add')
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
@@ -323,14 +322,16 @@ function! DefaultSpellCheck()
     let fname = fnamemodify(expand("%"), ":~:.")
     if fname != ''
         setlocal spell
+        setlocal spelloptions=camel
+        let &l:spellfile=expand('~/.vim/spell/' . &spelllang . '.' . &encoding . '.add')
     endif
 endfunction
 
 " Toggle spell checking
 " ref: https://gist.github.com/brandonpittman/9d15134057c7267a88a8
 function! ToggleSpellCheck()
-  set spell!
-  set spell?
+    setlocal spell!
+    setlocal spell?
 endfunction
 
 " Toggle signcolumn
