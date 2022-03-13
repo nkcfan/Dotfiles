@@ -17,10 +17,6 @@ augroup END
 
 if has('nvim-0.4.0')
     if exists('g:neoray')
-        imap <expr> <S-Insert> XTermPasteBegin("")."<C-R>*<f29>"
-        cmap <S-Insert> <C-R>*
-        tnoremap <expr> <S-Insert> XTermPasteBegin("").'<C-\><C-N>"*p<f29>i'
-
         NeoraySet CursorAnimTime 0
         NeoraySet WindowState maximized
         NeoraySet ContextMenuOn false
@@ -28,9 +24,6 @@ if has('nvim-0.4.0')
     endif
     if exists('g:neovide')
         set guifont=Hasklig:h15
-        imap <expr> <S-Insert> XTermPasteBegin("")."<C-R>*<f29>"
-        cmap <S-Insert> <C-R>*
-
         " let g:neovide_fullscreen=v:true
     endif
     if exists('g:started_by_firenvim')

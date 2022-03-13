@@ -221,6 +221,11 @@ endif
 execute "set <C-Home>=\e[1;5H"
 execute "set <C-End>=\e[1;5F"
 
+" Paste in GUI mode
+inoremap <S-Insert> <C-R><C-O>*
+cnoremap <S-Insert> <C-R>*
+tnoremap <S-Insert> <C-\><C-N>"*pi
+
 " map the escape sequences to their Alt combinations
 " ref: https://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim/10216459#10216459
 " map the escape sequences to their Alt combinations in terminal mode
