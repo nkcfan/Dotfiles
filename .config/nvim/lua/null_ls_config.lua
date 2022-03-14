@@ -52,7 +52,7 @@ null_ls.setup({
 
         -- Prose
         null_ls.builtins.diagnostics.vale,
-        -- null_ls.builtins.diagnostics.alex,
+        null_ls.builtins.diagnostics.alex,
         null_ls.builtins.hover.dictionary,
 
         -- XML
