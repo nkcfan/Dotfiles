@@ -2,19 +2,14 @@ local cmp = require("cmp")
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
-local has_words_before = function()
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
 cmp.setup {
     mapping = {
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ["<Tab>"] = cmp.mapping(function(fallback)
-            if luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif has_words_before() then
-                cmp.confirm()
+            if cmp.visible() and cmp.confirm({ select = false }) then
+                -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            elseif luasnip.jumpable() then
+                luasnip.jump()
             else
                 fallback()
             end
@@ -57,7 +52,7 @@ cmp.setup {
 
     completion = {
         -- completeopt = "menu,menuone,noinsert",
-        completeopt = "menu,menuone",
+        completeopt = "menu,menuone,noselect",
     },
 
     formatting = {
@@ -68,7 +63,7 @@ cmp.setup {
                 nvim_lua = '[lua]',
                 path = '[path]',
                 luasnip = '[snip]',
-                spell = '[spl]',
+                -- spell = '[spl]',
             },
         },
     },
