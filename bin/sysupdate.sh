@@ -5,8 +5,9 @@ python2 -m pip install pynvim jedi
 python3 -m pip install pynvim jedi
 npm install -g neovim
 
-# cargo crates
+# rust and cargo crates
 # Note: depends on pkg-config libssl-dev
+rustup update
 cargo install cargo-update
 cargo install ripgrep
 cargo install bat
