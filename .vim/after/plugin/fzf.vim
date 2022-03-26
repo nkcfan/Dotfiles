@@ -20,7 +20,7 @@ let $FZF_DEFAULT_OPTS = '--bind alt-a:toggle-all'
 if empty($FZF_DEFAULT_COMMAND)
     " Note: because cmd will not run .bashrc, there is no FZF_DEFAULT_COMMAND env var
     if has('win32')
-        let $FZF_DEFAULT_COMMAND = 'bin/ripgrep_git.cmd'
+        let $FZF_DEFAULT_COMMAND = expand('~/bin/ripgrep_git.cmd')
     endif
 endif
 
