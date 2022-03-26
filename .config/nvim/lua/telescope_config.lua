@@ -1,9 +1,12 @@
 local actions = require("telescope.actions")
 
+local find_command = { vim.env.FZF_DEFAULT_COMMAND }
+
 require("telescope").setup {
     defaults = {
         mappings = {
             i = {
+                ["<C-H>"] = "which_key",
                 ["<Esc>"] = actions.close
             }
         },
@@ -14,6 +17,9 @@ require("telescope").setup {
         sorting_strategy = "ascending",
     },
     pickers = {
+        find_files = {
+            find_command = find_command,
+        },
         buffers = {
             ignore_current_buffer = true,
             sort_mru = true,
