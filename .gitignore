@@ -5,15 +5,12 @@
 !.git?*
 !.*rc
 !.*profile
-!.config
-!.config/**
 !.vim
 !.vim/**
 
-.config/**/node_modules/**
-.config/**/pkg/mod/**
 .vim/bundle/**
 .bashrc
 .netrc
 .gitk
 .curlrc
+.yarnrc

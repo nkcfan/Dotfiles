@@ -4,7 +4,6 @@
     name = nkcfan
     email = nkcfan@users.noreply.github.com
 [core]
-    excludesfile = ~/.gitignore_global
     autocrlf = input
     editor = vi
     symlinks = true
