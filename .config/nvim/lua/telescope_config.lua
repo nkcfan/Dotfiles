@@ -1,6 +1,6 @@
 local actions = require("telescope.actions")
 
-local find_command = { vim.env.FZF_DEFAULT_COMMAND }
+local find_command = { vim.env.FZF_DEFAULT_COMMAND or vim.fn.expand('~/bin/ripgrep_git.cmd') }
 
 require("telescope").setup {
     defaults = {
