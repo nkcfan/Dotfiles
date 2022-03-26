@@ -144,13 +144,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Setting fd as the default source for fzf
-UNAME=`uname`
-if [[ "$UNAME" == "MINGW"* ]]; then
-    export FZF_DEFAULT_COMMAND='{ rg --files --path-separator "//" --hidden; git ls-files; } | sort -u'
-else
-    export FZF_DEFAULT_COMMAND='{ rg --files --hidden; git ls-files; } | sort -u'
-fi
+# Setting the default source for fzf
+export FZF_DEFAULT_COMMAND='bin/ripgrep_git.sh'
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
