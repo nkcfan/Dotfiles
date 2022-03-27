@@ -57,6 +57,7 @@ else
     Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
     Plug 'ConradIrwin/vim-bracketed-paste'
 endif
+Plug 'ojroques/vim-oscyank'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
 Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
@@ -494,17 +495,28 @@ onoremap gp :normal! vgp<CR>
 let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
 set grepformat^=%f:%l:%c:%m
 
-" Yank to tmux
-if !has("nvim") && exists("##TextYankPost")
+" Yank to tmux or osc52
+if has('nvim')
+    if $TERM_PROGRAM=='mintty'
+        let g:clipboard = {
+                \   'name': 'osc52',
+                \   'copy': {'+': {lines, regtype -> OSCYankString(join(lines, "\n"))}},
+                \   'paste': {'+': {-> [split(getreg(''), '\n'), getregtype('')]}},
+                \ }
+    endif
+elseif exists("##TextYankPost")
     function! s:onYanked() abort
-        if $TMUX != ''
-            call system("tmux load-buffer -", v:event.regcontents)
-        endif
+        call system("tmux load-buffer -", v:event.regcontents)
     endfunction
 
     augroup YankPost
         autocmd!
-        autocmd TextYankPost * call s:onYanked()
+        if $TMUX != ''
+            autocmd TextYankPost * call s:onYanked()
+        endif
+        if $TERM_PROGRAM=='mintty'
+            autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '+' | execute 'OSCYankReg +' | endif
+        endif
     augroup END
 endif
 
