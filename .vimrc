@@ -7,8 +7,8 @@ endif
 call plug#begin('~/.vim/bundle')
 " The following are examples of different formats supported.
 if has('nvim-0.5.0')
-    Plug 'navarasu/onedark.nvim'
-    Plug 'EdenEast/nightfox.nvim'
+    " Plug 'navarasu/onedark.nvim'
+    " Plug 'EdenEast/nightfox.nvim'
     Plug 'folke/tokyonight.nvim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -42,7 +42,10 @@ if has('nvim-0.5.0')
     Plug 'L3MON4D3/LuaSnip'
     Plug 'rafamadriz/friendly-snippets'
 else
-    Plug 'joshdick/onedark.vim'
+    Plug 'sainnhe/sonokai'
+    " Plug 'joshdick/onedark.vim'
+    " Plug 'gruvbox-community/gruvbox'
+    " Plug 'bluz71/vim-moonfly-colors'
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'vim-python/python-syntax'
     Plug 'wellle/targets.vim'
@@ -78,9 +81,6 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'pearofducks/ansible-vim'
 Plug 'stephpy/vim-yaml'
-Plug 'gruvbox-community/gruvbox'
-Plug 'bluz71/vim-moonfly-colors'
-Plug 'sainnhe/sonokai'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vim-which-key'
@@ -309,17 +309,19 @@ set cursorline
 let g:load_doxygen_syntax = 1
 let g:python_highlight_all = 1
 
-" Choose a colorscheme
-" colorscheme gruvbox
-" colorscheme onedark
-" colorscheme moonfly
-" sonokai
-let g:sonokai_style = 'shusia'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-let g:sonokai_diagnostic_virtual_text = 'colored'
-" let g:sonokai_transparent_background = 1
-colorscheme sonokai
+if !has('nvim-0.5.0')
+    " Choose a colorscheme
+    " colorscheme gruvbox
+    " colorscheme onedark
+    " colorscheme moonfly
+    " sonokai
+    let g:sonokai_style = 'shusia'
+    let g:sonokai_enable_italic = 1
+    let g:sonokai_disable_italic_comment = 1
+    let g:sonokai_diagnostic_virtual_text = 'colored'
+    " let g:sonokai_transparent_background = 1
+    colorscheme sonokai
+endif
 
 function! AtEndOfLine()
     return col(".") >= col("$") - 1
