@@ -17,6 +17,7 @@ if has('nvim-0.5.0')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
     Plug 'nvim-treesitter/nvim-treesitter-refactor'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+    Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'neovim/nvim-lspconfig'
     Plug 'onsails/lspkind-nvim'
     Plug 'onsails/diaglist.nvim'
