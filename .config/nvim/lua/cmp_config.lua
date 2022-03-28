@@ -4,6 +4,7 @@ local luasnip = require("luasnip")
 
 cmp.setup {
     mapping = {
+        ["<C-Y>"] = cmp.mapping.confirm({ select = true }),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() and cmp.confirm({ select = false }) then
