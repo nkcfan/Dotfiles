@@ -12,6 +12,7 @@ cargo install cargo-update
 cargo install ripgrep
 cargo install bat
 cargo install stylua
+cargo install tree-sitter-cli
 cargo install-update -a
 
 # nvm
