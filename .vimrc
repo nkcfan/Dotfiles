@@ -500,7 +500,7 @@ set grepformat^=%f:%l:%c:%m
 
 " Yank to tmux or osc52
 if has('nvim')
-    if $TERM_PROGRAM=='mintty'
+    if $TMUX == ''
         let g:clipboard = {
                 \   'name': 'osc52',
                 \   'copy': {'+': {lines, regtype -> OSCYankString(join(lines, "\n"))}},
@@ -514,11 +514,10 @@ elseif exists("##TextYankPost")
 
     augroup YankPost
         autocmd!
-        if $TMUX != ''
-            autocmd TextYankPost * call s:onYanked()
-        endif
-        if $TERM_PROGRAM=='mintty'
+        if $TMUX == ''
             autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '+' | execute 'OSCYankReg +' | endif
+        else
+            autocmd TextYankPost * call s:onYanked()
         endif
     augroup END
 endif
