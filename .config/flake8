@@ -10,3 +10,4 @@ ignore=
     E302,  # Expected 2 blank lines, found 0
     E303,  # Too many blank lines
     E501,  # Line too long
+    PT009, # use a regular assert instead of unittest-style 'assertEqual'
