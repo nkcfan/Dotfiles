@@ -20,7 +20,7 @@ NVM_DIR="$HOME/.nvm"
 if [ -s "$NVM_DIR/nvm.sh" ]; then
     set +x
     source "$NVM_DIR/nvm.sh"  # This loads nvm
-    if nvm install node --reinstall-packages-from=node; then
+    if nvm install --lts node --reinstall-packages-from=node; then
         nvm alias default node
         pushd ~/.config/coc/extensions
         npm rebuild
