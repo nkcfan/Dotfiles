@@ -12,6 +12,17 @@ return {
         "Hack",
         "LXGW WenKai Mono",
     }),
+    font_rules = {
+        {
+            italic = true,
+            intensity = "Bold",
+            font = wezterm.font("Hack", {italic=true, weight="Bold"}),
+        },
+        {
+            intensity = "Bold",
+            font = wezterm.font("Hack", {weight="Bold"}),
+        },
+    },
     window_padding = {
         left = 2,
         right = 2,
