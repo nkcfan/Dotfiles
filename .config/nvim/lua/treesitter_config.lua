@@ -29,7 +29,21 @@ define_modules(
 )
 
 require "nvim-treesitter.configs".setup {
-    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = { "ocaml_interface", "fortran", "python", "c_sharp",
+        "gomod", "json5", "gowork", "todotxt", "graphql", "typescript", "ruby",
+        "perl", "supercollider", "fish", "slint", "php", "haskell", "java",
+        "hjson", "kotlin", "tlaplus", "regex", "julia", "llvm", "toml", "css",
+        "scss", "prisma", "pug", "rasi", "vue", "foam", "norg", "jsonc", "gleam",
+        "cpp", "elm", "javascript", "yaml", "eex", "yang", "heex", "lalrpop",
+        "ninja", "vala", "tsx", "nix", "hcl", "cooklang", "glimmer", "solidity",
+        "verilog", "rst", "latex", "json", "vim", "teal", "elvish", "markdown",
+        "ql", "astro", "hack", "go", "wgsl", "pascal", "make", "http", "scheme",
+        "hocon", "pioasm", "help", "lua", "cmake", "jsdoc", "zig", "ocaml", "rego",
+        "sparql", "beancount", "r", "gdscript", "clojure", "svelte", "devicetree",
+        "commonlisp", "turtle", "query", "comment", "cuda", "phpdoc", "d",
+        "fennel", "dart", "scala", "glsl", "html", "dockerfile", "bash", "c",
+        "dot", "erlang", "elixir", "rust", "surface", "fusion", "bibtex",
+        "ocamllex", "ledger" }, -- one of "all" or a list of languages
     folding,
     context_commentstring = {
         enable = true
