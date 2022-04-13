@@ -3,7 +3,7 @@ local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
 cmp.setup {
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
         ["<C-Y>"] = cmp.mapping.confirm({ select = true }),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -22,7 +22,7 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
-    },
+    }),
 
     --    the order of your sources matter (by default). That gives them priority
     --    you can configure:
@@ -47,8 +47,9 @@ cmp.setup {
         end,
     },
 
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
 
     completion = {
