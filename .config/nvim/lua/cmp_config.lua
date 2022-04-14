@@ -2,10 +2,19 @@ local cmp = require("cmp")
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
-cmp.setup {
+cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<C-Y>"] = cmp.mapping.confirm({ select = true }),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        -- Define a manual toggle
+        -- Note: i_CTRL-E is overridden
+        ["<C-E>"] = cmp.mapping(function (fallback)
+            if cmp.visible() then
+                cmp.mapping.abort()(fallback)
+            else
+                cmp.mapping.complete()()
+            end
+        end, { "i", "s" }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() and cmp.confirm({ select = false }) then
                 -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -58,16 +67,16 @@ cmp.setup {
     },
 
     formatting = {
-        format = lspkind.cmp_format {
+        format = lspkind.cmp_format({
             menu = {
-                buffer = '[buf]',
-                nvim_lsp = '[lsp]',
-                nvim_lua = '[lua]',
-                path = '[path]',
-                luasnip = '[snip]',
+                buffer = "[buf]",
+                nvim_lsp = "[lsp]",
+                nvim_lua = "[lua]",
+                path = "[path]",
+                luasnip = "[snip]",
                 -- spell = '[spl]',
             },
-        },
+        }),
     },
 
     matching = {
@@ -78,4 +87,4 @@ cmp.setup {
         native_menu = false,
         ghost_text = false,
     },
-}
+})
