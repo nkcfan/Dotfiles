@@ -110,8 +110,8 @@ if has('nvim-0.5.0')
     lua require('gitsigns_config')
     augroup gitsign
         autocmd!
-        autocmd InsertEnter * :Gitsigns toggle_current_line_blame
-        autocmd InsertLeave * :Gitsigns toggle_current_line_blame
+        autocmd InsertEnter * :Gitsigns toggle_current_line_blame false
+        autocmd InsertLeave * :Gitsigns toggle_current_line_blame true
     augroup END
 
     lua require('Comment').setup()
