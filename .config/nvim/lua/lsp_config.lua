@@ -1,5 +1,6 @@
 local lsp = require("lspconfig")
 local fuzzy = require("lspfuzzy").setup {}
+local sig = require('lsp_signature')
 
 vim.lsp.handlers["textDocument/hover"] =
     vim.lsp.with(
@@ -32,11 +33,16 @@ local map = function(type, key, value)
     vim.api.nvim_buf_set_keymap(0, type, key, value, {noremap = true, silent = true})
 end
 
-local custom_attach = function(client)
+local sig_cfg = {
+    toggle_key = '<M-x>',
+}
+sig.setup(sig_cfg)
+
+local custom_attach = function(client, bufnr)
     send_progress(client.id, 0, {kind = "begin", title = "on_attach"})
 
     -- require "completion".on_attach(client)
-    require('lsp_signature').on_attach()
+    require('lsp_signature').on_attach(sig_cfg, bufnr)
 
     map("n", "<LocalLeader>tv", "<cmd>lua require('virtual_text').toggle()<CR>")
     map("n", "vv", "<cmd>lua vim.lsp.buf.definition()<CR>")
