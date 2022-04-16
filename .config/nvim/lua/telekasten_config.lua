@@ -108,3 +108,10 @@ require('telekasten').setup({
     -- should all links be updated when a file is renamed
     rename_update_links = true,
 })
+
+vim.api.nvim_set_keymap('n', '<LocalLeader>kf', "<cmd>lua require('telekasten').find_notes()<CR>", {})
+vim.api.nvim_set_keymap('n', '<LocalLeader>kd', "<cmd>lua require('telekasten').find_daily_notes()<CR>", {})
+vim.api.nvim_set_keymap('n', '<LocalLeader>kg', "<cmd>lua require('telekasten').search_notes()<CR>", {})
+vim.api.nvim_set_keymap('n', '<LocalLeader>kk', "<cmd>lua require('telekasten').follow_link()<CR>", {})
+-- on hesitation, bring up the panel
+vim.api.nvim_set_keymap('n', '<LocalLeader>k',  "<cmd>lua require('telekasten').panel()<CR>", {})

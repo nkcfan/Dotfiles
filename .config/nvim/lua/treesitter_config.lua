@@ -126,3 +126,5 @@ require "nvim-treesitter.configs".setup {
         },
     }
 }
+
+vim.api.nvim_set_keymap('n', '<LocalLeader>th', '<cmd>TSBufToggle highlight<CR>', {})

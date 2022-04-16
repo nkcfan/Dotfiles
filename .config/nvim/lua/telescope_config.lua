@@ -34,3 +34,8 @@ require("telescope").setup {
 }
 
 require('telescope').load_extension('fzy_native')
+
+vim.api.nvim_set_keymap('n', 'z=', '<cmd>Telescope spell_suggest<CR>', {})
+vim.api.nvim_set_keymap('n', '<C-S-PageDown>', '<cmd>Telescope loclist<CR>', {})
+vim.api.nvim_set_keymap('n', '<S-PageDown>', '<cmd>Telescope quickfix<CR>', {})
+vim.api.nvim_set_keymap('n', '<M-p>', '<cmd>Telescope buffers<CR>', {})

@@ -38,6 +38,7 @@ local custom_attach = function(client)
     -- require "completion".on_attach(client)
     require('lsp_signature').on_attach()
 
+    map("n", "<LocalLeader>tv", "<cmd>lua require('virtual_text').toggle()<CR>")
     map("n", "vv", "<cmd>lua vim.lsp.buf.definition()<CR>")
     map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
     map("n", "rr", "<cmd>lua vim.lsp.buf.references()<CR>")
