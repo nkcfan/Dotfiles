@@ -1,21 +1,19 @@
-local gitsigns = require "gitsigns"
+local gitsigns = require("gitsigns")
 
 local function map(mode, lhs, rhs, opts)
-    opts = vim.tbl_extend("force", {noremap = true, silent = true}, opts or {})
+    opts = vim.tbl_extend("force", { noremap = true, silent = true }, opts or {})
     vim.api.nvim_buf_set_keymap(0, mode, lhs, rhs, opts)
 end
 
-gitsigns.setup {
+gitsigns.setup({
     current_line_blame = true,
     current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
         delay = 500,
-        ignore_whitespace = false
+        ignore_whitespace = false,
     },
-    current_line_blame_formatter_opts = {
-        relative_time = false
-    },
+    current_line_blame_formatter = " <author>, <author_time:%Y-%m-%d> - <summary>",
     on_attach = function(bufnr)
         -- Load current file git diff into loclist
         -- TODO: fix the empty list
@@ -39,5 +37,5 @@ gitsigns.setup {
         -- Text object
         map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>")
         map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>")
-    end
-}
+    end,
+})
