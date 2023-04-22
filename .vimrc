@@ -308,6 +308,12 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" " Customize highlight after ColorScheme changed
+" augroup my_colors
+"     autocmd!
+"     autocmd ColorScheme * highlight SpellBad cterm=undercurl gui=undercurl
+" augroup END
+"
 set cursorline
 let g:load_doxygen_syntax = 1
 let g:python_highlight_all = 1
