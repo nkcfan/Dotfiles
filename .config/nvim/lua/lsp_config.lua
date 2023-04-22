@@ -71,7 +71,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 lsp.bashls.setup {on_attach = custom_attach}
 lsp.clangd.setup {on_attach = custom_attach}
 
-lsp.jedi_language_server.setup {
+lsp.pyright.setup {
     on_attach = custom_attach,
     settings = {
         diagnostics = {
@@ -79,10 +79,6 @@ lsp.jedi_language_server.setup {
         },
         completion = {
             -- disableSnippets = true
-        },
-        jediSettings = {
-            -- autoImportModules = {"numpy", "pandas"},
-            -- debug = true
         },
         workspace = {
             extraPaths = {},
