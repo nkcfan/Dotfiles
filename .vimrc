@@ -520,9 +520,9 @@ elseif exists("##TextYankPost")
 
     augroup YankPost
         autocmd!
-        if empty($TMUX) && !empty($TERM) && $TERM != 'vtpcon'
+        if !empty($TERM) && $TERM != 'vtpcon'
             autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '+' | execute 'OSCYankReg +' | endif
-        else
+        elseif !empty($TMUX)
             autocmd TextYankPost * call s:onYanked()
         endif
     augroup END
