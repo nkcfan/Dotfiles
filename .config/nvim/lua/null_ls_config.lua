@@ -57,5 +57,9 @@ null_ls.setup({
 
         -- XML
         null_ls.builtins.formatting.xmllint,
+
+        -- code actions
+        null_ls.builtins.code_actions.gitsigns,
+        null_ls.builtins.code_actions.gitrebase,
     },
 })
