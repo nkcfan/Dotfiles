@@ -124,7 +124,7 @@ set clipboard+=unnamedplus
 "set selection=exclusive        " conflict with nvim-treesitter
 set foldlevelstart=20
 " Always show statusline
-set laststatus=2
+set laststatus=3
 " Show invisible char
 set list
 set listchars=tab:⇲\ ,trail:◦

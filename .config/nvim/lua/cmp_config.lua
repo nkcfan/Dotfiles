@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local types = require('cmp.types')
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
@@ -88,3 +89,67 @@ cmp.setup({
         ghost_text = false,
     },
 })
+-- `/` cmdline setup.
+cmdline_mapping = {
+    -- Define a manual toggle
+    ["<C-E>"] = {
+        c = function(fallback)
+            if cmp.visible() then
+                cmp.mapping.close()(fallback)
+            else
+                cmp.mapping.complete()(fallback)
+            end
+        end,
+    },
+    -- ["<Tab>"] = {
+    --     c = function(fallback)
+    --         fallback()
+    --     end,
+    -- },
+    -- ["<S-Tab>"] = {
+    --     c = function(fallback)
+    --         fallback()
+    --     end,
+    -- },
+    ["<Down>"] = {
+        c = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+            else
+                fallback()
+            end
+        end,
+    },
+    ["<Up>"] = {
+        c = function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+            else
+                fallback()
+            end
+        end,
+    },
+}
+-- -- `/` cmdline setup.
+-- cmp.setup.cmdline("/", {
+--     mapping = cmp.mapping.preset.cmdline(cmdline_mapping),
+--     completion = {
+--         autocomplete = false,
+--     },
+--     sources = {
+--         { name = "buffer" },
+--     },
+-- })
+-- -- `:` cmdline setup.
+-- cmp.setup.cmdline(":", {
+--     mapping = cmp.mapping.preset.cmdline(cmdline_mapping),
+--     completion = {
+--         autocomplete = false,
+--     },
+--     sources = cmp.config.sources({
+--         { name = "path" },
+--     }, {
+--         { name = "cmdline" },
+--     }),
+-- })
+
