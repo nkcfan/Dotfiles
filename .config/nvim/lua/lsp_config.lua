@@ -107,7 +107,7 @@ lsp.gopls.setup {
 -- set the path to the sumneko installation
 local sumneko_root_path = vim.fn.stdpath("data") .. "/lspinstall/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/" .. "/lua-language-server"
-lsp.sumneko_lua.setup {
+lsp.lua_ls.setup {
     on_attach = custom_attach,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
