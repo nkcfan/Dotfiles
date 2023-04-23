@@ -21,7 +21,10 @@ sudo apt-get install pkg-config libssl-dev
 ### node / npm / nvm
 Follow https://github.com/nvm-sh/nvm#installing-and-updating
 
-Follow https://github.com/nvm-sh/nvm#usage
+Follow https://github.com/nvm-sh/nvm#usage to install lts version of node
+```
+nvm install --lts node --reinstall-packages-from=node
+```
 
 ### pip
 Follow https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py
