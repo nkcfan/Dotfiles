@@ -3,7 +3,13 @@
 # coc.nvim dependencies
 python2 -m pip install pynvim jedi
 python3 -m pip install pynvim jedi
+python3 -m pip install yapf isort flake8
 npm install -g neovim
+npm install -g prettier
+
+# cabal
+cabal update
+cabal install alex
 
 # rust and cargo crates
 # Note: depends on pkg-config libssl-dev
