@@ -38,7 +38,7 @@ require "nvim-treesitter.configs".setup {
         "ninja", "vala", "tsx", "nix", "hcl", "cooklang", "glimmer", "solidity",
         "verilog", "rst", "latex", "json", "vim", "teal", "elvish", "markdown",
         "ql", "astro", "hack", "go", "wgsl", "pascal", "make", "http", "scheme",
-        "hocon", "pioasm", "help", "lua", "cmake", "jsdoc", "zig", "ocaml", "rego",
+        "hocon", "pioasm", "vimdoc", "lua", "cmake", "jsdoc", "zig", "ocaml", "rego",
         "sparql", "beancount", "r", "gdscript", "clojure", "svelte", "devicetree",
         "commonlisp", "turtle", "query", "comment", "cuda", "phpdoc", "d",
         "fennel", "dart", "scala", "glsl", "html", "dockerfile", "bash", "c",
