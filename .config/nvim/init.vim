@@ -79,6 +79,8 @@ if has('nvim-0.5.0')
     lua require('tokyonight_config')
     colorscheme tokyonight
 
+    lua require('whichkey_config')
+
     lua require('fidget_config')
     lua require('lsp_config')
     lua require('diagnostics_config')
