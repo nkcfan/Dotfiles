@@ -86,7 +86,6 @@ Plug 'pearofducks/ansible-vim'
 Plug 'stephpy/vim-yaml'
 Plug 'wsdjeg/vim-fetch'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'liuchengxu/vim-which-key'
 Plug 'alok/notational-fzf-vim'
 " All of your Plugins must be added before the following line
 " Initialize plugin system
@@ -379,7 +378,6 @@ set nonumber
 call ToggleSignColumn()
 " Leader key mappings
 " Note: do not use format like <KeyName>, which is not compatible with
-" vim-which-key
 let maplocalleader = " "
 let mapleader = "\\"
 nnoremap <LocalLeader>b                     :TagbarToggle<CR>
