@@ -21,7 +21,9 @@ null_ls.setup({
         -- null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.yapf,
         null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.ruff,
         null_ls.builtins.diagnostics.flake8,
+        null_ls.builtins.diagnostics.ruff,
 
         -- JS yaml html markdown css json
         null_ls.builtins.formatting.prettier.with({
