@@ -33,6 +33,7 @@ pathmunge() {
 pathmunge "$HOME/.local/bin"
 pathmunge "$HOME/.rbenv/bin"
 pathmunge "$HOME/.cargo/bin"
+pathmunge "$HOME/.cargo/env"
 pathmunge "$HOME/.yarn/bin"
 pathmunge "$HOME/.config/yarn/global/node_modules/.bin"
 pathmunge "$HOME/.cabal/bin"
