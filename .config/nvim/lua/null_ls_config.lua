@@ -22,8 +22,10 @@ null_ls.setup({
         null_ls.builtins.formatting.yapf,
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.ruff,
-        null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.ruff,
+        null_ls.builtins.diagnostics.flake8.with({
+            extra_args = { "--append-config", vim.fn.expand("~/.config/flake8") }
+        }),
 
         -- JS yaml html markdown css json
         null_ls.builtins.formatting.prettier.with({

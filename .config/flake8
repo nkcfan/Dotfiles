@@ -1,13 +1,24 @@
 [flake8]
 ignore=
-    E201,  # Whitespace after '('
-    E202,  # Whitespace before ')'
-    E203,  # Whitespace before ':'
-    E211,  # Whitespace before '('
-    E203,  # Whitespace before ':'
-    E261,  # at least two spaces before inline comment
-    E251,  # Unexpected spaces around keyword / parameter equals
-    E302,  # Expected 2 blank lines, found 0
-    E303,  # Too many blank lines
-    E501,  # Line too long
-    PT009, # use a regular assert instead of unittest-style 'assertEqual'
+    # Whitespace after '('
+    E201,
+    # Whitespace before ')'
+    E202,
+    # Whitespace before ':'
+    E203,
+    # Whitespace before '('
+    E211,
+    # Whitespace before ':'
+    E203,
+    # at least two spaces before inline comment
+    E261,
+    # Unexpected spaces around keyword / parameter equals
+    E251,
+    # Expected 2 blank lines, found 0
+    E302,
+    # Too many blank lines
+    E303,
+    # Line too long
+    E501,
+    # use a regular assert instead of unittest-style 'assertEqual'
+    PT009,
