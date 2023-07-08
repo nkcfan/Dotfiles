@@ -1,0 +1,6 @@
+[tool.ruff]
+ignore= [
+    "E501",  # Line too long
+    "PT009", # use a regular assert instead of unittest-style 'assertEqual'
+]
+
