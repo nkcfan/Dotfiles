@@ -17,6 +17,7 @@ augroup END
 
 if has('nvim-0.4.0')
     if exists('g:neoray')
+        set guifont=Hack:h10
         NeoraySet CursorAnimTime 0
         NeoraySet WindowState maximized
         NeoraySet ContextMenuOn false
