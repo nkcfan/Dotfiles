@@ -1,5 +1,5 @@
-Font=Hack
-FontHeight=10
+Font=Hack Nerd Font Mono
+FontHeight=11
 MiddleClickAction=void
 RightClickAction=paste
 Term=xterm-256color
