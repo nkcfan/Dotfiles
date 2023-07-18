@@ -509,7 +509,7 @@ if has('nvim')
     if empty($TMUX) && !empty($TERM) && $TERM != 'vtpcon'
         let g:clipboard = {
                 \   'name': 'osc52',
-                \   'copy': {'+': {lines, regtype -> OSCYankString(join(lines, "\n"))}},
+                \   'copy': {'+': {lines, regtype -> OSCYank(join(lines, "\n"))}},
                 \   'paste': {'+': {-> [split(getreg(''), '\n'), getregtype('')]}},
                 \ }
     endif
