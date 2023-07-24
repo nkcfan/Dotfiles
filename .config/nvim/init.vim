@@ -28,7 +28,9 @@ if has('nvim-0.4.0')
         " let g:neovide_fullscreen=v:true
     endif
     if exists('g:started_by_firenvim')
-        set guifont=Hack:h16
+        set guifont=Hack\ Nerd\ Font\ Mono
+        set bg=light
+        let g:firenvim_config = { 'globalSettings': {}, 'localSettings': { '.*': { 'takeover': 'never' } } }
     endif
     if !exists('*OnUIEnter')
         function! OnUIEnter(event)
