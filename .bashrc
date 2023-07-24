@@ -151,8 +151,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Key mappings for fzf
 # ref: https://github.com/junegunn/fzf/issues/546#issuecomment-213891483
-bind -x '"\C-p": fzf-file-widget'
 bind '"\C-t": transpose-chars'
+bind -x '"\C-p": fzf-file-widget'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
