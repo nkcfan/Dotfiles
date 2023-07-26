@@ -31,6 +31,7 @@ pathmunge() {
 
 # set PATH so it includes user's private bin if it exists
 pathmunge "$HOME/.local/bin"
+pathmunge "$HOME/.local/share/bob/nvim-bin"
 pathmunge "$HOME/.rbenv/bin"
 pathmunge "$HOME/.cargo/bin"
 pathmunge "$HOME/.cargo/env"

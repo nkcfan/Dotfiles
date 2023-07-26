@@ -14,6 +14,7 @@ cabal install alex
 # rust and cargo crates
 # Note: depends on pkg-config libssl-dev
 rustup update
+cargo install bob-nvim
 cargo install cargo-update
 cargo install ripgrep
 cargo install bat
