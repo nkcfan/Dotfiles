@@ -86,6 +86,7 @@ if has('nvim-0.5.0')
     lua require('block_config')
 
     lua require('fidget_config')
+    lua require('mason_config')
     lua require('lsp_config')
     lua require('diagnostics_config')
     lua require('telescope_config')
