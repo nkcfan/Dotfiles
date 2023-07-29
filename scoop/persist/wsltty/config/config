@@ -8,3 +8,7 @@ FontSmoothing=default
 BoldAsFont=yes
 AllowSetSelection=yes
 Scrollbar=none
+SwitchShortcuts=no
+KeyFunctions=\
+    C+Tab:'[27;5;9~'\
+    C+S+Tab:'[27;6;9~'\
