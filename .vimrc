@@ -508,7 +508,20 @@ set grepformat^=%f:%l:%c:%m
 
 " Yank to tmux or osc52
 if has('nvim')
-    if empty($TMUX) && !empty($TERM) && $TERM != 'vtpcon'
+    if has('wsl')
+        let g:clipboard = {
+                \   'name': 'WslClipboard',
+                \   'copy': {
+                \      '+': 'clip.exe',
+                \      '*': 'clip.exe',
+                \    },
+                \   'paste': {
+                \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                \   },
+                \   'cache_enabled': 0,
+                \ }
+    elseif empty($TMUX) && !empty($TERM) && $TERM != 'vtpcon'
         let g:clipboard = {
                 \   'name': 'osc52',
                 \   'copy': {'+': {lines, regtype -> OSCYank(join(lines, "\n"))}},
