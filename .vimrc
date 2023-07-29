@@ -6,9 +6,10 @@ endif
 
 call plug#begin('~/.vim/bundle')
 " The following are examples of different formats supported.
-if has('nvim-0.5.0')
+if has('nvim')
     " Plug 'navarasu/onedark.nvim'
     " Plug 'EdenEast/nightfox.nvim'
+    Plug 'gbprod/cutlass.nvim'
     Plug 'folke/tokyonight.nvim'
     Plug 'folke/which-key.nvim'
     Plug 'HampusHauffman/block.nvim'
@@ -49,6 +50,7 @@ if has('nvim-0.5.0')
     Plug 'L3MON4D3/LuaSnip'
     Plug 'rafamadriz/friendly-snippets'
 else
+    Plug 'svermeulen/vim-cutlass'
     Plug 'sainnhe/sonokai'
     " Plug 'joshdick/onedark.vim'
     " Plug 'gruvbox-community/gruvbox'
@@ -75,7 +77,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'zackhsi/fzf-tags'
 Plug 'itchyny/lightline.vim'
 Plug 'drzel/vim-line-no-indicator'
-Plug 'svermeulen/vim-cutlass'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -493,10 +494,12 @@ inoremap    <expr> <PageDown>   ExtendedPageDown("\<C-O>")
 set nostartofline
 
 " Cutlass
-nnoremap m d
-xnoremap m d
-nnoremap mm dd
-nnoremap M D
+if !has('nvim')
+    nnoremap m d
+    xnoremap m d
+    nnoremap mm dd
+    nnoremap M D
+endif
 
 " Make a text object for previously changed text
 " ref: http://vim.wikia.com/wiki/Selecting_your_pasted_text

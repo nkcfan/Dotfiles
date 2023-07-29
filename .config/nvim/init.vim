@@ -82,6 +82,7 @@ if has('nvim-0.5.0')
     lua require('tokyonight_config')
     colorscheme tokyonight
 
+    lua require('cutlass_config')
     lua require('whichkey_config')
     lua require('block_config')
 
