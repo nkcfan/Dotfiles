@@ -7,3 +7,4 @@ Transparency=off
 FontSmoothing=default
 BoldAsFont=yes
 AllowSetSelection=yes
+Scrollbar=none
