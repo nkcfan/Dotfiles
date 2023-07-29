@@ -34,6 +34,7 @@ if has('nvim-0.5.0')
     Plug 'renerocksai/telekasten.nvim'
     Plug 'danilamihailov/beacon.nvim'
     Plug 'svban/YankAssassin.vim'
+    Plug 'github/copilot.vim'
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
     " For nvim-cmp

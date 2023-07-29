@@ -91,6 +91,7 @@ if has('nvim-0.5.0')
     lua require('diagnostics_config')
     lua require('telescope_config')
     lua require('telekasten_config')
+    lua require('copilot_config')
 
     " Note: init lspkind before nvim-cmp
     lua require('lspkind_config')
