@@ -8,8 +8,8 @@
 !.vim
 !.vim/**
 
+.vim/systags
 .vim/bundle/**
-.bashrc
 .netrc
 .gitk
 .curlrc
