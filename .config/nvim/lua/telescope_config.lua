@@ -20,6 +20,9 @@ require("telescope").setup {
         find_files = {
             find_command = find_command,
         },
+        live_grep = {
+            find_command = find_command,
+        },
         buffers = {
             ignore_current_buffer = true,
             sort_mru = true,
