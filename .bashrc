@@ -148,6 +148,9 @@ fi
 export FZF_DEFAULT_COMMAND=$(realpath ~/bin/ripgrep_git.sh)
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# Ctrl-R to popup command history
+export FZF_CTRL_R_OPTS="--reverse"
+export FZF_TMUX_OPTS="-p"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Key mappings for fzf
 # ref: https://github.com/junegunn/fzf/issues/546#issuecomment-213891483
