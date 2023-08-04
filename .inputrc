@@ -3,6 +3,8 @@ set show-all-if-ambiguous on
 set bell-style visible
 # Bash 4.4, with readline 7.0, supports bracketed paste
 set enable-bracketed-paste on
+# Bash 4.3 supports enabling color for tab completion
+set colored-stats on
 
 # Delete Key
 "\e[3~": delete-char
