@@ -127,6 +127,7 @@ set encoding=utf-8
 " Always use the system clipboard for all operations, instead of interacting with the '+' and/or '*' registers explicitly
 set clipboard+=unnamedplus
 "set selection=exclusive        " conflict with nvim-treesitter
+set foldlevel=20
 set foldlevelstart=20
 " Always show statusline
 set laststatus=3
