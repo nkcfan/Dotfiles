@@ -130,7 +130,11 @@ set clipboard+=unnamedplus
 set foldlevel=20
 set foldlevelstart=20
 " Always show statusline
-set laststatus=3
+if has('nvim')
+    set laststatus=3
+else
+    set laststatus=2
+endif
 " Show invisible char
 set list
 set listchars=tab:⇲\ ,trail:◦
