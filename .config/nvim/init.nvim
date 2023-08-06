@@ -1,6 +1,4 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
-source ~/.vimrc
+" vi: ft=vim
 
 set winblend=5
 set pumblend=0

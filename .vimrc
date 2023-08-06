@@ -1,55 +1,41 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+let g:PluginSpec_Common = {
+            \ 'ojroques/vim-oscyank': { },
+            \ 'ntpeters/vim-better-whitespace': { },
+            \ 'Chiel92/vim-autoformat': { },
+            \ 'majutsushi/tagbar': { 'on': ['Tagbar', 'TagbarToggle'] },
+            \ 'plasticboy/vim-markdown': { },
+            \ 'vim-pandoc/vim-pandoc-syntax': { },
+            \ 'junegunn/fzf': { 'dir': '~/.fzf', 'do': './install --all' },
+            \ 'junegunn/fzf.vim': { },
+            \ 'zackhsi/fzf-tags': { },
+            \ 'itchyny/lightline.vim': { },
+            \ 'drzel/vim-line-no-indicator': { },
+            \ 'jpalardy/vim-slime': { },
+            \ 'tpope/vim-repeat': { },
+            \ 'tpope/vim-surround': { },
+            \ 'tpope/vim-eunuch': { },
+            \ 'tpope/vim-fugitive': { },
+            \ 'tpope/vim-rhubarb': { },
+            \ 'cedarbaum/fugitive-azure-devops.vim': { },
+            \ 'tommcdo/vim-ninja-feet': { },
+            \ 'unblevable/quick-scope': { },
+            \ 'xolox/vim-misc': { },
+            \ 'xolox/vim-colorscheme-switcher': { 'dependencies': ['xolox/vim-misc'] },
+            \ 'pearofducks/ansible-vim': { },
+            \ 'stephpy/vim-yaml': { },
+            \ 'wsdjeg/vim-fetch': { },
+            \ 'ludovicchabant/vim-gutentags': { },
+            \ 'alok/notational-fzf-vim': { },
+            \ }
 
-call plug#begin('~/.vim/bundle')
-" The following are examples of different formats supported.
-if has('nvim')
-    " Plug 'navarasu/onedark.nvim'
-    " Plug 'EdenEast/nightfox.nvim'
-    Plug 'gbprod/cutlass.nvim'
-    Plug 'folke/tokyonight.nvim'
-    Plug 'folke/which-key.nvim'
-    Plug 'HampusHauffman/block.nvim'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-telescope/telescope-fzy-native.nvim'
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-    Plug 'nvim-treesitter/nvim-treesitter-refactor'
-    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-    Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-    Plug 'williamboman/mason.nvim'
-    Plug 'williamboman/mason-lspconfig.nvim'
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'onsails/lspkind-nvim'
-    Plug 'onsails/diaglist.nvim'
-    Plug 'ray-x/lsp_signature.nvim'
-    Plug 'ojroques/nvim-lspfuzzy'
-    Plug 'jose-elias-alvarez/null-ls.nvim'
-    Plug 'j-hui/fidget.nvim', {'tag': 'legacy'}
-    Plug 'lewis6991/gitsigns.nvim'
-    Plug 'numToStr/Comment.nvim'
-    Plug 'renerocksai/telekasten.nvim'
-    Plug 'danilamihailov/beacon.nvim'
-    Plug 'svban/YankAssassin.vim'
-    Plug 'github/copilot.vim'
-    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+if !has('nvim')
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
 
-    " For nvim-cmp
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'hrsh7th/cmp-cmdline'
-    Plug 'f3fora/cmp-spell'
-    " For luasnip users.
-    Plug 'saadparwaiz1/cmp_luasnip'
-    Plug 'L3MON4D3/LuaSnip'
-    Plug 'rafamadriz/friendly-snippets'
-else
+    call plug#begin('~/.vim/bundle')
     Plug 'svermeulen/vim-cutlass'
     Plug 'sainnhe/sonokai'
     " Plug 'joshdick/onedark.vim'
@@ -65,37 +51,15 @@ else
     Plug 'w0rp/ale'
     Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
     Plug 'ConradIrwin/vim-bracketed-paste'
+
+    for [plugin, args] in items(g:PluginSpec_Common)
+        call plug#(plugin, args)
+    endfor
+
+    " All of your Plugins must be added before the following line
+    " Initialize plugin system
+    call plug#end()
 endif
-Plug 'ojroques/vim-oscyank'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'Chiel92/vim-autoformat'
-Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
-Plug 'plasticboy/vim-markdown'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'zackhsi/fzf-tags'
-Plug 'itchyny/lightline.vim'
-Plug 'drzel/vim-line-no-indicator'
-Plug 'jpalardy/vim-slime'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'cedarbaum/fugitive-azure-devops.vim'
-Plug 'tommcdo/vim-ninja-feet'
-Plug 'unblevable/quick-scope'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-colorscheme-switcher'
-Plug 'pearofducks/ansible-vim'
-Plug 'stephpy/vim-yaml'
-Plug 'wsdjeg/vim-fetch'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'alok/notational-fzf-vim'
-" All of your Plugins must be added before the following line
-" Initialize plugin system
-call plug#end()
 
 syntax on
 let g:xml_syntax_folding = 1
