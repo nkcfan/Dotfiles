@@ -32,7 +32,7 @@ let g:lightline = {
       \ }
 
 " Use vim colors in lightline.vim
-let g:lightline.colorscheme = g:colors_name
+let g:lightline.colorscheme = get(g:, 'colors_name', 'default')
 augroup LightlineOnColorScheme
   autocmd!
   autocmd ColorScheme * silent! let g:lightline.colorscheme = g:colors_name
