@@ -12,10 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 lazyspec = {
-    -- Plug 'navarasu/onedark.nvim'
-    -- Plug 'EdenEast/nightfox.nvim'
+    { "navarasu/onedark.nvim", lazy = true },
+    { "EdenEast/nightfox.nvim", lazy = true },
+    { "folke/tokyonight.nvim", lazy = true },
     { "gbprod/cutlass.nvim" },
-    { "folke/tokyonight.nvim" },
     { "folke/which-key.nvim" },
     { "HampusHauffman/block.nvim" },
     { "nvim-lua/popup.nvim" },
