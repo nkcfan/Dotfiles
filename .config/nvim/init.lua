@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 lazyspec = {
     { "navarasu/onedark.nvim", lazy = true },
     { "EdenEast/nightfox.nvim", lazy = true },
-    { "folke/tokyonight.nvim", lazy = true },
+    { "folke/tokyonight.nvim", lazy = false, priority = 1000, config = function() vim.cmd('colorscheme tokyonight') end },
     { "gbprod/cutlass.nvim" },
     { "folke/which-key.nvim" },
     { "HampusHauffman/block.nvim" },
