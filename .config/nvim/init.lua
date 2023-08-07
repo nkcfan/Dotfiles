@@ -83,13 +83,9 @@ for plugin, args in pairs(vim.g.PluginSpec_Common) do
     table.insert(lazyspec, args)
 end
 
-opts = {
-    performance = {
-        rtp = {
-            paths = { "~/.vim", "~/.vim/after" },
-        },
-    },
-}
-require("lazy").setup(lazyspec, opts)
+-- Note: do not change rtp in opts. To auto load legacy vimscript plugins,
+-- Make a copy of ~/.vim/{after,colors,indent,plugin,syntax} to ~/.config/nvim/.
+-- ref: https://github.com/folke/lazy.nvim/discussions/845#discussioncomment-6030168
+require("lazy").setup(lazyspec)
 
 vim.cmd.source(vim.fn.stdpath("config") .. "/init.nvim")
