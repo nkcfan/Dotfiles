@@ -314,9 +314,14 @@ function UpgradeAll()
     if exists('*coc#util#update_extensions')
         call coc#util#update_extensions()
     endif
-    execute 'PlugUpgrade'
-    execute 'PlugClean!'
-    execute 'PlugUpdate --sync'
+    if exists(':PlugUpgrade')
+        execute 'PlugUpgrade'
+        execute 'PlugClean!'
+        execute 'PlugUpdate --sync'
+    endif
+    if exists(':Lazy')
+        execute 'Lazy sync'
+    endif
 endfunction
 
 function! DefaultSpellCheck()
