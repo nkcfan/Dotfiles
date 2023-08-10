@@ -4,6 +4,7 @@
 python2 -m pip install pynvim jedi
 python3 -m pip install pynvim jedi
 python3 -m pip install yapf isort flake8
+pip3 install ruff
 npm install -g neovim
 npm install -g prettier
 
@@ -20,6 +21,7 @@ cargo install ripgrep
 cargo install bat
 cargo install stylua
 cargo install tree-sitter-cli
+cargo install zoxide --locked
 cargo install-update -a
 
 # nvm
