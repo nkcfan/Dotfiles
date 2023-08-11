@@ -7,7 +7,6 @@
     autocrlf = input
     editor = vi
     symlinks = true
-    pager = diff-so-fancy | less --tabs=4 -RFX
 [diff]
     tool = vimdiff
     algorithm = patience
@@ -107,9 +106,7 @@
 [push]
     default = upstream
 [pager]
-    show = diff-so-fancy | less --tabs=1,5 -RFX
 [interactive]
-    diffFilter = diff-so-fancy --patch
 [merge]
     conflictstyle = diff3
 [commit]
