@@ -10,7 +10,7 @@ BoldAsColour=no
 AllowSetSelection=yes
 Scrollbar=none
 SwitchShortcuts=no
-ProgressBar=1
+ProgressBar=yes
 KeyFunctions=\
     C+Tab:'[27;5;9~'\
     C+S+Tab:'[27;6;9~'\
