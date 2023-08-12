@@ -31,13 +31,37 @@ let g:lightline = {
       \ },
       \ }
 
-" Use vim colors in lightline.vim
-let g:lightline.colorscheme = get(g:, 'colors_name', 'default')
-augroup LightlineOnColorScheme
-  autocmd!
-  autocmd ColorScheme * silent! let g:lightline.colorscheme = g:colors_name
-  " autocmd VimLeave * !tmux source-file ~/.tmux.conf
+" Update your lightline colorscheme in sync with your vim
+" colorscheme (only for select colorschemes which exist for
+" both)
+" ref: help lightline-problem-13
+augroup LightlineColorscheme
+    autocmd!
+    autocmd ColorScheme * call s:lightline_update()
 augroup END
+function! s:lightline_update()
+    if !exists('g:loaded_lightline')
+        return
+    endif
+    try
+        if g:colors_name =~# 'wombat\|solarized\|landscape\|jellybeans\|seoul256\|Tomorrow'
+            let g:lightline.colorscheme =
+                        \ substitute(substitute(g:colors_name, '-', '_', 'g'), '256.*', '', '')
+        elseif g:colors_name =~# 'tokyonight.*'
+            let g:lightline.colorscheme = 'tokyonight'
+        elseif g:colors_name =~# 'onedark'
+            let g:lightline.colorscheme = 'one'
+        elseif g:colors_name =~# '.*fox'
+            let g:lightline.colorscheme = g:colors_name
+        else
+            return
+        endif
+        call lightline#init()
+        call lightline#colorscheme()
+        call lightline#update()
+    catch
+    endtry
+endfunction
 
 if !exists('*nvim_buf_set_virtual_text')
     call add(g:lightline.active.right, ['blame'])
