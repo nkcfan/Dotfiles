@@ -1,5 +1,4 @@
 local lsp = require("lspconfig")
-local fuzzy = require("lspfuzzy").setup {}
 local sig = require('lsp_signature')
 
 vim.lsp.handlers["textDocument/hover"] =

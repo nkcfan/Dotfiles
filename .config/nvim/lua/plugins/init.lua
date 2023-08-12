@@ -19,7 +19,11 @@ lazyspec = {
     { "onsails/lspkind-nvim" },
     { "onsails/diaglist.nvim" },
     { "ray-x/lsp_signature.nvim" },
-    { "ojroques/nvim-lspfuzzy" },
+    {
+        "ojroques/nvim-lspfuzzy",
+        dependencies = { "junegunn/fzf", "junegunn/fzf.vim" },
+        config = true,
+    },
     { "jose-elias-alvarez/null-ls.nvim" },
     { "j-hui/fidget.nvim", tag = "legacy" },
     { "lewis6991/gitsigns.nvim" },
