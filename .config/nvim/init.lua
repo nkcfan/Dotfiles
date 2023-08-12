@@ -15,5 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Make a copy of ~/.vim/{after,colors,indent,plugin,syntax} to ~/.config/nvim/.
 -- ref: https://github.com/folke/lazy.nvim/discussions/845#discussioncomment-6030168
 require("lazy").setup("plugins")
+vim.cmd("colorscheme tokyonight")
 
 vim.cmd.source(vim.fn.stdpath("config") .. "/init.nvim")

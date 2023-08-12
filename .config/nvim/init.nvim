@@ -75,12 +75,7 @@ if has('nvim-0.5.0')
         lua require('treesitter_config')
     endif
 
-    " lua require('onedark_config')
-    " lua require('nightfox_config')
-    lua require('tokyonight_config')
-
     lua require('cutlass_config')
-    lua require('block_config')
 
     lua require('fidget_config')
     lua require('lsp_config')

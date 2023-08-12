@@ -1,17 +1,6 @@
 lazyspec = {
-    { "navarasu/onedark.nvim", lazy = true },
-    { "EdenEast/nightfox.nvim", lazy = true },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd("colorscheme tokyonight")
-        end,
-    },
     { "gbprod/cutlass.nvim" },
     { "folke/which-key.nvim", config = true },
-    { "HampusHauffman/block.nvim" },
     { "nvim-lua/popup.nvim" },
     { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope.nvim" },
