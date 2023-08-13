@@ -1,7 +1,6 @@
 let g:PluginSpec_Common = {
             \ 'ojroques/vim-oscyank': { },
             \ 'ntpeters/vim-better-whitespace': { },
-            \ 'Chiel92/vim-autoformat': { },
             \ 'majutsushi/tagbar': { 'on': ['Tagbar', 'TagbarToggle'] },
             \ 'plasticboy/vim-markdown': { },
             \ 'vim-pandoc/vim-pandoc-syntax': { },
@@ -51,6 +50,7 @@ if !has('nvim')
     Plug 'w0rp/ale'
     Plug 'maximbaz/lightline-ale'   " Depends on lightline.vim and ale
     Plug 'ConradIrwin/vim-bracketed-paste'
+    Plug 'Chiel92/vim-autoformat'
 
     for [plugin, args] in items(g:PluginSpec_Common)
         call plug#(plugin, args)
