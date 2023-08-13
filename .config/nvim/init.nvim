@@ -1,18 +1,5 @@
 " vi: ft=vim
 
-set winblend=5
-set pumblend=0
-
-if has('win32')
-    let $TMP="/tmp"
-endif
-
-" highlightedyank
-augroup highlight_yank
-    autocmd!
-    au TextYankPost * lua vim.highlight.on_yank()
-augroup END
-
 if has('nvim-0.4.0')
     if exists('g:neoray')
         set guifont=Hack:h10

@@ -17,4 +17,19 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 vim.cmd("colorscheme tokyonight")
 
+vim.g.winblend=5
+vim.g.pumblend=0
+
+if vim.fn.has('win32') then
+    vim.env.TMP = "/tmp"
+end
+
+-- highlightedyank
+local augroup = vim.api.nvim_create_augroup("highlight_yank", {})
+vim.api.nvim_create_autocmd("TextYankPost", {
+    pattern = "*",
+    callback = vim.highlight.on_yank,
+    group = augroup,
+})
+
 vim.cmd.source(vim.fn.stdpath("config") .. "/init.nvim")
