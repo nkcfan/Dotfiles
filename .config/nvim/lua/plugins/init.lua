@@ -26,7 +26,6 @@ lazyspec = {
     { "renerocksai/telekasten.nvim" },
     { "danilamihailov/beacon.nvim" },
     { "svban/YankAssassin.vim" },
-    { "github/copilot.vim" },
     {
         "glacambre/firenvim",
 
