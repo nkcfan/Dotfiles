@@ -12,7 +12,6 @@ lazyspec = {
         config = true,
     },
     { "numToStr/Comment.nvim", config = true },
-    { "renerocksai/telekasten.nvim" },
     { "danilamihailov/beacon.nvim" },
     { "svban/YankAssassin.vim" },
     {
