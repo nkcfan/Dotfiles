@@ -13,7 +13,6 @@ lazyspec = {
         config = true,
     },
     { "jose-elias-alvarez/null-ls.nvim" },
-    { "lewis6991/gitsigns.nvim" },
     { "numToStr/Comment.nvim", config = true },
     { "renerocksai/telekasten.nvim" },
     { "danilamihailov/beacon.nvim" },
