@@ -116,6 +116,31 @@ function treesitter_setup()
         },
     })
     vim.api.nvim_set_keymap("n", "<LocalLeader>th", "<cmd>TSBufToggle highlight<CR>", {})
+
+    function GitFileStatus()
+        local file = vim.fn.expand("%")
+        if file == "" then
+            return ""
+        end
+        local filestatus = vim.fn.system("git status --porcelain " .. vim.fn.shellescape(file))
+        return string.sub(filestatus, 1, 2)
+    end
+
+    function RespectGitFileStatus()
+        if GitFileStatus() == "UU" then
+            if exists(':TSBufDisable') then
+                execute 'TSBufDisable highlight'
+            end
+            vim.diagnostic.disable(0, nil)
+        end
+    end
+
+    local augroup = vim.api.nvim_create_augroup("respectgit", {})
+    vim.api.nvim_create_autocmd({"BufNewFile", "BufFilePre", "BufRead"}, {
+        pattern = "*",
+        callback = RespectGitFileStatus,
+        group = augroup,
+    })
 end
 
 return {
