@@ -160,5 +160,4 @@ return {
         dependencies = { "junegunn/fzf", "junegunn/fzf.vim" },
         config = true,
     },
-    { "onsails/diaglist.nvim" },
 }
