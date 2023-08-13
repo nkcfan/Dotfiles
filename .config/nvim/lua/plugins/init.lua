@@ -1,10 +1,6 @@
 lazyspec = {
     { "folke/which-key.nvim", config = true },
     { "nvim-lua/popup.nvim" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, -- We recommend updating the parsers on update
-    { "nvim-treesitter/nvim-treesitter-refactor" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
-    { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "williamboman/mason.nvim", config = true },
     {
         "williamboman/mason-lspconfig.nvim",

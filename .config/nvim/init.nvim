@@ -71,10 +71,6 @@ if has('nvim-0.5.0')
         autocmd BufNewFile,BufFilePre,BufRead * call RespectGitFileStatus()
     augroup END
 
-    if !has('win32')
-        lua require('treesitter_config')
-    endif
-
     augroup gitsign
         autocmd!
         autocmd InsertEnter * :Gitsigns toggle_current_line_blame false
