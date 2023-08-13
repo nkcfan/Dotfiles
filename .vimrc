@@ -71,7 +71,6 @@ augroup detect_filetype
     autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
     autocmd FileType gitcommit,c,cpp,go,python,markdown,vim,yaml call DefaultSpellCheck()
     autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
-    autocmd BufNewFile,BufReadPost *.* if !empty(FugitiveGitDir()) && &buftype == '' | call feedkeys(":Git! difftool | cclose | echon '' \<CR>") | endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
     autocmd FileType xml setlocal foldmethod=syntax | call feedkeys(":%foldopen!\<CR>")
 augroup END
