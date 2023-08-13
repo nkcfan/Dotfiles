@@ -2,9 +2,6 @@ lazyspec = {
     { "gbprod/cutlass.nvim" },
     { "folke/which-key.nvim", config = true },
     { "nvim-lua/popup.nvim" },
-    { "nvim-lua/plenary.nvim" },
-    { "nvim-telescope/telescope.nvim" },
-    { "nvim-telescope/telescope-fzy-native.nvim" },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, -- We recommend updating the parsers on update
     { "nvim-treesitter/nvim-treesitter-refactor" },
     { "nvim-treesitter/nvim-treesitter-textobjects" },
