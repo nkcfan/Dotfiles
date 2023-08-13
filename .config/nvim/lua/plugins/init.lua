@@ -16,7 +16,6 @@ lazyspec = {
         config = true,
     },
     { "neovim/nvim-lspconfig" },
-    { "onsails/lspkind-nvim" },
     { "onsails/diaglist.nvim" },
     { "ray-x/lsp_signature.nvim" },
     {
@@ -43,18 +42,6 @@ lazyspec = {
             vim.fn["firenvim#install"](0)
         end,
     },
-
-    -- For nvim-cmp
-    { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-buffer" },
-    { "hrsh7th/cmp-path" },
-    { "hrsh7th/cmp-cmdline" },
-    { "f3fora/cmp-spell" },
-    -- For luasnip users.
-    { "saadparwaiz1/cmp_luasnip" },
-    { "L3MON4D3/LuaSnip" },
-    { "rafamadriz/friendly-snippets" },
 }
 
 -- Source the common vimrc file

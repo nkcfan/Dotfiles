@@ -84,10 +84,6 @@ if has('nvim-0.5.0')
     lua require('telekasten_config')
     lua require('copilot_config')
 
-    " Note: init lspkind before nvim-cmp
-    lua require('lspkind_config')
-    lua require('snip_config')
-    lua require('cmp_config')
     lua require('null_ls_config')
 
     lua require('gitsigns_config')
