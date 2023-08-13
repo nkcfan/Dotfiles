@@ -8,8 +8,8 @@ end
 local custom_attach = function(client)
     map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
     map("n", "<Leader>ra", "<cmd>Telescope lsp_code_actions<CR>")
-    map("n", "g=", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-    map("v", "g=", ":lua vim.lsp.buf.range_formatting()<CR>")
+    map("n", "g=", "<cmd>lua vim.lsp.buf.format()<CR>")
+    map("v", "g=", "<cmd>lua vim.lsp.buf.format()<CR>")
 end
 
 null_ls.setup({
