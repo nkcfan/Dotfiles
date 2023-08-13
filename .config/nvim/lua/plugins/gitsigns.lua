@@ -3,6 +3,8 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_buf_set_keymap(0, mode, lhs, rhs, opts)
 end
 
+local augroup = vim.api.nvim_create_augroup("gitsign", {})
+
 return {
     {
         "lewis6991/gitsigns.nvim",
@@ -19,6 +21,18 @@ return {
                 -- Load current file git diff into loclist
                 -- TODO: fix the empty list
                 -- gitsigns.setqflist(bufnr, { use_location_list = true, open = false})
+
+                -- Auto commands
+                vim.api.nvim_create_autocmd("InsertEnter", {
+                    command = ":Gitsigns toggle_current_line_blame false",
+                    group = augroup,
+                    buffer = bufnr,
+                })
+                vim.api.nvim_create_autocmd("InsertLeave", {
+                    command = ":Gitsigns toggle_current_line_blame true",
+                    group = augroup,
+                    buffer = bufnr,
+                })
 
                 -- Actions
                 -- map("n", "<LocalLeader>hs", ":Gitsigns stage_hunk<CR>")
