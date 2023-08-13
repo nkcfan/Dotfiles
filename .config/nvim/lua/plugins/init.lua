@@ -1,6 +1,5 @@
 lazyspec = {
     { "folke/which-key.nvim", config = true },
-    { "nvim-lua/popup.nvim" },
     { "williamboman/mason.nvim", config = true },
     {
         "williamboman/mason-lspconfig.nvim",
