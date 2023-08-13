@@ -12,7 +12,6 @@ lazyspec = {
         dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
         config = true,
     },
-    { "jose-elias-alvarez/null-ls.nvim" },
     { "numToStr/Comment.nvim", config = true },
     { "renerocksai/telekasten.nvim" },
     { "danilamihailov/beacon.nvim" },
