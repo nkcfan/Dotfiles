@@ -1,5 +1,4 @@
 lazyspec = {
-    { "gbprod/cutlass.nvim" },
     { "folke/which-key.nvim", config = true },
     { "nvim-lua/popup.nvim" },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, -- We recommend updating the parsers on update
