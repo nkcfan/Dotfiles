@@ -9,6 +9,7 @@
 !.vim/**
 
 .vim/systags
+.vim/autoload/plug.vim
 .vim/bundle/**
 .netrc
 .gitk
