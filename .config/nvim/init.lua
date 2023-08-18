@@ -34,4 +34,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     group = augroup,
 })
 
-vim.cmd.source(vim.fn.stdpath("config") .. "/init.nvim")
+if vim.g.started_by_firenvim == true then
+    vim.o.guifont = "Hack Nerd Font Mono"
+    vim.o.bg = "light"
+end
