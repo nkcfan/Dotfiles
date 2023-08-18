@@ -16,6 +16,11 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# If ssh-agent does not represent any identities, start ssh-agent and add identity
+if ! ssh-add -l; then
+    . "$HOME/bin/ssh-agent.sh"
+fi
+
 # ref: https://unix.stackexchange.com/a/217629/161486
 pathmunge() {
     if [ -d "$1" ]; then
