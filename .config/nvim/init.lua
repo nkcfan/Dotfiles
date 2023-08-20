@@ -28,7 +28,9 @@ end
 local augroup = vim.api.nvim_create_augroup("highlight_yank", {})
 vim.api.nvim_create_autocmd("TextYankPost", {
     pattern = "*",
-    callback = vim.highlight.on_yank,
+    -- Note: need a lambda for callback to work
+    -- ref: https://www.reddit.com/r/neovim/comments/u6ysr5/comment/i5bi1o8/?utm_source=share&utm_medium=web2x&context=3
+    callback = function() vim.highlight.on_yank() end,
     group = augroup,
 })
 
