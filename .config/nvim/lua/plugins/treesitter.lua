@@ -30,9 +30,6 @@ function treesitter_setup()
     require("nvim-treesitter.configs").setup({
         auto_install = true,
         folding,
-        context_commentstring = {
-            enable = true,
-        },
         highlight = {
             enable = true, -- false will disable the whole extension
             disable = {}, -- list of language that will be disabled
