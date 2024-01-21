@@ -9,6 +9,10 @@ vim.api.nvim_set_keymap("n", "<LocalLeader>k", "<cmd>lua require('telekasten').p
 
 return {
     {
+        "renerocksai/calendar-vim",
+        dependencies = { "renerocksai/telekasten.nvim" },
+    },
+    {
         "renerocksai/telekasten.nvim",
         config = {
             home = home,
