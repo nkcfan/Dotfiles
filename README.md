@@ -14,6 +14,7 @@ git branch --set-upstream-to=origin/master
 
 ### build toolchain
 ```
+sudo apt-get update
 sudo apt-get install build-essential
 sudo apt-get install pkg-config libssl-dev libxml2-utils universal-ctags clangd cmake
 ```
