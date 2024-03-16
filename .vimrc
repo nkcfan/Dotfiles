@@ -7,7 +7,6 @@ let g:PluginSpec_Common = {
             \ 'junegunn/fzf': { 'dir': '~/.fzf', 'do': './install --all' },
             \ 'junegunn/fzf.vim': { },
             \ 'zackhsi/fzf-tags': { },
-            \ 'itchyny/lightline.vim': { },
             \ 'drzel/vim-line-no-indicator': { },
             \ 'jpalardy/vim-slime': { },
             \ 'tpope/vim-repeat': { },
@@ -26,6 +25,11 @@ let g:PluginSpec_Common = {
             \ 'ludovicchabant/vim-gutentags': { },
             \ 'alok/notational-fzf-vim': { },
             \ }
+
+" Disable plugins in vscode-neovim
+if !exists('g:vscode')
+    let g:PluginSpec_Common['itchyny/lightline.vim'] = { }
+endif
 
 if !has('nvim')
     if empty(glob('~/.vim/autoload/plug.vim'))

@@ -87,19 +87,6 @@ let g:lightline#ale#indicator_warnings = "! "
 let g:lightline#ale#indicator_errors = "✘ "
 let g:lightline#ale#indicator_ok = "✓"
 
-augroup LightlineOnChanges
-  autocmd!
-  autocmd User ALEFixPre   call lightline#update()
-  autocmd User ALEFixPost  call lightline#update()
-  autocmd User ALELintPre  call lightline#update()
-  autocmd User ALELintPost call lightline#update()
-  autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
-  autocmd User CocGitStatusChange call lightline#update()
-  if exists('##DiagnosticChanged')
-      autocmd DiagnosticChanged * call lightline#update()
-  endif
-augroup end
-
 " gutentags
 function! LightlineGutentags() abort
   if exists('*gutentags#statusline')
