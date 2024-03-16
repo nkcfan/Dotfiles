@@ -1,0 +1,17 @@
+{
+    "foam.openDailyNote.directory": "daily",
+    "editor.fontFamily": "Hack Nerd Font Mono, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "git.openRepositoryInParentFolders": "never",
+    "vscode-neovim.useWSL": true,
+    "vscode-neovim.neovimExecutablePaths.linux": "~/.local/share/bob/nvim-bin/nvim",
+	"remote.extensionKind": {
+        "asvetliakov.vscode-neovim": [
+			"workspace"
+		]
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.lineNumbers": "relative"
+}
