@@ -122,7 +122,9 @@ set ttimeoutlen=100
 " The default updatetime is too large for tagbar/coc.nvim's response
 set updatetime=500
 " Prefer lightline status, don't need showmode
-set noshowmode
+if !exists('g:vscode')
+    set noshowmode
+endif
 " ins-completion
 if has("patch-8.1.1880")
     set completeopt+=popup
