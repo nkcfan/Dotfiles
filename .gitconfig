@@ -27,7 +27,7 @@
     branch = auto
     interactive = true
 [credential]
-    helper = ! \"$GIT_CREDENTIAL_HELPER\"
+    helper =
 [help]
     format = man
 [pack]
