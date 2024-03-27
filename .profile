@@ -82,6 +82,9 @@ elif [[ "$UNAME" == "Darwin" ]]; then # OSX
     export GREP_OPTIONS='--color=auto'
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=git-credential-osxkeychain
+    # Using tmux-256color on macOS
+    # ref: https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
+    export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 else # Windows
     #export EDITOR="'$PROGRAMFILES/Notepad++/notepad++.exe'"
     # Set git credential helper for https
