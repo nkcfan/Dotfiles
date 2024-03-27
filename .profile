@@ -77,7 +77,7 @@ if [[ "$UNAME" == "Linux" ]]; then
     stty -ixon
 elif [[ "$UNAME" == "Darwin" ]]; then # OSX
     #export EDITOR="/usr/local/bin/mate -w"
-    export GIT_EDITOR="/usr/local/bin/mate -w"
+    #export GIT_EDITOR="/usr/local/bin/mate -w"
     # Enable color in grep
     export GREP_OPTIONS='--color=auto'
     # Set git credential helper for https
