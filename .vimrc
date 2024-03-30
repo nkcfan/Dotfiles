@@ -158,6 +158,12 @@ else
     " Please install the package wamerican
 endif
 
+" Executable path
+if exists('g:vscode')
+    " For ripgrep(rg)
+    let $PATH .= ':' . $HOME . '/.cargo/bin'
+endif
+
 " Scroll hit to middle if not on same page
 " If cursor is in first or last line of window, scroll to middle line.
 " ref: https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
