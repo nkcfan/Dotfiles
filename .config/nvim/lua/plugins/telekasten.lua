@@ -1,6 +1,7 @@
 local home = vim.fn.expand("~/wiki")
 
 vim.api.nvim_set_keymap("n", "<LocalLeader>kf", "<cmd>lua require('telekasten').find_notes()<CR>", {})
+vim.api.nvim_set_keymap("n", "<M-h>", "<cmd>lua require('telekasten').find_daily_notes()<CR>", {})
 vim.api.nvim_set_keymap("n", "<LocalLeader>kd", "<cmd>lua require('telekasten').find_daily_notes()<CR>", {})
 vim.api.nvim_set_keymap("n", "<LocalLeader>kg", "<cmd>lua require('telekasten').search_notes()<CR>", {})
 vim.api.nvim_set_keymap("n", "<LocalLeader>kk", "<cmd>lua require('telekasten').follow_link()<CR>", {})
