@@ -1,11 +1,5 @@
 lazyspec = {
     { "folke/which-key.nvim", config = true },
-    { "williamboman/mason.nvim", config = true },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
-        config = true,
-    },
     { "danilamihailov/beacon.nvim" },
     { "svban/YankAssassin.vim" },
 }
