@@ -147,6 +147,11 @@ return {
         build = ":TSUpdate", -- We recommend updating the parsers on update
         config = treesitter_setup,
         dependencies = {
+            {
+                -- lsp won't start if this is removed
+                -- ref: https://www.reddit.com/r/neovim/comments/14cikep/on_nightly_my_lsp_is_not_starting_automatically/
+                "neovim/nvim-lspconfig"
+            },
             { "nvim-treesitter/nvim-treesitter-refactor" },
             { "nvim-treesitter/nvim-treesitter-textobjects" },
             { "JoosepAlviste/nvim-ts-context-commentstring" },
