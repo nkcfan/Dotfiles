@@ -139,6 +139,8 @@ set shortmess+=c
 " Running the native Windows vim in msys or cygwin, do no use bash
 if has('win32')
     let &shell='cmd.exe'
+else
+    let &shell='bash -l'
 endif
 
 " vim-yaml
