@@ -13,5 +13,15 @@
     {
         "key": "alt+w",
         "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "markdown-editor.openEditor",
+        "when": "editorTextFocus && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+shift+alt+m",
+        "command": "-markdown-editor.openEditor",
+        "when": "editorTextFocus && editorLangId == 'markdown'"
     }
 ]

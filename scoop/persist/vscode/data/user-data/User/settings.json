@@ -13,5 +13,11 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "editor.lineNumbers": "relative"
+    "editor.lineNumbers": "relative",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    }
 }
