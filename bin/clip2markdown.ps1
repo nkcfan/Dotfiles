@@ -9,4 +9,4 @@ $clipboard = [Windows.Clipboard]::GetData([Windows.DataFormats]::Html)
 $ofs = "`n"
 $html_fragment = ("$clipboard" -split '<!--StartFragment-->|<!--EndFragment-->')[1]
 
-$html_fragment | pandoc -f html -t org --wrap=none | pandoc -f org -t markdown --wrap=none
+$html_fragment | pandoc.exe -f html -t org --wrap=none | pandoc.exe -f org -t markdown --wrap=none

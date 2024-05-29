@@ -384,7 +384,7 @@ nnoremap <LocalLeader>tn                    :call ToggleSignColumn()<CR>
 nnoremap <LocalLeader>ts                    :call ToggleSpellCheck()<CR>
 nnoremap <LocalLeader>tw                    <cmd>ToggleWhitespace<CR>
 nnoremap <LocalLeader>ym                    :let @*=trim(execute('1messages')) \| echo 'Last message yanked'<CR>
-nnoremap <LocalLeader>md                    :let @*=system('powershell ~/bin/clip2markdown.ps1') \| echo 'Clipboard as markdown yanked'<CR>
+nnoremap <LocalLeader>md                    :let @*=system('powershell.exe ~/bin/clip2markdown.ps1') \| echo 'Clipboard as markdown yanked'<CR>
 
 nnoremap <C-Home> gg0
 nnoremap <C-End> G$
