@@ -4,7 +4,7 @@ Run below commands in the home directory, logout and login.
 ```bash
 cd ~
 git init
-git remote add origin git@github.com:nkcfan/Dotfiles.git
+git remote add origin https://github.com/nkcfan/Dotfiles.git
 git fetch
 git checkout -t origin/master
 git branch --set-upstream-to=origin/master
