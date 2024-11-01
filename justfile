@@ -18,6 +18,7 @@ curl: (apt_try_install "curl")
     just apt_install ca-certificates
 fzf: (apt_try_install "fzf")
 tmux: (apt_try_install "tmux")
+augtool: (apt_try_install "augtool" "augeas-tools")
 
 NVM_DIR := "$HOME/.nvm"
 nvm: curl
@@ -29,7 +30,7 @@ node: nvm
     set +x
     if nvm install --lts node {{ if `command -v node` != "" { "--reinstall-packages-from=node" } else { "" } }}; then
         nvm alias default node
-        echo 'Please `nvm uinstall` old versions!'
+        @echo 'Please `nvm uinstall` old versions!'
         if [ -d "~/.config/coc/extensions" ]; then
             pushd ~/.config/coc/extensions
             npm rebuild
@@ -96,5 +97,12 @@ docker:
     just apt_install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 docker_post: docker
     sudo usermod -aG docker $USER
-    # activate the changes to groups
-    newgrp docker
+    @echo 'Log out and log back in so that your group membership is re-evaluated'
+
+avahi:
+    just apt_install avahi-daemon
+    just augtool
+    # sudo augtool --autosave "set /files/etc/avahi/avahi-daemon.conf/publish/publish-addresses yes"
+    # sudo service avahi-daemon restart
+avahi-utils:
+    just apt_install avahi-utils
