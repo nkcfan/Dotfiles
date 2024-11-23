@@ -28,9 +28,9 @@ node: nvm
     #!/bin/bash
     source "$NVM_DIR/nvm.sh"  # This loads nvm
     set +x
-    if nvm install --lts node {{ if `command -v node` != "" { "--reinstall-packages-from=node" } else { "" } }}; then
+    if nvm install --lts node {{ if `command -v node || true` != "" { "--reinstall-packages-from=node" } else { "" } }}; then
         nvm alias default node
-        @echo 'Please `nvm uinstall` old versions!'
+        echo 'Please `nvm uinstall` old versions!'
         if [ -d "~/.config/coc/extensions" ]; then
             pushd ~/.config/coc/extensions
             npm rebuild
@@ -38,7 +38,7 @@ node: nvm
         fi
     fi
     set -x
-npm: nvm
+npm: node
     #!/bin/bash
     # TODO: no need to upgate npm, since it is managed by nvm
     #npm install -g npm@latest
