@@ -90,6 +90,8 @@ function lspconfig_setup()
     })
     -- lua
     lsp.lua_ls.setup({ on_attach = custom_attach })
+
+    lsp.docker_compose_language_service.setup({ on_attach = custom_attach })
 end
 
 return {

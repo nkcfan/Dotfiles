@@ -72,6 +72,7 @@ let g:xml_syntax_folding = 1
 augroup detect_filetype
     autocmd!
     autocmd BufNewFile,BufFilePre,BufRead */ansible/{**/,}*.yml set filetype=yaml.ansible
+    autocmd BufNewFile,BufFilePre,BufRead docker-compose.yml set filetype=yaml.docker-compose
     autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
     autocmd FileType gitcommit,c,cpp,go,python,markdown,vim,yaml call DefaultSpellCheck()
     autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
