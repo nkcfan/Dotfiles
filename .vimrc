@@ -106,6 +106,7 @@ endif
 " Show invisible char
 set list
 set listchars=tab:⇲\ ,trail:◦
+set fillchars=eob:\ ,fold:\ ,foldopen:,foldsep:\ ,foldclose:
 " Tabs
 set tabstop=4
 set shiftwidth=4
