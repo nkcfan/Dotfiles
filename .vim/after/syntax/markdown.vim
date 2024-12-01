@@ -1,4 +1,3 @@
-setlocal conceallevel=2
 setlocal comments+=b:-
 setlocal formatoptions+=ro
 
