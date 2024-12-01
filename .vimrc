@@ -3,7 +3,7 @@ let g:PluginSpec_Common = {
             \ 'ntpeters/vim-better-whitespace': { },
             \ 'majutsushi/tagbar': { 'on': ['Tagbar', 'TagbarToggle'] },
             \ 'plasticboy/vim-markdown': { 'ft': ['markdown' ] },
-            \ 'junegunn/fzf': { 'dir': '~/.fzf', 'do': './install --all' },
+            \ 'junegunn/fzf': { 'do': './install --all' },
             \ 'junegunn/fzf.vim': { },
             \ 'zackhsi/fzf-tags': { },
             \ 'drzel/vim-line-no-indicator': { },

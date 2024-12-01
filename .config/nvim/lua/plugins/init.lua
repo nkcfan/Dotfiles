@@ -9,16 +9,19 @@ lazyspec = {
 vim.cmd.source("~/.vimrc")
 
 for plugin, args in pairs(vim.g.PluginSpec_Common) do
-    if args.on then
-        args.cmd = args.on
-        args.on = nil
+    as = {}
+    for k, v in pairs(args) do
+        if k == 'on' then
+            ak = 'cmd'
+        elseif k == 'do' then
+            ak = 'build'
+        else
+            ak = k
+        end
+        as[ak] = v
     end
-    if args["do"] then
-        args.build = args["do"]
-        args["do"] = nil
-    end
-    table.insert(args, 1, plugin)
-    table.insert(lazyspec, args)
+    table.insert(as, 1, plugin)
+    table.insert(lazyspec, as)
 end
 
 return lazyspec
