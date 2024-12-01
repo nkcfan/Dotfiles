@@ -3,7 +3,6 @@ let g:PluginSpec_Common = {
             \ 'ntpeters/vim-better-whitespace': { },
             \ 'majutsushi/tagbar': { 'on': ['Tagbar', 'TagbarToggle'] },
             \ 'plasticboy/vim-markdown': { 'ft': ['markdown' ] },
-            \ 'vim-pandoc/vim-pandoc-syntax': { 'ft': ['markdown', 'pandoc'] },
             \ 'junegunn/fzf': { 'dir': '~/.fzf', 'do': './install --all' },
             \ 'junegunn/fzf.vim': { },
             \ 'zackhsi/fzf-tags': { },
@@ -73,7 +72,6 @@ augroup detect_filetype
     autocmd!
     autocmd BufNewFile,BufFilePre,BufRead */ansible/{**/,}*.yml set filetype=yaml.ansible
     autocmd BufNewFile,BufFilePre,BufRead {docker-,}compose.y{a,}ml set filetype=yaml.docker-compose
-    autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
     autocmd FileType gitcommit,c,cpp,go,python,markdown,vim,yaml call DefaultSpellCheck()
     autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
