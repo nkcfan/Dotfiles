@@ -45,6 +45,7 @@ return {
             vim.api.nvim_set_keymap("n", "<S-PageDown>", "<cmd>Telescope quickfix<CR>", {})
             vim.api.nvim_set_keymap("n", "<C-P>", "<cmd>Telescope find_files<CR>", {})
             vim.api.nvim_set_keymap("n", "<M-p>", "<cmd>Telescope buffers<CR>", {})
+            vim.api.nvim_set_keymap("n", "<M-t>", "<cmd>Telescope treesitter<CR>", {})
         end,
     },
     {
