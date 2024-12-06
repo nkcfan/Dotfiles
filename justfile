@@ -108,5 +108,6 @@ avahi-utils:
     just apt_install avahi-utils
 
 # power management
-sudo augtool --autosave "set /files/etc/systemd/logind.conf/Login/HandlePowerKeyLongPress/value poweroff"
-sudo augtool --autosave "set /files/etc/systemd/logind.conf/Login/HandleLidSwitch/value ignore"
+logind:
+    sudo augtool --autosave "set /files/etc/systemd/logind.conf/Login/HandlePowerKeyLongPress/value poweroff"
+    sudo augtool --autosave "set /files/etc/systemd/logind.conf/Login/HandleLidSwitch/value ignore"
