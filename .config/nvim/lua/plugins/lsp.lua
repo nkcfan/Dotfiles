@@ -57,6 +57,19 @@ function lspconfig_setup()
     lsp.bashls.setup({ on_attach = custom_attach })
     lsp.clangd.setup({ on_attach = custom_attach })
 
+    lsp.rust_analyzer.setup({
+        on_attach = custom_attach,
+        settings = {
+            ['rust-analyzer'] = {
+                diagnostics = {
+                    enable = true,
+                },
+                cargo = {
+                    allFeatures = true,
+                },
+            }
+        }
+    })
     lsp.pyright.setup({
         on_attach = custom_attach,
         settings = {
