@@ -55,7 +55,24 @@ function lspconfig_setup()
     local lsp = require("lspconfig")
     lsp.marksman.setup({ on_attach = custom_attach })
     lsp.bashls.setup({ on_attach = custom_attach })
-    lsp.clangd.setup({ on_attach = custom_attach })
+    lsp.clangd.setup({
+        on_attach = custom_attach,
+        settings = {
+            clangd = {
+                diagnostics = {
+                    enable = true,
+                },
+
+                -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+                -- Be aware that you also will need to properly configure your LSP server to
+                -- provide the inlay hints.
+                inlay_hints = {
+                    enabled = true,
+                    exclude = { }, -- filetypes for which you don't want to enable inlay hints
+                },
+            },
+        },
+    })
 
     lsp.rust_analyzer.setup({
         on_attach = custom_attach,
