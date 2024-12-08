@@ -27,6 +27,17 @@ local custom_attach = function(client, bufnr)
     -- require "completion".on_attach(client)
     require("lsp_signature").on_attach(sig_cfg, bufnr)
 
+    local methods = vim.lsp.protocol.Methods
+
+    -- https://reddit.com/r/neovim/s/eDfG5BfuxW
+    if client.supports_method(methods.textDocument_inlayHint) then
+        vim.keymap.set("n", "<LocalLeader>ti", function()
+            vim.lsp.inlay_hint.enable(true, nil)
+        end, { desc = "[t]oggle [i]nlay hints" })
+        -- enable by default
+        vim.lsp.inlay_hint.enable(true, nil)
+    end
+
     map("n", "<LocalLeader>tv", "<cmd>lua require('virtual_text').toggle()<CR>")
     map("n", "vv", "<cmd>lua vim.lsp.buf.definition()<CR>")
     map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
@@ -55,20 +66,37 @@ function lspconfig_setup()
     local lsp = require("lspconfig")
     lsp.marksman.setup({ on_attach = custom_attach })
     lsp.bashls.setup({ on_attach = custom_attach })
-    lsp.clangd.setup({ on_attach = custom_attach })
+    lsp.clangd.setup({
+        on_attach = custom_attach,
+        settings = {
+            clangd = {
+                diagnostics = {
+                    enable = true,
+                },
+
+                -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+                -- Be aware that you also will need to properly configure your LSP server to
+                -- provide the inlay hints.
+                inlay_hints = {
+                    enabled = true,
+                    exclude = {}, -- filetypes for which you don't want to enable inlay hints
+                },
+            },
+        },
+    })
 
     lsp.rust_analyzer.setup({
         on_attach = custom_attach,
         settings = {
-            ['rust-analyzer'] = {
+            ["rust-analyzer"] = {
                 diagnostics = {
                     enable = true,
                 },
                 cargo = {
                     allFeatures = true,
                 },
-            }
-        }
+            },
+        },
     })
     lsp.pyright.setup({
         on_attach = custom_attach,
