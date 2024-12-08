@@ -416,6 +416,10 @@ nmap <C-kDel> dw
 " Note: ◦<C-O>x - To erase a visible char in order to keep indentation
 inoremap <expr> <C-kDel> AtEndOfLine() ? '◦<C-O>x<C-O>gJ' : '<C-O>"_dw'
 
+" Mimic Windows C-Right behavior in insert mode, not to skip last word of the line
+" ref: https://www.reddit.com/r/vim/comments/9lu0vi/comment/e79jtwb/
+inoremap <C-Right> <C-o>E<Right>
+
 " Save to file
 inoremap <C-S> <C-O>:w<CR>
 
