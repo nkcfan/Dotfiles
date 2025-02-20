@@ -45,6 +45,7 @@ function cmp_setup ()
             -- Could enable this only for lua, but nvim_lua handles that already.
             { name = "nvim_lua" },
             { name = "nvim_lsp" },
+            { name = "nvim_lsp_signature_help" },
             { name = "path" },
             { name = "luasnip" },
             { name = "buffer", keyword_length = 2 },
@@ -160,6 +161,7 @@ return {
         dependencies = {
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-nvim-lsp" },
+            { "hrsh7th/cmp-nvim-lsp-signature-help" },
             { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-path" },
             { "hrsh7th/cmp-cmdline" },
