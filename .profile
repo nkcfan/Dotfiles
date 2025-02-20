@@ -73,6 +73,7 @@ if [[ "$UNAME" == "Linux" ]]; then
     export GIT_PAGER="diff-so-fancy || cat | less --tabs=4 -RFX"
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=true
+    export GCM_CREDENTIAL_STORE=cache
     # Disable XON/XOFF flow control
     stty -ixon
 elif [[ "$UNAME" == "Darwin" ]]; then # OSX

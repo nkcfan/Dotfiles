@@ -27,7 +27,7 @@
     branch = auto
     interactive = true
 [credential]
-    helper =
+    helper = /usr/local/bin/git-credential-manager
 [help]
     format = man
 [pack]
