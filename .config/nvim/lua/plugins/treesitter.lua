@@ -28,6 +28,8 @@ function treesitter_setup()
     })
 
     require("nvim-treesitter.configs").setup({
+        -- ensure installed so they can be highlighted in markdown code blocks
+        ensure_installed = { "cpp", "python" },
         auto_install = true,
         folding,
         highlight = {
