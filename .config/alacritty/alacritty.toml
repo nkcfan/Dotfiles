@@ -21,3 +21,12 @@ italic.family = "Hack Nerd Font Mono"
 bold_italic.family = "Hack Nerd Font Mono"
 
 size = 15.0
+
+[keyboard]
+bindings = [
+  # Disable Cmd-W and Cmd-Q to prevent accidental exit
+  { key = "Q", mods = "Command", action = "None" }, # not working
+  { key = "W", mods = "Command", action = "None" },
+  # { key = "Backspace", mods = "Control", chars = "\u0008" },
+  # { key = "W", mods = "Control", chars = "\u0008" }
+]
