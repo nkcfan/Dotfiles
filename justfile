@@ -7,18 +7,18 @@ apt_install *PACKAGE:
     #!/bin/bash
     just apt_update
     sudo apt install {{PACKAGE}}
-apt_try_install COMMAND PACKAGE=COMMAND:
+apt_try_install COMMAND PACKAGE=COMMAND *EXTRA_PACKAGES:
     #!/bin/bash
     if command -v {{COMMAND}}; then exit 0; fi
     just apt_install {{PACKAGE}}
+    just apt_install {{EXTRA_PACKAGES}}
 
 toolchain:
     just apt_install build-essential pkg-config libssl-dev libxml2-utils universal-ctags clangd cmake
 curl: (apt_try_install "curl")
     just apt_install ca-certificates
 fzf: (apt_try_install "fzf")
-tmux: (apt_try_install "tmux")
-    just apt_install ncurses-term
+tmux: (apt_try_install "tmux" "tmux" "ncurses-term")
 augtool: (apt_try_install "augtool" "augeas-tools")
 
 NVM_DIR := "$HOME/.nvm"
