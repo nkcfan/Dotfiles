@@ -16,6 +16,14 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# if running zsh
+if [ -n "$ZSH_NAME" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.zshrc" ]; then
+        . "$HOME/.zshrc"
+    fi
+fi
+
 # If ssh-agent does not represent any identities, start ssh-agent and add identity
 if ! ssh-add -l; then
     . "$HOME/bin/ssh-agent.sh"
