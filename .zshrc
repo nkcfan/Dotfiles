@@ -15,3 +15,11 @@ zle     -N              fzf-file-widget
 bindkey -M emacs '\C-p' fzf-file-widget
 bindkey -M vicmd '\C-p' fzf-file-widget
 bindkey -M viins '\C-p' fzf-file-widget
+
+# Arrow to search history
+# ref: https://unix.stackexchange.com/a/97844/161486
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
