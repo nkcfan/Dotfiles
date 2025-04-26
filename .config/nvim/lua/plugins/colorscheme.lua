@@ -1,3 +1,5 @@
+local prefer_italic = vim.env.ALACRITTY_WINDOW_ID ~= nil
+
 return {
     {
         "folke/tokyonight.nvim",
@@ -7,7 +9,7 @@ return {
             style = "storm",
             styles = {
                 functions = { italic = true },
-                comments = { italic = false },
+                comments = { italic = prefer_italic },
                 keywords = { italic = false },
             },
             sidebars = { "qf", "vista_kind", "terminal", "packer" },
