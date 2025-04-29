@@ -28,6 +28,7 @@ bindings = [
   { key = "Q", mods = "Command", action = "None" }, # not working
   { key = "W", mods = "Command", action = "None" },
   # { key = "Backspace", mods = "Control", chars = "\u0008" },
+  { key = "Backspace", mods = "Control", chars = "\u0017" },
   # { key = "W", mods = "Control", chars = "\u0008" }
 
   # On macos: you might need to disable the ctrl left and right bindings from mission control
