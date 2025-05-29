@@ -78,7 +78,7 @@ if [[ "$UNAME" == "Linux" ]]; then
     # Note: please install most package
     export MANPAGER=most
     # Set git pager
-    export GIT_PAGER="diff-so-fancy || cat | less --tabs=4 -RFX"
+    export GIT_PAGER="( diff-so-fancy || cat ) | less --tabs=4 -RFX"
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=true
     export GCM_CREDENTIAL_STORE=cache
