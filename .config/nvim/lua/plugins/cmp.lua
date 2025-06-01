@@ -18,10 +18,13 @@ function cmp_setup ()
                 end
             end, { "i", "s" }),
             ["<Tab>"] = cmp.mapping(function(fallback)
+                local copilot_keys = vim.fn['copilot#Accept']()
                 if cmp.visible() and cmp.confirm({ select = false }) then
                     -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 elseif luasnip.jumpable() then
                     luasnip.jump()
+                elseif copilot_keys ~= '' and type(copilot_keys) == 'string' then
+                    vim.api.nvim_feedkeys(copilot_keys, 'i', true)
                 else
                     fallback()
                 end
