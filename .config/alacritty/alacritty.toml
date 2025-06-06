@@ -22,6 +22,9 @@ bold_italic.family = "Hack Nerd Font Mono"
 
 size = 15.0
 
+[env]
+TERM = "xterm-256color"
+
 [keyboard]
 bindings = [
   # Disable Cmd-W and Cmd-Q to prevent accidental exit
