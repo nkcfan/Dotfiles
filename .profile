@@ -82,8 +82,9 @@ if [[ "$UNAME" == "Linux" ]]; then
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=true
     export GCM_CREDENTIAL_STORE=cache
-    # Disable XON/XOFF flow control
-    stty -ixon
+    # Disable XON/XOFF flow control in an interactive shell
+    # ref: https://stackoverflow.com/a/25391867
+    [[ $- == *i* ]] && stty -ixon
 elif [[ "$UNAME" == "Darwin" ]]; then # OSX
     #export EDITOR="/usr/local/bin/mate -w"
     #export GIT_EDITOR="/usr/local/bin/mate -w"
