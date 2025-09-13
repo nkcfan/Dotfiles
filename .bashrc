@@ -157,6 +157,9 @@ export FZF_TMUX_OPTS="-p"
 bind '"\C-t": transpose-chars'
 bind -x '"\C-p": fzf-file-widget'
 
+# Bash 5.1 workaround for key mapping C-R
+bind -m emacs-standard -x '"\C-r": __fzf_history__'
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
