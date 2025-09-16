@@ -6,7 +6,7 @@ cd ~
 git init
 git remote add origin https://github.com/nkcfan/Dotfiles.git
 git fetch
-git checkout -t origin/master
+git checkout -t origin/master -f
 git branch --set-upstream-to=origin/master
 ```
 
