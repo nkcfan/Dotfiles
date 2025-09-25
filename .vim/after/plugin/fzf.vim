@@ -35,6 +35,8 @@ nmap <Leader><tab> <plug>(fzf-maps-n)
 xmap <Leader><tab> <plug>(fzf-maps-x)
 omap <Leader><tab> <plug>(fzf-maps-o)
 
+nnoremap <silent> <M-p> :Buffers<CR>
+
 " fzf_tags
 nmap <C-]> <Plug>(fzf_tags)
 noreabbrev <expr> ts getcmdtype() == ":" && getcmdline() == 'ts' ? 'FZFTselect' : 'ts'
