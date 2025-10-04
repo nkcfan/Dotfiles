@@ -79,6 +79,8 @@ if [[ "$UNAME" == "Linux" ]]; then
     export MANPAGER=most
     # Set git pager
     export GIT_PAGER="( diff-so-fancy 2>/dev/null || cat ) | less --tabs=4 -RFX"
+    # Set journalctl pager
+    export SYSTEMD_PAGER=vi
     # Set git credential helper for https
     export GIT_CREDENTIAL_HELPER=true
     export GCM_CREDENTIAL_STORE=cache
