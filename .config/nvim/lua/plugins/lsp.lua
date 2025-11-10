@@ -135,6 +135,23 @@ function lspconfig_setup()
     lsp.docker_compose_language_service.setup({ on_attach = custom_attach })
 end
 
+function mason_lspconfig_setup()
+    local mason_lspconfig = require("mason-lspconfig")
+    mason_lspconfig.setup({
+        ensure_installed = {
+            "bashls",
+            "clangd",
+            "docker_compose_language_service",
+            "gopls",
+            "lua_ls",
+            "marksman",
+            "pyright",
+            "rust_analyzer",
+        },
+        automatic_installation = true,
+    })
+end
+
 return {
     {
         "neovim/nvim-lspconfig",
@@ -157,7 +174,7 @@ return {
                         config = true,
                     },
                 },
-                config = true,
+                config = mason_lspconfig_setup,
             },
         },
     },
