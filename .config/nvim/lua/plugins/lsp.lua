@@ -63,10 +63,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 function lspconfig_setup()
-    local lsp = require("lspconfig")
-    lsp.marksman.setup({ on_attach = custom_attach })
-    lsp.bashls.setup({ on_attach = custom_attach })
-    lsp.clangd.setup({
+    vim.lsp.config('marksman', { on_attach = custom_attach })
+    vim.lsp.config('bashls', { on_attach = custom_attach })
+    vim.lsp.config('clangd', {
         on_attach = custom_attach,
         settings = {
             clangd = {
@@ -85,7 +84,7 @@ function lspconfig_setup()
         },
     })
 
-    lsp.rust_analyzer.setup({
+    vim.lsp.config('rust_analyzer', {
         on_attach = custom_attach,
         settings = {
             ["rust-analyzer"] = {
@@ -98,7 +97,8 @@ function lspconfig_setup()
             },
         },
     })
-    lsp.pyright.setup({
+
+    vim.lsp.config('pyright', {
         on_attach = custom_attach,
         settings = {
             diagnostics = {
@@ -117,7 +117,7 @@ function lspconfig_setup()
         },
     })
 
-    lsp.gopls.setup({
+    vim.lsp.config('gopls', {
         on_attach = custom_attach,
         cmd = { "gopls", "serve" },
         settings = {
@@ -130,9 +130,9 @@ function lspconfig_setup()
         },
     })
     -- lua
-    lsp.lua_ls.setup({ on_attach = custom_attach })
+    vim.lsp.config('lua_ls', { on_attach = custom_attach })
 
-    lsp.docker_compose_language_service.setup({ on_attach = custom_attach })
+    vim.lsp.config('docker_compose_language_service', { on_attach = custom_attach })
 end
 
 function mason_lspconfig_setup()
