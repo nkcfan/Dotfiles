@@ -1,3 +1,6 @@
+[terminal]
+shell = { program = "/bin/bash", args = ["-l"] }
+
 [window]
 blur = true
 opacity = 0.85
