@@ -1,4 +1,6 @@
 # Alias definitions.
+alias which >/dev/null 2>&1 && unalias which
+
 UNAME=`uname`
 function _alias_std() {
     function ls() { $(which ls) --color "$@"; }
