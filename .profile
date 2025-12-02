@@ -54,11 +54,14 @@ pathmunge "$HOME/.cabal/bin"
 pathmunge "$HOME/go/bin"
 pathmunge "$HOME/bin"
 pathmunge "$HOME/Library/Python/2.7/bin"
-pathmunge /opt/local/sbin
-pathmunge /opt/local/bin
-pathmunge /usr/local/bin
-pathmunge /usr/sbin
-pathmunge /sbin
+pathmunge /opt/local/sbin after
+pathmunge /opt/local/bin after
+pathmunge /usr/local/sbin after
+pathmunge /usr/local/bin after
+pathmunge /usr/sbin after
+pathmunge /usr/bin after
+pathmunge /sbin after
+pathmunge /bin after
 
 export PATH
 export MANPATH="/usr/local/Cellar:$MANPATH"
