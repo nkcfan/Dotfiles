@@ -76,7 +76,7 @@ UNAME=`uname`
 if [[ "$UNAME" == "Linux" ]]; then
     export EDITOR="vi"
     # Enable rbenv shims and autocompletion
-    eval "$(rbenv init -)"
+    command -v rbenv &> /dev/null && eval "$(rbenv init -)"
     # Set manpage to use color
     # Note: please install most package
     export MANPAGER=most
