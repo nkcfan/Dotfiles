@@ -1,3 +1,4 @@
 #!/bin/bash
-
+docker start lazydocker
 docker exec -it lazydocker lazydocker
+docker stop lazydocker
