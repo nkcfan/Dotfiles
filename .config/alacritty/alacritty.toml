@@ -35,10 +35,15 @@ bindings = [
   { key = "W", mods = "Command", action = "None" },
   # { key = "Backspace", mods = "Control", chars = "\u0008" },
   { key = "Backspace", mods = "Control", chars = "\u0017" },
-  # { key = "W", mods = "Control", chars = "\u0008" }
+  # { key = "W", mods = "Control", chars = "\u0008" },
+  { key = "Insert", mods = "Shift", action = "PasteSelection" },
 
-  # On macos: you might need to disable the ctrl left and right bindings from mission control
+  # On macos
+  # Disable the ctrl left and right bindings from mission control
   # ref: https://stackoverflow.com/a/72995176/2514803
   { key = "Left",  mods = "Control", chars = "\u001B[1;5D" },
   { key = "Right", mods = "Control", chars = "\u001B[1;5C" },
+  # Revert ctrl/shift tab bindings
+  { key = "Tab", mods = "Control|Shift", chars = "\u001B[27;6;9~" },
+  { key = "Tab", mods = "Control", chars = "\u001B[27;5;9~" },
 ]
