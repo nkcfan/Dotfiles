@@ -30,9 +30,6 @@ TERM = "xterm-256color"
 
 [keyboard]
 bindings = [
-  # Disable Cmd-W and Cmd-Q to prevent accidental exit
-  { key = "Q", mods = "Command", action = "None" }, # not working
-  { key = "W", mods = "Command", action = "None" },
   # { key = "Backspace", mods = "Control", chars = "\u0008" },
   { key = "Backspace", mods = "Control", chars = "\u0017" },
   # { key = "W", mods = "Control", chars = "\u0008" },
@@ -46,4 +43,62 @@ bindings = [
   # Revert ctrl/shift tab bindings
   { key = "Tab", mods = "Control|Shift", chars = "\u001B[27;6;9~" },
   { key = "Tab", mods = "Control", chars = "\u001B[27;5;9~" },
+  # alt Letters
+  { key = "A", mods = "Command", chars = "\u001ba" },
+  { key = "B", mods = "Command", chars = "\u001bb" },
+  { key = "C", mods = "Command", chars = "\u001bc" },
+  { key = "D", mods = "Command", chars = "\u001bd" },
+  { key = "E", mods = "Command", chars = "\u001be" },
+  { key = "F", mods = "Command", chars = "\u001bf" },
+  { key = "G", mods = "Command", chars = "\u001bg" },
+  { key = "H", mods = "Command", chars = "\u001bh" },
+  { key = "I", mods = "Command", chars = "\u001bi" },
+  { key = "J", mods = "Command", chars = "\u001bj" },
+  { key = "K", mods = "Command", chars = "\u001bk" },
+  { key = "L", mods = "Command", chars = "\u001bl" },
+  { key = "M", mods = "Command", chars = "\u001bm" },
+  { key = "N", mods = "Command", chars = "\u001bn" },
+  { key = "O", mods = "Command", chars = "\u001bo" },
+  { key = "P", mods = "Command", chars = "\u001bp" },
+  { key = "Q", mods = "Command", chars = "\u001bq" },
+  { key = "R", mods = "Command", chars = "\u001br" },
+  { key = "S", mods = "Command", chars = "\u001bs" },
+  { key = "T", mods = "Command", chars = "\u001bt" },
+  { key = "U", mods = "Command", chars = "\u001bu" },
+  # { key = "V", mods = "Command", chars = "\u001bv" },
+  { key = "W", mods = "Command", chars = "\u001bw" },
+  { key = "X", mods = "Command", chars = "\u001bx" },
+  { key = "Y", mods = "Command", chars = "\u001by" },
+  { key = "Z", mods = "Command", chars = "\u001bz" },
+
+  # alt Numbers
+  { key = "Key0", mods = "Command", chars = "\u001b0" },
+  { key = "Key1", mods = "Command", chars = "\u001b1" },
+  { key = "Key2", mods = "Command", chars = "\u001b2" },
+  { key = "Key3", mods = "Command", chars = "\u001b3" },
+  { key = "Key4", mods = "Command", chars = "\u001b4" },
+  { key = "Key5", mods = "Command", chars = "\u001b5" },
+  { key = "Key6", mods = "Command", chars = "\u001b6" },
+  { key = "Key7", mods = "Command", chars = "\u001b7" },
+  { key = "Key8", mods = "Command", chars = "\u001b8" },
+  { key = "Key9", mods = "Command", chars = "\u001b9" },
+
+  # alt Symbols
+  { key = "`", mods = "Command", chars = "\u001b`" },
+  { key = "Minus", mods = "Command", chars = "\u001b-" },
+  { key = "Equals", mods = "Command", chars = "\u001b=" },
+  { key = "[", mods = "Command", chars = "\u001b[" },
+  { key = "]", mods = "Command", chars = "\u001b]" },
+  { key = "Backslash", mods = "Command", chars = "\u001b\\" },
+  { key = "Semicolon", mods = "Command", chars = "\u001b;" },
+  { key = "'", mods = "Command", chars = "\u001b'" },
+  { key = "Comma", mods = "Command", chars = "\u001b," },
+  { key = "Period", mods = "Command", chars = "\u001b." },
+  { key = "Slash", mods = "Command", chars = "\u001b/" },
+
+# alt Special
+  # Space
+  # { key = "Space", mods = "Command", chars = "\u001b " },
+  # Backspace
+  { key = "Back", mods = "Command", chars = "\u001b\u007f" },
 ]
