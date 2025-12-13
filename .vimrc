@@ -502,8 +502,12 @@ xnoremap <silent> <expr> gp ':<C-U>normal! ' . '`]' . strpart(getregtype(), 0, 1
 onoremap gp :normal! vgp<CR>
 
 " grep
-let &grepprg = expand('~/.cargo/bin/rg --vimgrep --no-heading')
-set grepformat^=%f:%l:%c:%m
+if executable('rg')
+    let &grepprg = 'rg --vimgrep --no-heading'
+    set grepformat^=%f:%l:%c:%m
+else
+    echoerr('ripgrep not found, using default grep')
+endif
 
 " Yank to tmux or osc52
 if has('nvim')
