@@ -135,8 +135,6 @@ if has("patch-8.1.1880")
 endif
 set completeopt-=preview
 set completeopt+=longest
-" Recommended completeopt for coc.nvim or completion-nvim
-set completeopt+=menuone,noinsert
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
