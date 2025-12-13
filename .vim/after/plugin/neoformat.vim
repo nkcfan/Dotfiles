@@ -1,6 +1,6 @@
 if !exists(':Neoformat')
     finish
-end
+endif
 
 noremap <Leader>fm                          :Neoformat<CR>
 vnoremap <Leader>fi                         :Neoformat!<Space>
