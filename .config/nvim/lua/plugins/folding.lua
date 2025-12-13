@@ -21,7 +21,7 @@ return {
         end,
     },
     -- ref: https://github.com/chrisgrieser/.config/blob/main/nvim/lua/plugin-configs/folding.lua
-    { -- use LSP as folding provid3er
+    { -- use LSP as folding provider
         "kevinhwang91/nvim-ufo",
         dependencies = "kevinhwang91/promise-async",
         event = "UIEnter", -- needed for folds to load in time and comments being closed

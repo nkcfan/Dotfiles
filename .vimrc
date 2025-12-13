@@ -65,7 +65,9 @@ if !has('nvim')
 endif
 
 syntax on
-let g:xml_syntax_folding = 1
+if !has('nvim')
+    let g:xml_syntax_folding = 1
+endif
 
 " Detect filetype
 augroup detect_filetype
@@ -75,7 +77,9 @@ augroup detect_filetype
     autocmd FileType gitcommit,c,cpp,go,python,markdown,vim,yaml call DefaultSpellCheck()
     autocmd BufWinEnter * ++nested if &spell | syntax enable | endif
     autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
-    autocmd FileType xml setlocal foldmethod=syntax | call feedkeys(":%foldopen!\<CR>")
+    if !has('nvim')
+        autocmd FileType xml setlocal foldmethod=syntax | call feedkeys(":%foldopen!\<CR>")
+    endif
 augroup END
 
 " Add to .vimrc to enable project-specific vimrc
