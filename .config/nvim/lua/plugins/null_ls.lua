@@ -87,8 +87,9 @@ return {
         config = function()
             local lint = require("lint")
             lint.linters_by_ft = {
-                python = { "flake8" },
-                -- markdown = { "markdownlint" },
+                python = { "flake8", "ruff" },
+                sh = { "shellcheck" },
+                markdown = { "markdownlint" },
             }
 
             -- Add custom flake8 config file
