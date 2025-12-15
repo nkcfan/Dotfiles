@@ -4,12 +4,21 @@ vim.diagnostic.config({
     },
     virtual_text = {
         severity = { min = vim.diagnostic.severity.ERROR },
+        format = function(diagnostic)
+            return string.format("[%s] %s", diagnostic.source, diagnostic.message)
+        end,
     },
     signs = {
         severity = { min = vim.diagnostic.severity.HINT },
     },
+    float = {
+        format = function(diagnostic)
+            return string.format("[%s] %s", diagnostic.source, diagnostic.message)
+        end,
+    },
 })
 
+vim.api.nvim_set_keymap("n", "<LocalLeader>tf", '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<LocalLeader>td", '<cmd>lua require("diagnostics_toggle").toggle()<CR>', {})
 
 return {

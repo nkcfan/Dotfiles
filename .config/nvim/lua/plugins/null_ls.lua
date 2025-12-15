@@ -79,6 +79,66 @@
 
 return {
     {
+        "mfussenegger/nvim-lint",
+        event = {
+            "BufReadPre",
+            "BufNewFile",
+        },
+        config = function()
+            local lint = require("lint")
+            lint.linters_by_ft = {
+                python = { "flake8" },
+                -- markdown = { "markdownlint" },
+            }
+
+            -- Add custom flake8 config file
+            lint.linters.flake8.args = {
+                "--append-config=" .. vim.fn.expand("~/.config/flake8"),
+                "--format=%(path)s:%(row)d:%(col)d: %(code)s %(text)s",
+                "--stdin-display-name",
+                function() return vim.api.nvim_buf_get_name(0) end,
+                "-",
+            }
+
+            -- Configure flake8 to show errors as errors and warnings as warnings
+            -- E*** and F*** are errors, W*** are warnings
+            lint.linters.flake8.parser = function(output, bufnr)
+                local diagnostics = {}
+                local severity_map = {
+                    E = vim.diagnostic.severity.ERROR,
+                    F = vim.diagnostic.severity.ERROR,
+                    W = vim.diagnostic.severity.WARN,
+                    C = vim.diagnostic.severity.WARN,
+                    N = vim.diagnostic.severity.INFO,
+                }
+
+                for line in output:gmatch("[^\n]+") do
+                    local file, row, col, code, message = line:match("([^:]+):(%d+):(%d+):%s*([A-Z]%d+)%s*(.*)")
+                    if file and row and col and code and message then
+                        local severity_prefix = code:sub(1, 1)
+                        table.insert(diagnostics, {
+                            lnum = tonumber(row) - 1,
+                            col = tonumber(col) - 1,
+                            message = string.format("[%s] %s", code, message),
+                            severity = severity_map[severity_prefix] or vim.diagnostic.severity.WARN,
+                            source = "flake8",
+                        })
+                    end
+                end
+                return diagnostics
+            end
+
+            local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+            vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged" }, {
+                group = lint_augroup,
+                callback = function()
+                    lint.try_lint()
+                end,
+            })
+        end,
+    },
+    {
         "stevearc/conform.nvim",
         keys = {
             {
