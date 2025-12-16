@@ -17,7 +17,6 @@ toolchain:
     just apt_install build-essential pkg-config libssl-dev libxml2-utils universal-ctags clangd cmake
 curl: (apt_try_install "curl")
     just apt_install ca-certificates
-fzf: (apt_try_install "fzf")
 tmux: (apt_try_install "tmux" "tmux" "ncurses-term")
 augtool: (apt_try_install "augtool" "augeas-tools")
 
