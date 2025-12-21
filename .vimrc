@@ -1,5 +1,4 @@
 let g:PluginSpec_Common = {
-            \ 'ojroques/vim-oscyank': { },
             \ 'ntpeters/vim-better-whitespace': { },
             \ 'majutsushi/tagbar': { 'on': ['Tagbar', 'TagbarToggle'] },
             \ 'plasticboy/vim-markdown': { 'ft': ['markdown' ] },
@@ -38,6 +37,7 @@ if !has('nvim')
     endif
 
     call plug#begin('~/.vim/bundle')
+    Plug 'ojroques/vim-oscyank'
     Plug 'svermeulen/vim-cutlass'
     Plug 'sainnhe/sonokai'
     " Plug 'joshdick/onedark.vim'
