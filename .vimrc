@@ -1,5 +1,4 @@
 let g:PluginSpec_Common = {
-            \ 'ojroques/vim-oscyank': { },
             \ 'ntpeters/vim-better-whitespace': { },
             \ 'majutsushi/tagbar': { 'on': ['Tagbar', 'TagbarToggle'] },
             \ 'plasticboy/vim-markdown': { 'ft': ['markdown' ] },
@@ -38,6 +37,7 @@ if !has('nvim')
     endif
 
     call plug#begin('~/.vim/bundle')
+    Plug 'ojroques/vim-oscyank'
     Plug 'svermeulen/vim-cutlass'
     Plug 'sainnhe/sonokai'
     " Plug 'joshdick/onedark.vim'
@@ -521,12 +521,6 @@ if has('nvim')
                 \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
                 \   },
                 \   'cache_enabled': 0,
-                \ }
-    elseif empty($TMUX) && !empty($TERM) && $TERM != 'vtpcon'
-        let g:clipboard = {
-                \   'name': 'osc52',
-                \   'copy': {'+': {lines, regtype -> OSCYank(join(lines, "\n"))}},
-                \   'paste': {'+': {-> [split(getreg(''), '\n'), getregtype('')]}},
                 \ }
     endif
 elseif exists("##TextYankPost")
