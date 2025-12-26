@@ -13,6 +13,8 @@ ignore=
     # at least two spaces before inline comment
     E261,
     # Unexpected spaces around keyword / parameter equals
+    E265,
+    # block comment should start with '# '
     E251,
     # Expected 2 blank lines, found 0
     E302,
