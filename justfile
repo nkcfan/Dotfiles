@@ -68,9 +68,13 @@ bat: (cargo_install "bat")
 stylua: (cargo_install "stylua")
 zoxide: (cargo_install "zoxide")
 ripgrep: (cargo_install "ripgrep")
-tree-sitter-cli: (cargo_install "tree-sitter-cli")
+tree-sitter-cli: clang (cargo_install "tree-sitter-cli")
 cargo-update: (cargo_install "cargo-update")
     cargo install-update -a
+
+# clang
+clang:
+    just apt_install llvm-dev libclang-dev clang
 
 # neovim
 bob-nvim: (cargo_install "bob-nvim")
