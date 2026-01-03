@@ -1,0 +1,4 @@
+#!/bin/bash
+
+COLUMNS=$(tput cols)
+~/.cargo/bin/rg -M $COLUMNS "$@"
