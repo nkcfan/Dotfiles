@@ -1,0 +1,16 @@
+Font=Hack Nerd Font Mono
+FontHeight=10
+MiddleClickAction=void
+RightClickAction=paste
+Term=xterm-256color
+Transparency=off
+FontSmoothing=default
+BoldAsFont=yes
+BoldAsColour=no
+AllowSetSelection=yes
+Scrollbar=none
+SwitchShortcuts=no
+ProgressBar=yes
+KeyFunctions=\
+    C+Tab:'[27;5;9~'\
+    C+S+Tab:'[27;6;9~'\
