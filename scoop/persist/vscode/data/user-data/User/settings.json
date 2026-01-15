@@ -1,7 +1,7 @@
 {
     "foam.openDailyNote.directory": "daily",
-    "editor.fontFamily": "Hack Nerd Font Mono, 'Courier New', monospace",
-    "editor.fontSize": 13,
+    "editor.fontFamily": "'0xProto Nerd Font Mono', 'Courier New', monospace",
+    "window.title": "${rootName}${separator}${activeEditorShort}",
     "git.openRepositoryInParentFolders": "never",
     "vscode-neovim.useWSL": true,
     "vscode-neovim.neovimExecutablePaths.linux": "~/.local/share/bob/nvim-bin/nvim",
@@ -20,5 +20,29 @@
         "markdown": true,
         "scminput": false
     },
-    "markdown.extension.list.indentationSize, adaptive": "adaptive"
+    "markdown.extension.list.indentationSize, adaptive": "adaptive",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "editor.accessibilitySupport": "off",
+    "markdown.extension.list.toggle.candidate-markers": [
+        "-",
+        "*",
+        "+",
+        "1.",
+        "1)"
+    ],
+    "markdown.extension.list.indentationSize": "inherit",
+    "github.copilot.chat.agent.thinkingTool": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": false,
+    "claudeCode.selectedModel": "default",
+    "telemetry.telemetryLevel": "off",
+    "claudeCode.preferredLocation": "panel",
+    "python.analysis.typeCheckingMode": "basic",
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.diff": "default"
+    },
+    "chat.agentSessionsViewLocation": "single-view",
+    "tabnine.experimentalAutoImports": true
 }
