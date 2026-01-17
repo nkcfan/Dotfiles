@@ -509,7 +509,9 @@ endif
 
 " Yank to tmux or osc52
 if has('nvim')
-    if has('wsl')
+    if !empty($SSH_TTY)
+        let g:clipboard = 'osc52'
+    elseif has('wsl')
         let g:clipboard = {
                 \   'name': 'WslClipboard',
                 \   'copy': {
