@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+import subprocess
+import getpass
+import sys
+import re
+
+REMOTE_NAME = "origin"
+
+def run(cmd):
+    return subprocess.check_output(cmd, stderr=subprocess.STDOUT, text=True).strip()
+
+def main():
+    try:
+        # Get current remote URL
+        current_url = run(["git", "remote", "get-url", REMOTE_NAME])
+
+        if not current_url.startswith("https://"):
+            print("❌ This script only supports HTTPS remotes.")
+            print(f"Current URL: {current_url}")
+            sys.exit(1)
+
+        # Remove existing token or username if present
+        cleaned_url = re.sub(r"https://[^@]+@", "https://", current_url)
+
+        # Ask for new token (hidden input)
+        token = getpass.getpass("Enter new PAT token: ")
+        if not token:
+            print("❌ Token cannot be empty.")
+            sys.exit(1)
+
+        # Insert token into URL
+        new_url = cleaned_url.replace("https://", f"https://{token}@", 1)
+
+        # Update Git remote
+        run(["git", "remote", "set-url", REMOTE_NAME, new_url])
+
+        print("✅ Git remote updated successfully.")
+        print(f"New URL: {new_url.replace(token, '****')}")
+
+    except subprocess.CalledProcessError as e:
+        print("❌ Git command failed:")
+        print(e.output)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
+
