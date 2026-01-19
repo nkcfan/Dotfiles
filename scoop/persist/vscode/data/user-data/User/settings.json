@@ -44,5 +44,8 @@
         "*.diff": "default"
     },
     "chat.agentSessionsViewLocation": "single-view",
-    "tabnine.experimentalAutoImports": true
+    "tabnine.experimentalAutoImports": true,
+    "chat.tools.terminal.autoApprove": {
+        "git add": true
+    }
 }
