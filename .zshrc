@@ -50,7 +50,7 @@ prompt() {
         exit_symbol="${LRED}✘"
     fi
 
-    remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
+    remote_state=$(git -c color.status=false status -sb 2> /dev/null | grep -oh "\[.*\]")
     branch_name=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)
     venv_name=$([[ -n "$VIRTUAL_ENV" ]] && echo "${VIRTUAL_ENV##*/} ")
 

@@ -23,7 +23,7 @@
 [color]
     ui = true
     diff = auto
-    status = auto
+    status = always
     branch = auto
     interactive = true
 [credential]
@@ -118,3 +118,15 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+; [credential "azrepos:org/msazure"]
+; 	username = qiluo@microsoft.com
+[credential "https://sonic-preview.googlesource.com"]
+	provider = generic
+[http]
+	cookiefile = /home/qiluo/.gitcookies
+[credential "azrepos:org/msazure"]
+	azureAuthority = https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47
+[safe]
+	directory = /data/sonic/sonic-mgmt-int/sonic-metadata
