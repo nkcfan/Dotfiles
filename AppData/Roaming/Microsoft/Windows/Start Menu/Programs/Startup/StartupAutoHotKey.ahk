@@ -21,3 +21,8 @@ Pause::#!k
 !v::+Ins
 !V::+Ins
 
+;; Select full file name when renaming on Windows
+;; ref: https://superuser.com/a/114907
+#HotIf WinActive("ahk_class CabinetWClass")
+$F2::Send "{F2}^a"
+#HotIf
