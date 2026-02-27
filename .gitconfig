@@ -4,7 +4,7 @@
     name = nkcfan
     email = nkcfan@users.noreply.github.com
 [core]
-    autocrlf = input
+    autocrlf = false
     editor = vi
     symlinks = true
 [diff]
