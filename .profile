@@ -54,6 +54,7 @@ pathmunge "$HOME/.cabal/bin"
 pathmunge "$HOME/go/bin"
 pathmunge "$HOME/bin"
 pathmunge "$HOME/Library/Python/2.7/bin"
+pathmunge "$(npm prefix -g)/bin"
 pathmunge /opt/local/sbin after
 pathmunge /opt/local/bin after
 pathmunge /usr/local/sbin after
